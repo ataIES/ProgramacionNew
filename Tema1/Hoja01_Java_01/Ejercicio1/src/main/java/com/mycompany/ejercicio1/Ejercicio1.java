@@ -23,7 +23,7 @@ public class Ejercicio1 {
         //e
         char sexo='M';
         //f
-        long miliseg=1298332800;
+        long miliseg=12983328000l;
         //g
         double totalfactura=10350.678;
         //h

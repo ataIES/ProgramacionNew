@@ -32,6 +32,8 @@ public class Ejercicio1 {
         long poblacion = 67752354714L;
         //i
         float velocidadLuz = 299792458f;
+        
+        //Ejercicio 2 apartado d
 
         System.out.println("---EJERCICIO DE VARIABLES Y TIPOS DE DATOS--- \n\tEl valor de la variable casado es " + casado
                 + "\n\tEl valor de la variable MAXIMO es " + MAXIMO + "\n\tEl valor de la variable diasem es " + diasem

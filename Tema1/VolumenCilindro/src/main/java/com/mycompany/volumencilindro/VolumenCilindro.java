@@ -18,10 +18,6 @@ public class VolumenCilindro {
 
         //Para potencias se utiliza la clase Math.Pow
         System.out.println("El volumen de un cilindro es: " + (PI * Math.pow(radio, 2) * altura));
-        //Otra forma hacer el cálculo en una variable aparte
-        double volumen = PI * Math.pow(radio, 2) * altura;
-
-        System.out.println("El volumen de un cilindro es: " + volumen);
 
         //Utilizando Math.PI
         System.out.println("El volumen de un cilindro es: " + (Math.PI * Math.pow(radio, 2) * altura));

@@ -17,13 +17,13 @@ public class VolumenCilindro {
         float radio=50.5f;
         final float PI=3.14f;
         
-        System.out.println("El volumen de un cilindro es: "+(altura*radio*PI));
+        System.out.println("El volumen de un cilindro es: "+(altura*Math.pow(radio, 2)*PI));
         //Otra forma hacer el cálculo en una variable aparte
-        float volumen=altura*radio*PI;
+        double volumen=altura*Math.pow(radio, 2)*PI;
         
         System.out.println("El volumen de un cilindro es: "+volumen);
         
         //Utilizando la clase Math
-        System.out.println("El volumen de un cilindro es: "+(altura*radio*Math.PI));
+        System.out.println("El volumen de un cilindro es: "+(altura*Math.pow(radio, 2)*Math.PI));
     }
 }

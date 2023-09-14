@@ -23,7 +23,7 @@ public class VolumenCilindro {
         
         System.out.println("El volumen de un cilindro es: "+volumen);
         
-        //Utilizando Math.PI
+        //Utilizando la clase Math
         System.out.println("El volumen de un cilindro es: "+(altura*radio*Math.PI));
     }
 }

@@ -25,9 +25,9 @@ public class Ejercicio1 {
         //f
         long miliseg=12983328000l;
         //g
-        double totalfactura=10350.678;
+        float totalfactura=10350.678f;
         //h
-        float poblacion=67752354714f;
+        long poblacion=67752354714L;
         //i
         float velocidadLuz=299792458f;
         

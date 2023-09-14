@@ -37,6 +37,6 @@ public class Ejercicio1 {
                 + "\n\tEl valor de la variable MAXIMO es " + MAXIMO + "\n\tEl valor de la variable diasem es " + diasem
                 + "\n\tEl valor de la variable diaanual es " + diaanual + "\n\tEl valor de la variable sexo es " + sexo
                 + "\n\tEl valor de la variable miliseg es " + miliseg + "\n\tEl valor de la variable totalfactura es " + totalfactura
-                + "\n\tEl valor de la variable poblacion es " + poblacion + "\n\tEl valor de la variable velocidadLuz es: " + velocidadLuz+"m/seg");
+                + "\n\tEl valor de la variable poblacion es " + poblacion + "\n\tEl valor de la variable velocidadLuz es: " + velocidadLuz + " m/seg");
     }//Aqui se cierra el main
 }//Aqui se cierra la clase

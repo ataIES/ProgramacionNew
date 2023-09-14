@@ -31,7 +31,7 @@ public class Ejercicio1 {
         //h
         long poblacion = 67752354714L;
         //i
-        float velocidadLuz = 299792458f;
+        long velocidadLuz = 299792458l;
         
         //Ejercicio 2 apartado d
 

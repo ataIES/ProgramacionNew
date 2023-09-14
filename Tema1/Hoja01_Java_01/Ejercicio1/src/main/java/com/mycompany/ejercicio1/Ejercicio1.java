@@ -15,7 +15,7 @@ public class Ejercicio1 {
         //a
         boolean casado=true;
         //b
-        int maximo=999999;
+        final int MAXIMO=999999;
         //c
         byte diasem=1;
         //d
@@ -31,7 +31,7 @@ public class Ejercicio1 {
         //i
         float velocidadLuz=299792458f;
         
-        System.out.println("Casado: "+casado+" ,Maximo: "+maximo+" ,Dia Semana: "+diasem+" ,Dia Año: "+diaanual
+        System.out.println("Casado: "+casado+" ,Maximo: "+MAXIMO+" ,Dia Semana: "+diasem+" ,Dia Año: "+diaanual
         +" ,Sexo: "+sexo+" ,MiliSegundos: "+miliseg+" ,TotalFactura: "+totalfactura+" ,Población: "+poblacion+" ,Velocidad Luz: "+velocidadLuz);
     }
 }

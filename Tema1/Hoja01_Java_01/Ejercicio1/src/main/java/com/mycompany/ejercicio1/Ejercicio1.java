@@ -34,7 +34,6 @@ public class Ejercicio1 {
         long velocidadLuz = 299792458l;
         
         //Ejercicio 2 apartado d
-
         System.out.println("---EJERCICIO DE VARIABLES Y TIPOS DE DATOS--- \n\tEl valor de la variable casado es " + casado
                 + "\n\tEl valor de la variable MAXIMO es " + MAXIMO + "\n\tEl valor de la variable diasem es " + diasem
                 + "\n\tEl valor de la variable diaanual es " + diaanual + "\n\tEl valor de la variable sexo es " + sexo

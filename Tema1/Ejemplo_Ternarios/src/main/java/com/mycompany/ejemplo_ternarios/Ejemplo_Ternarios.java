@@ -20,8 +20,9 @@ public class Ejemplo_Ternarios {
         b= a==7?10:20;
         
         System.out.println("b vale "+b);
-        
-        int num=-2;
+       
+        //Programa que calcule el valor absoluto de un número
+        int num=34;
         int valor=num>0?num:-num;
         
         System.out.println("El valor absoluto de "+num+" es: "+valor);

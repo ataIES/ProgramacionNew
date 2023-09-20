@@ -21,7 +21,10 @@ public class Ejemplo_Ternarios {
         
         System.out.println("b vale "+b);
         
+        int num=-2;
+        int valor=num>0?num:-num;
         
+        System.out.println("El valor absoluto de "+num+" es: "+valor);
        
     }
 }

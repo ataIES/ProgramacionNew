@@ -23,9 +23,9 @@ public class Ejemplo_Ternarios {
        
         //Programa que calcule el valor absoluto de un número
         int num=11;
-        int valor=num>0?num:-num;
+        int valorAbs=num>0?num:-num;
         
-        System.out.println("El valor absoluto de "+num+" es: "+valor);
+        System.out.println("El valor absoluto de "+num+" es: "+valorAbs);
        
     }
 }

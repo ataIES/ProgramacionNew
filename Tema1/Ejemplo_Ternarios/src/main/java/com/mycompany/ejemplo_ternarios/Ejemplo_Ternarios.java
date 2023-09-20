@@ -12,6 +12,7 @@ package com.mycompany.ejemplo_ternarios;
 public class Ejemplo_Ternarios {
 
     public static void main(String[] args) {
+        //Ejemplo ternario
         int a,b;
         a=3<5 ? 1:-1;
         

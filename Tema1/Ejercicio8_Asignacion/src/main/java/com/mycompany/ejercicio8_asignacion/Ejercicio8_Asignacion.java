@@ -19,7 +19,7 @@ public class Ejercicio8_Asignacion {
         
         kManzanas=10f;
         kPeras=15f;
-        beneficios=(kManzanas*=precioManzanas)+((kPeras*=precioPeras));
+        beneficios=(kManzanas*=precioManzanas)+(kPeras*=precioPeras);
         System.out.println("El beneficio es: "+String.format("%,.2f", beneficios));
         
       

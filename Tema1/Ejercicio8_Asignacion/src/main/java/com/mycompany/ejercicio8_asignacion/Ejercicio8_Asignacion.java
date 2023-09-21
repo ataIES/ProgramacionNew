@@ -15,12 +15,12 @@ public class Ejercicio8_Asignacion {
         float kManzanas,kPeras;
         final float precioManzanas=2.35f;
         final float precioPeras=1.95f;
-        float beneficios;
+        float ingresos;
         
         kManzanas=10f;
         kPeras=15f;
-        beneficios=(kManzanas*=precioManzanas)+(kPeras*=precioPeras);
-        System.out.println("El beneficio es: "+String.format("%,.2f", beneficios));
+        ingresos=(kManzanas*=precioManzanas)+(kPeras*=precioPeras);
+        System.out.printf("El ingreso es: %.2f ",ingresos);
         
       
         

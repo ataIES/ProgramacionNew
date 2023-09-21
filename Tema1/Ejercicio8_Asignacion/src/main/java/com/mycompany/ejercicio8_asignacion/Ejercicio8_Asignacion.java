@@ -12,10 +12,9 @@ package com.mycompany.ejercicio8_asignacion;
 public class Ejercicio8_Asignacion {
 
     public static void main(String[] args) {
-        float kManzanas,kPeras;
+        float kManzanas,kPeras,ingresos;
         final float precioManzanas=2.35f;
         final float precioPeras=1.95f;
-        float ingresos;
         
         kManzanas=10f;
         kPeras=15f;

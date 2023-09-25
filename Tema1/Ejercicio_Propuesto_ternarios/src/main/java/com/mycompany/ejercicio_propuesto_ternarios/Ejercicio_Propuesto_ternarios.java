@@ -11,6 +11,7 @@ package com.mycompany.ejercicio_propuesto_ternarios;
 public class Ejercicio_Propuesto_ternarios {
 
     public static void main(String[] args) {
+        //Ejercicio propuesto donde saco que aspirante es idóneo
         boolean conocimientosInfo, cursoInfo, experencia;
         String result;
         conocimientosInfo = false;

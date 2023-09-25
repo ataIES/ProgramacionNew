@@ -28,6 +28,9 @@ public class Ejercicio5 {
         //Muestro los resultados por pantalla
         System.out.printf("El precio sin IVA es: %.2f \nEl precio con el porcentaje del 21 de IVA es: %.2f"
                 + "\nEl precio después de aplicar un porcentaje de 10 de descuento es: %.2f \n", precio, precioIVA, precioDescuento);
+        //Con la opción JOptionPane.showMessage
+        JOptionPane.showMessageDialog(null, "El precio sin IVA es: "+String.format("%.2f", precio)+"\nEl precio con el porcentaje del 21 de IVA es: "+String.format("%.2f",precioIVA)
+                + "\nEl precio después de aplicar un porcentaje de 10 de descuento es: "+String.format("%.2f",precioDescuento));
 
     }
 }

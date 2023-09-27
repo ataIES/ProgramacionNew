@@ -33,7 +33,7 @@ public class Ejercicio5 {
                 + "\nx * y= " + multiplicacion + "\nx / y= " + division + "\nx^2= " + Math.pow(num1, 2) + "\nRaíz cuadrada de x=" + Math.sqrt(num1));
 
         //Con printf
-        System.out.printf("x= %.2f y= %.2f \nx + y= %.2f \nx - y= %.2f \nx * y= %.2f \nx / y= %.2f"
-                + "\nx^2= %.2f \nRaíz cuadrada de x= %.2f", num1, num2, suma, resta, multiplicacion, division, Math.pow(num1, 2), Math.sqrt(num1));
+        System.out.printf("x= %.1f y= %.1f \nx + y= %.1f \nx - y= %.1f \nx * y= %.1f \nx / y= %.1f"
+                + "\nx^2= %.1f \nRaíz cuadrada de x= %.1f", num1, num2, suma, resta, multiplicacion, division, Math.pow(num1, 2), Math.sqrt(num1));
     }
 }

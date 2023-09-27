@@ -19,10 +19,10 @@ public class Ejercicio5 {
 
         //Pido los valores por teclado
         System.out.println("Introduce el primer número: ");
-        num1 = teclado.nextInt();
+        num1 = teclado.nextFloat();
 
         System.out.println("Introduce el segundo número: ");
-        num2 = teclado.nextInt();
+        num2 = teclado.nextFloat();
         //Cálculo suma,resta,multiplicación y división
         suma = num1 + num2;
         resta = num1 - num2;

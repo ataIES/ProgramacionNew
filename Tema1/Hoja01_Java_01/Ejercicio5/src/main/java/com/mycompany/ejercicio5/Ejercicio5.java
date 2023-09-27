@@ -19,11 +19,11 @@ public class Ejercicio5 {
        int suma,resta,multiplicacion,division;
        
        //Pido los valores por teclado
-        System.out.println("Introduce el primer número: ");
-        num1=teclado.nextInt();
+       System.out.println("Introduce el primer número: ");
+       num1=teclado.nextInt();
         
-        System.out.println("Introduce el segundo número: ");
-        num2=teclado.nextInt();
+       System.out.println("Introduce el segundo número: ");
+       num2=teclado.nextInt();
         //Cálculo suma,resta,multiplicación y división
        suma=num1+num2;
        resta=num1-num2;

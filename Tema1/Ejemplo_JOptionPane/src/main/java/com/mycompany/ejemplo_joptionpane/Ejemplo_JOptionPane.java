@@ -21,7 +21,7 @@ public class Ejemplo_JOptionPane {
         //Mostrando el resultado en un cuadro de diálogo
         JOptionPane.showMessageDialog(null,"Has introducido el número "+num);
         
-        //Mensaje de error
+        //Mensaje de advertencia
         JOptionPane.showMessageDialog(null, "Advertencia", "Peligro",JOptionPane.WARNING_MESSAGE);
     }
 }

@@ -20,5 +20,8 @@ public class Ejemplo_JOptionPane {
         System.out.println("Has introducido el número "+num);
         //Mostrando el resultado en un cuadro de diálogo
         JOptionPane.showMessageDialog(null,"Has introducido el número "+num);
+        
+        //Mensaje de error
+        JOptionPane.showMessageDialog(null, "Advertencia", "Peligro",JOptionPane.WARNING_MESSAGE);
     }
 }

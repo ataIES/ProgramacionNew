@@ -17,6 +17,7 @@ public class Ejercicio5 {
        Scanner teclado=new Scanner(System.in);
        int num1,num2;
        int suma,resta,multiplicacion,division;
+       
        //Pido los valores por teclado
         System.out.println("Introduce el primer número: ");
         num1=teclado.nextInt();

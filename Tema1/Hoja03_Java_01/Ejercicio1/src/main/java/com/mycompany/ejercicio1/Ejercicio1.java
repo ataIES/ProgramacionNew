@@ -30,7 +30,7 @@ public class Ejercicio1 {
         
         //Muestro por pantalla los datos y el resultado
         System.out.printf("---CÁLCULO IMPORTE TOTAL---\n\tBase Imponible: %.2f%c  \n\tIVA a aplicar: %d%c"
-                + "\n\tImporte final: %.2f%c \n------------------",baseImponible,euros,IVA,letra,importeFinal,euros);
+                + "\n\tImporte final: %.2f%c",baseImponible,euros,IVA,letra,importeFinal,euros);
         
     }
 }

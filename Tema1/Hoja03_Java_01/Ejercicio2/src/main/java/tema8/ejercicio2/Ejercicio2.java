@@ -18,7 +18,8 @@ public class Ejercicio2 {
         //Introduzco el valor del número
         System.out.println("Introduce un número: ");
         num = teclado.nextInt();
-        valor = (num % 7 == 0) ? 0: 7- num%7;
+        //valor = (num % 7 == 0) ? 0: 7- num%7;
+        valor=(num>=0)?((num%7==0)?0:(7-num%7)):((num%7==0)?0:(Math.abs(num%7-7)));
         System.out.println("Para " + num + " hay que sumarle " + valor + " para que el resultado sea múltiplo de 7");
 
     }

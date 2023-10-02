@@ -21,7 +21,7 @@ public class Ejercicio5 {
         cantSegundos=teclado.nextInt();
         
         seg=cantSegundos%60;
-        minutos=cantSegundos/60;
+        minutos=(cantSegundos/60)%60;
         horas=cantSegundos/3600;
         
         System.out.println("Horas: "+horas+" Minutos: "+minutos+" segundos: "+seg);

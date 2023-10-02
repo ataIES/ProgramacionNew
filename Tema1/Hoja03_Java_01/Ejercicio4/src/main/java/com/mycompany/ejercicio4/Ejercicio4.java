@@ -29,8 +29,11 @@ public class Ejercicio4 {
         y=0;
         
         //Cálculo de y en el polinomio de segundo grado
-        pertenece=(y==(a*Math.pow(a, 2))+(b*x)+c)?true:false;
         y=(a*Math.pow(a, 2))+(b*x)+c;
+        
+        //dado un par de valores(x,y), indicar si verifican el polinomio de segundo grado anterior
+        //(0,3) pertenece si verifica el polinomio
+        pertenece=(y==(a*Math.pow(a, 2))+(b*x)+c)?true:false;
         System.out.printf("---Cálculo del Polinomio de Segundo Grado--- \nValor de a: %.2f "
                 + "\nValor de b: %.2f \nValor de c: %.2f \nValor de x: %.2f \nValor de y: %.2f",a,b,c,x,y);
         System.out.printf("\nEl par de valores x= %f, y= %f verifica el polinomio %b",x,y,pertenece);

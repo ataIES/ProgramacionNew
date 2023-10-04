@@ -19,12 +19,10 @@ public class Ejercicio10 {
 
         System.out.println("Introduce la longitud en metros de un lanzamiento: ");
         lanzamientoMetros = teclado.nextFloat();
-        
-        lanzamientoCentimetros=(int) (lanzamientoMetros*100);
-        
-        
-        System.out.printf("Lanzamiento en metros: %f \nLanzamiento en centímetros: %d",lanzamientoMetros,Math.toIntExact(lanzamientoCentimetros));
-        
-        
+
+        lanzamientoCentimetros = (int) (lanzamientoMetros * 100);
+
+        System.out.printf("Lanzamiento en metros: %f \nLanzamiento en centímetros: %d", lanzamientoMetros, Math.toIntExact(lanzamientoCentimetros));
+
     }
 }

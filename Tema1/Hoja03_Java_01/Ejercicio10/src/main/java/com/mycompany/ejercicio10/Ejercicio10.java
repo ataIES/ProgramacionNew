@@ -15,14 +15,14 @@ public class Ejercicio10 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         float lanzamientoMetros;
-        int lanzamientoCentimetros;
+        double lanzamientoCentimetros;
 
         System.out.println("Introduce la longitud en metros de un lanzamiento: ");
         lanzamientoMetros = teclado.nextFloat();
 
-        lanzamientoCentimetros = (int) (lanzamientoMetros * 100);
+        lanzamientoCentimetros = lanzamientoMetros * 100;
 
-        System.out.printf("Lanzamiento en metros: %f \nLanzamiento en centímetros: %d", lanzamientoMetros, Math.toIntExact(lanzamientoCentimetros));
+        System.out.printf("Lanzamiento en metros: %f \nLanzamiento en centímetros: %.0f", lanzamientoMetros, Math.floor(lanzamientoCentimetros));
 
     }
 }

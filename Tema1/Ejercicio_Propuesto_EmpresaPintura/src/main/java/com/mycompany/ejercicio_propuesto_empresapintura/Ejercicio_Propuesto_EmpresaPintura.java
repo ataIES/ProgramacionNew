@@ -35,11 +35,9 @@ public class Ejercicio_Propuesto_EmpresaPintura {
         opcEdificio = teclado.nextInt();
         altura1 = (opcEdificio == 1 ? altura1.ALTO : (opcEdificio == 2 ? altura1.BAJO : null));
 
-        contrata=(altura1 ==altura1.ALTO)?true:(trabajo1 == trabajo1.TEJADO?true:false);
-        
-        System.out.println("Se puede contratar?: "+contrata);
-        
-        
+        contrata = (altura1 == altura1.ALTO) ? true : (trabajo1 == trabajo1.TEJADO ? true : false);
+
+        System.out.println("Se puede contratar?: " + contrata);
 
         /*
         boolean contrata, pintura, reparacionTejados, altura;

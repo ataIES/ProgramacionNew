@@ -12,16 +12,17 @@ public class CajaAhorro {
 
     private int saldo;
     private int transacciones;
-    
+
     //contructor sin parámetros
-    public CajaAhorro(){
-        saldo=0;
-        transacciones=0;
+    public CajaAhorro() {
+        saldo = 0;
+        transacciones = 0;
     }
+
     //contructor que recibe saldo inicial
-    public CajaAhorro(int saldo_inicial){
-        saldo=saldo_inicial;
-        transacciones=1;
+    public CajaAhorro(int saldo_inicial) {
+        saldo = saldo_inicial;
+        transacciones = 1;
     }
 
     public void depositar(int cantidad) {

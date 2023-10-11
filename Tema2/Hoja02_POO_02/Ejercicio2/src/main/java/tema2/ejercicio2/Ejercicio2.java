@@ -23,7 +23,7 @@ public class Ejercicio2 {
         Circulo c3;
 
         //Introduzco la radio por teclado para c3
-        System.out.println("Introduce un radio: ");
+        System.out.println("Introduce un radio para c3: ");
         radio = teclado.nextDouble();
         c3 = new Circulo(radio);
 

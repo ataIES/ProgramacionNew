@@ -39,5 +39,13 @@ public class Ejercicio2 {
 
         //Mostramos el área y longitud de c3
         System.out.printf("\nEl área de c3 es: %.2f y la longitud de c3 es: %.2f", c3.area(), c3.longitud());
+
+        //C2 o c3 cuál es el más grande
+        double radio_mayor;
+        /*radio_mayor = (c2.getRadio() > c3.getRadio()) ? c2.getRadio() : c3.getRadio();
+        System.out.printf("\nEl radio mayor entre c2 y c3 es: %.2f", radio_mayor);*/
+
+        radio_mayor = (c1.getRadio() > c2.getRadio()) ? c1.getRadio() : (c2.getRadio() > c3.getRadio() ? c2.getRadio() : c3.getRadio());
+        System.out.printf("\nEl radio mayor entre c1,c2 y c3 es: %.2f",radio_mayor);
     }
 }

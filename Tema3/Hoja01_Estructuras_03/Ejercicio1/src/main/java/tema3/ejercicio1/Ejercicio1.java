@@ -13,6 +13,6 @@ public class Ejercicio1 {
 
     public static void main(String[] args) {
         Calculo c=new Calculo();
-        c.metodo9();
+        c.metodo5();
     }
 }

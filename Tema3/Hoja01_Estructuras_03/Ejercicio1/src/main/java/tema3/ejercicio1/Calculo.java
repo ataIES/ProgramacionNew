@@ -60,10 +60,10 @@ public class Calculo {
         double numero = 0;
         System.out.println("Introduce un número: ");
         numero = teclado.nextDouble();
-        
-        if(numero%1!=0){
+
+        if (numero % 1 != 0) {
             System.out.println("Tiene parte fraccionaria");
-        }else{
+        } else {
             System.out.println("No tiene parte fraccionaria");
         }
 
@@ -74,7 +74,7 @@ public class Calculo {
         System.out.println("Introduce un año: (1900-2100)");
         anio = teclado.nextInt();
 
-        if ((anio % 4 == 0) || (anio % 100 == 0 && anio % 400 != 0)) {
+        if ((anio % 4 == 0) || ((anio % 100 == 0) && (anio % 400 != 0))) {
             System.out.println("Es bisiesto");
         } else {
             System.out.println("No es bisiesto");
@@ -97,11 +97,14 @@ public class Calculo {
         int numero = 0;
         System.out.println("Introduce un número:(1-10) ");
         numero = teclado.nextInt();
-
-        if (numero % 2 == 0) {
-            System.out.println("Es par");
-        } else {
-            System.out.println("Es impar");
+        if (numero >= 1 && numero <= 10) {
+            if (numero % 2 == 0) {
+                System.out.println("Es par");
+            } else {
+                System.out.println("Es impar");
+            }
+        }else{
+            System.out.println("No está en el rango establecido");
         }
     }
 
@@ -116,10 +119,27 @@ public class Calculo {
 
         System.out.println("Introduce el número 3: ");
         numero3 = teclado.nextInt();
-        //Sacaré el numero mayor y el menor
+        //Sacaré el numero mayor
+        if (numero1 > numero2 && numero1 > numero3) {
+            mayor = numero1;
+        } else if (numero2 > numero1 && numero2 > numero3) {
+            mayor = numero2;
+        } else {
+            mayor = numero3;
+        }
+
+        //Sacaré el numero menor
+        if (numero1 < numero2 && numero1 < numero3) {
+            menor = numero1;
+        } else if (numero2 < numero1 && numero2 < numero3) {
+            menor = numero2;
+        } else {
+            menor = numero3;
+        }
+        /*
         mayor = Math.max(numero1, Math.max(numero2, numero3));
         menor = Math.min(numero1, Math.min(numero2, numero3));
-
+         */
         //Aqui compruebo que si tengo dos número iguales me asigne el valor en la variable medio
         if ((numero1 == numero2 || numero1 == numero3)) {
             medio = numero1;
@@ -147,14 +167,13 @@ public class Calculo {
         System.out.println("Introduce el número1: ");
         numero1 = teclado.nextInt();
         System.out.println("Introduce el número 2: ");
-        numero2=teclado.nextInt();
-        
-        if(numero1%numero2==0){
-            System.out.println(numero1+" es divisible entre "+numero2);
-        }else if(numero2%numero1==0){
-            System.out.println(numero2+" es divisible entre "+numero1);
-        }
-        else{
+        numero2 = teclado.nextInt();
+
+        if (numero1 % numero2 == 0) {
+            System.out.println(numero1 + " es divisible entre " + numero2);
+        } else if (numero2 % numero1 == 0) {
+            System.out.println(numero2 + " es divisible entre " + numero1);
+        } else {
             System.out.println("No es divisible entre ellos");
         }
     }

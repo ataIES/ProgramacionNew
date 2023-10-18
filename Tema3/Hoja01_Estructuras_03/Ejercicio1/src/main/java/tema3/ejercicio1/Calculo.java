@@ -73,12 +73,14 @@ public class Calculo {
         int anio = 0;
         System.out.println("Introduce un año: (1900-2100)");
         anio = teclado.nextInt();
-        if (anio < 1900 && anio > 2100) {
+        if (anio <= 1900 && anio >= 2100) {
             if ((anio % 4 == 0) || ((anio % 100 == 0) && (anio % 400 != 0))) {
                 System.out.println("Es bisiesto");
             } else {
                 System.out.println("No es bisiesto");
             }
+        } else if (anio == 1900) {
+            System.out.println("No es bisiesto");
         } else {
             System.out.println("El año está fuera del rango");
         }

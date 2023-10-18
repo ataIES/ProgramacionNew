@@ -23,7 +23,6 @@ public class Calculo {
         System.out.println("Introduce un número: ");
         numero = teclado.nextInt();
 
-        //Utilizando el if crearé la condición
         if (numero >= 100 && numero <= 1000) {
             System.out.println("Está comprendido");
         } else {

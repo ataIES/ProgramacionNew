@@ -145,23 +145,20 @@ public class Calculo {
         mayor = Math.max(numero1, Math.max(numero2, numero3));
         menor = Math.min(numero1, Math.min(numero2, numero3));
          */
-        //Aqui compruebo que si tengo dos número iguales me asigne el valor en la variable medio
-        if ((numero1 == numero2 || numero1 == numero3)) {
-            medio = numero1;
-        } else if (numero2 == numero3) {
-            medio = numero2;
-        }
-
         //Aqui compruebo que número deberá de estar en medio
         if (numero1 != mayor && numero1 != menor) {
             medio = numero1;
-        }
-        if (numero2 != mayor && numero2 != menor) {
+        } else if (numero2 != mayor && numero2 != menor) {
             medio = numero2;
-        }
-        if (numero3 != mayor && numero3 != menor) {
+        } else {
             medio = numero3;
         }
+        if (numero1 == numero2 || numero1 == numero3) {
+            medio = numero1;
+        } else {
+            medio = numero3;
+        }
+
         System.out.println(mayor + " " + medio + " " + menor);
 
     }

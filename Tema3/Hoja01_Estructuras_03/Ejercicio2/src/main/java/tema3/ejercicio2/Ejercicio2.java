@@ -12,7 +12,7 @@ package tema3.ejercicio2;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
-        Ticket t1=new Ticket(115.4f);
+        Ticket t1=new Ticket(12.4f);
         System.out.println(t1.imprimir());
     }
 }

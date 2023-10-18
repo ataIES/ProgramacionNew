@@ -79,7 +79,7 @@ public class Calculo {
             } else {
                 System.out.println("No es bisiesto");
             }
-        }else{
+        } else {
             System.out.println("El año está fuera del rango");
         }
     }

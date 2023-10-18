@@ -60,6 +60,12 @@ public class Calculo {
         double numero = 0;
         System.out.println("Introduce un número: ");
         numero = teclado.nextDouble();
+        
+        if(numero%1!=0){
+            System.out.println("Tiene parte fraccionaria");
+        }else{
+            System.out.println("No tiene parte fraccionaria");
+        }
 
     }
 

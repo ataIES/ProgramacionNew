@@ -33,7 +33,11 @@ public class Ticket {
     
 
     public String imprimir() {
+<<<<<<< HEAD
         return "Número de Kilos de Naranjas Vendidos: "+kilos_naranjas+"\nImporte Total: "+importeTotal();
+=======
+        return "Número de Kilos de Naranjas Vendidos: "+kilos_naranjas+"\nImporte Total: "+String.format("%.2f", importeTotal());
+>>>>>>> dd64dbd6e6e4d3ccc5858bc73aa2969f81037c5f
     }
 
 }

@@ -17,9 +17,9 @@ public class Ejercicio3 {
         Scanner teclado=new Scanner(System.in);
         int minutos=0,segundos=0;
         
-        System.out.println("Introduce los minutos de duración de la llamada");
+        System.out.println("Introduce los minutos de duración de la llamada: ");
         minutos=teclado.nextInt();
-        System.out.println("Introduce los segundos de duración de la llamada");
+        System.out.println("Introduce los segundos de duración de la llamada: ");
         segundos=teclado.nextInt();
         
         Llamada llamada=new Llamada();

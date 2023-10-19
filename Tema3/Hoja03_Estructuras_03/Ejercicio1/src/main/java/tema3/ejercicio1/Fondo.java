@@ -22,9 +22,11 @@ public class Fondo {
 
     public void evolucion() {
         double capital_final = 0;
+        double capital_compuesto=0;
         for (int i = 1; i <= anio; i++) {
             capital_final = capital + (capital * (interes / 100) * i);
-            System.out.printf("---Año %d--- \nCapital final: %.2f\n", i, capital_final);
+            capital_compuesto=capital+Math.pow(1+interes, i);
+            System.out.printf("---Año %d--- \nCapital final: %.2f \nInterés compuesto: %.2f", i, capital_final,capital_compuesto);
         }
 
     }

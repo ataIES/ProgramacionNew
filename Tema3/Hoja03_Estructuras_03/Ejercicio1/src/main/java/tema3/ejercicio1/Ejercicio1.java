@@ -12,7 +12,7 @@ package tema3.ejercicio1;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-       Fondo f1=new Fondo(1000,10,4);
+       Fondo f1=new Fondo(1,0.12,4);
        System.out.println(f1.mostrar());
        f1.evolucion();
     }

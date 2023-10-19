@@ -21,12 +21,18 @@ public class Fondo {
     }
 
     public void evolucion() {
-        double capital_final = 0;
+        double capital_simple = 0;
         double interes_compuesto = 0;
+        double capital_compuesto = 0;
+        double cap = 0;
         for (int i = 1; i <= anio; i++) {
-            capital_final = capital + (capital * (interes / 100) * i);
-            //interes_compuesto = capital * Math.pow(1 + interes, i);
-            System.out.printf("---Año %d--- \nCapital final: %.2f \nInterés compuesto: %.2f \n", i, capital_final, interes_compuesto);
+            //Interés simple
+            capital_simple = capital + (capital * interes * i);
+            //Interés compuesto
+            interes_compuesto = capital * Math.pow(1 + interes, i);
+            capital_compuesto = capital + interes_compuesto;
+
+            System.out.printf("---Año %d--- \nCapital con interés simple: %.2f \nCapital con interés compuesto: %.2f \n", i, capital_simple, capital_compuesto);
         }
 
     }

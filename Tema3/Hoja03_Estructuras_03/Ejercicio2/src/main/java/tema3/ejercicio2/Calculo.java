@@ -43,15 +43,15 @@ public class Calculo {
         }
         System.out.println("\nPositivos= " + positivos + "\nNegativos= " + negativos + "\nNulos= " + nulos);
     }
+
     //Método para calcular el factorial
-    public void metodo3(){
-        Scanner teclado= new Scanner(System.in);
-        int numero=0, factorial=0;
+    public void metodo3() {
+        Scanner teclado = new Scanner(System.in);
+        int numero = 0, factorial = 0;
         System.out.println("Introduce un número para calcular su factorial: ");
-        numero=teclado.nextInt();
-        for(int i=1; i<4;i++){
-            
-            
+        numero = teclado.nextInt();
+        for (int i = 1; i < 4; i++) {
+
         }
     }
 

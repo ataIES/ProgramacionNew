@@ -41,7 +41,7 @@ public class Calculo {
                 nulos++;
             }
         }
-        System.out.println("\nPositivos: " + positivos + "\nNegativos= " + negativos + "\nNulos: " + nulos);
+        System.out.println("\nPositivos= " + positivos + "\nNegativos= " + negativos + "\nNulos= " + nulos);
     }
     //Método para calcular el factorial
     public void metodo3(){

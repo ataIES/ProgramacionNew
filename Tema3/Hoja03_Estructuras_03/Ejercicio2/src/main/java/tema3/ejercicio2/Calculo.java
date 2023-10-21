@@ -56,5 +56,9 @@ public class Calculo {
         }
         System.out.println("El factorial de" + numero + " es: " + factorial);
     }
+    
+    public void metodo4(){
+        Scanner teclado=new Scanner(System.in);
+    }
 
 }

@@ -31,6 +31,7 @@ public class Ejercicio2 {
             switch(opc){
                 case 1->c1.metodo1();
                 case 2->c1.metodo2();
+                case 3->c1.metodo3();
             }
         }while(opc!=-1);
     }

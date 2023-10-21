@@ -47,12 +47,14 @@ public class Calculo {
     //Método para calcular el factorial
     public void metodo3() {
         Scanner teclado = new Scanner(System.in);
-        int numero = 0, factorial = 0;
+        int numero = 0, factorial = 1, contador = 0;
         System.out.println("Introduce un número para calcular su factorial: ");
         numero = teclado.nextInt();
-        for (int i = 1; i < 4; i++) {
 
+        for (int i = 1; i <= numero; i++) {
+            factorial = factorial * i;
         }
+        System.out.println("El factorial de" + numero + " es: " + factorial);
     }
 
 }

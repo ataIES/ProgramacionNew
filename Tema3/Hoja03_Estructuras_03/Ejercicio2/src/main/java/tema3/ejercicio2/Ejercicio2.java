@@ -32,6 +32,10 @@ public class Ejercicio2 {
                 case 1->c1.metodo1();
                 case 2->c1.metodo2();
                 case 3->c1.metodo3();
+                case 4->c1.metodo4();
+                case 5->c1.metodo5();
+                case -1->System.out.println("Saliendoo");
+                default->System.out.println("Opción incorrecta");
             }
         }while(opc!=-1);
     }

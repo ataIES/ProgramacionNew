@@ -56,9 +56,38 @@ public class Calculo {
         }
         System.out.println("El factorial de" + numero + " es: " + factorial);
     }
-    
-    public void metodo4(){
-        Scanner teclado=new Scanner(System.in);
+
+    public void metodo4() {
+        Scanner teclado = new Scanner(System.in);
+        //pido la frase
+        System.out.println("Introduce la frase");
+        String frase = teclado.nextLine();
+
+        //Saco la posición donde está el punto
+        int posicionPunto = frase.lastIndexOf(".");
+
+        //Obtengo la frase sin contar el punto final
+        String frasefinal = frase.substring(0, posicionPunto);
+
+        //Recojo la longitud de la frase
+        int cont_caracteres = frasefinal.length();
+        System.out.println("Hemos introducido " + cont_caracteres + " caracteres");
+    }
+
+    public void metodo5() {
+        Scanner teclado = new Scanner(System.in);
+        int numero = 0, suma = 0, media = 0, cont_numeros = 0;
+        do {
+            System.out.println("Introduce un número: ");
+            numero = teclado.nextInt();
+            //Cada vez que introduzco un número los voy sumando
+            suma += numero;
+            //Utilizo esta variable para contar los número que voy introduciendo
+            cont_numeros++;
+        } while (numero > 0);
+        media = suma / cont_numeros;
+
+        System.out.println("La media es: " + media);
     }
 
 }

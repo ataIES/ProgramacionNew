@@ -24,7 +24,6 @@ public class Fondo {
         double capital_simple = 0;
         double interes_compuesto = 0;
         double capital_compuesto = 0;
-        double cap = 0;
         for (int i = 1; i <= anio; i++) {
             //Interés simple
             capital_simple = capital + (capital * interes * i);

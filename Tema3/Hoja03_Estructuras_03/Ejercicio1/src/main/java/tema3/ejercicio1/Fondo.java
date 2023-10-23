@@ -28,9 +28,7 @@ public class Fondo {
             //Interés simple
             capital_simple = capital + (capital * interes * i);
             //Interés compuesto
-            interes_compuesto = capital * Math.pow(1 + interes, i);
-            capital_compuesto = capital + interes_compuesto;
-
+            capital_compuesto=capital+capital_simple;
             System.out.printf("---Año %d--- \nCapital con interés simple: %.2f \nCapital con interés compuesto: %.2f \n", i, capital_simple, capital_compuesto);
         }
 

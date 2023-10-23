@@ -18,12 +18,12 @@ public class Ejercicio1 {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("introduce el numero de filas: ");
-        int nFilas = teclado.nextInt();
+        int nfilas = teclado.nextInt();
 
-        int nEspacios = nFilas * 2;//hago que los espacios iniciales sean el doble de las filas que tengo
+        int nEspacios = nfilas * 2;//hago que los espacios iniciales sean el doble de las filas que tengo
         int espacios = 0;
 
-        for (int i = nFilas; i >= 1; i--) {
+        for (int i = nfilas; i >= 1; i--) {
 
             //calculo los espacios que tengo que dejar, va de mas a menos
             espacios = 0;

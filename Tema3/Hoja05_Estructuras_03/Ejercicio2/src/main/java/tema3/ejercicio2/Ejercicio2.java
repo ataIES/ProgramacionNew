@@ -22,7 +22,7 @@ public class Ejercicio2 {
             /*Creo una condición para las filas pares e impares, cuando sea una fila par, introduzco números
             de forma ascendente y cuando la fila sea impar, introduzca números de forma descendente
             */
-             
+
             if (i % 2 == 0) {
                 for (int a = 1; a < 10; a++) {
                     System.out.print(" " + a + " ");

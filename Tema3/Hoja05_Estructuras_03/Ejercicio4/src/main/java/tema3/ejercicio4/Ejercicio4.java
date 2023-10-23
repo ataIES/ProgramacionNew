@@ -12,7 +12,9 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         System.out.println("");
+        //Saco todos los números hasta el 100
         for (int i = 0; i < 100; i++) {
+            //Cuando i sea multiplo de 10, introduzco el Ciclo 
             if (i % 10 == 0) {
                 System.out.println("Ciclo Nº " + (i + 1));
             }

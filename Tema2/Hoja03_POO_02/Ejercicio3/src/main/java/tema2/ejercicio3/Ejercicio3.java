@@ -23,6 +23,6 @@ public class Ejercicio3 {
        //Vuelvo a mostrar la posicion del satelite y diciendo si esta en orbita
        satelite.printPosicion();
        String orbita=satelite.enOrbita()?"En Órbita":"En la Tierra";
-        System.out.println(orbita);
+       System.out.println(orbita);
     }
 }

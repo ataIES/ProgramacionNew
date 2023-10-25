@@ -22,6 +22,7 @@ public class Ejercicio3 {
        
        //Vuelvo a mostrar la posicion del satelite y diciendo si esta en orbita
        satelite.printPosicion();
+       //Utilizo un ternario para cambiar el true o el false, por un mensaje
        String orbita=satelite.enOrbita()?"En Órbita":"En la Tierra";
        System.out.println(orbita);
     }

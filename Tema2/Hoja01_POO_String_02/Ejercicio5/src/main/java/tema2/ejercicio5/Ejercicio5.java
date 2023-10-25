@@ -17,6 +17,15 @@ public class Ejercicio5 {
         System.out.println(frase+"\n"+frase_convertida);
     }
     public static String sustituir(String frase){
-        return frase.replace("es", "no por");
+        //return frase.replace("es", "no por");
+        String frase_convertida=" ";
+        for(int i=0; i<frase.length();i++){
+            if(frase.charAt(i)=='e' && frase.charAt(i+1)=='s'){
+                frase_convertida+="no por";
+            }else{
+                frase_convertida+=frase.charAt(i);
+            }
+        }
+        return frase_convertida;
     }
 }

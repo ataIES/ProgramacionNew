@@ -17,11 +17,12 @@ public class Ejercicio3 {
        satelite.printPosicion();
        
        //Vario la altura y la posicion del satelite
-       satelite.variarAltura(17000);
+       satelite.variarAltura(15000);
        satelite.variarPosicion(3000, 10000);
        
        //Vuelvo a mostrar la posicion del satelite y diciendo si esta en orbita
        satelite.printPosicion();
-        System.out.println("¿Está en órbita? "+satelite.enOrbita());
+       String orbita=satelite.enOrbita()?"En Órbita":"En la Tierra";
+        System.out.println(orbita);
     }
 }

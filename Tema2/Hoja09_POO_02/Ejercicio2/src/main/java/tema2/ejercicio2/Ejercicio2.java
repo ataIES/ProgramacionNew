@@ -11,7 +11,7 @@ package tema2.ejercicio2;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
-        Alimento alimento = new Alimento("Muslo", 10, 3, true);
+        Alimento alimento = new Alimento("Muslo de cerdo", 10, 3, true);
         alimento.mostrar();
         
         String dietetico = (alimento.esDietetico()) ? "Es dietetico" : "No es dietetico";

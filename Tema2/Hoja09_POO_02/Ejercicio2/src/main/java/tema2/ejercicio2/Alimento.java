@@ -47,6 +47,7 @@ public class Alimento {
         if (grasas < 12 && !origenAnimal) {
             dietetico = true;
         }
+        
         return dietetico;
     }
 

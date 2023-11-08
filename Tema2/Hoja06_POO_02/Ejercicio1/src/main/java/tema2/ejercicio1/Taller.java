@@ -22,6 +22,14 @@ public class Taller {
         contCambiosTotales=0;
         contCambiosParciales=0;
     }
+    
+    //Creo un constructor copia
+    public Taller(Taller t){
+        this.aceite=t.aceite;
+        this.ruedas=t.ruedas;
+        this.contCambiosParciales=t.contCambiosParciales;
+        this.contCambiosTotales=t.contCambiosTotales;
+    }
     //Paso por parámetros número de bidones de aceite y los convierto en litros
     public void addAceite(int nuevoAceite){
         aceite+=(nuevoAceite*5);
@@ -64,7 +72,13 @@ public class Taller {
     public int getRuedas() {
         return ruedas;
     }
+    
+     public double ingresos() {
+        int parciales = (5 * aceite) + (60 * ruedas);
+        double totales = (4.5 * aceite) + (50 * ruedas);
 
+        return parciales + totales;
+    }
     @Override
     public String toString() {
         return "Taller{" + "aceite=" + aceite + ", ruedas=" + ruedas + ", contCambiosTotales=" + contCambiosTotales + ", contCambiosParciales=" + contCambiosParciales + '}';

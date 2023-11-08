@@ -14,6 +14,10 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         Taller taller=new Taller(10,10);
         System.out.println(taller.toString());
+        //Creo un objeto de tipo taller utilizando el constructor copia
+        Taller taller2=new Taller(taller);
+        System.out.println("Taller creado por constructor copia");
+        System.out.println(taller2.toString());
         //Añado 3 bidones de aceite y ruedas
         taller.addAceite(3);
         taller.addRuedas(4);

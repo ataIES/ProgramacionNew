@@ -14,6 +14,6 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         Persona persona=new Persona("Adrián","Tresgallo","Arozamena","72205130B");
         System.out.println(persona.clave());
-        System.out.println(persona.dniValido());
+        persona.validarDNI();
     }
 }

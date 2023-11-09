@@ -43,7 +43,6 @@ public class Persona {
         if (dni.length() == 9) {
             if (dni.charAt(dni.length() - 1) == cadena.charAt(posicionLetra())) {
                 valido = true;
-                System.out.println("DNI válido");
             } else {
                 System.out.println("Error, letra errónea");
             }
@@ -51,5 +50,11 @@ public class Persona {
             System.out.println("Error, la longitud del dni es errónea");
         }
         return valido;
+    }
+
+    public void validarDNI() {
+        if (dniValido() == true) {
+            System.out.println("DNI válido");
+        }
     }
 }

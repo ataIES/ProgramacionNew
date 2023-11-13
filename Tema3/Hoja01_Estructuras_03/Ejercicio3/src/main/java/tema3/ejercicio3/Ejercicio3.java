@@ -16,6 +16,7 @@ public class Ejercicio3 {
         int minutos = 0, segundos = 0;
         minutos = validarMinutos();
         segundos = validarSegundos();
+        
         Llamada llamada = new Llamada();
         System.out.printf("Duración de la llamada %d:%d \nPrecio a pagar: %.2f", minutos, segundos, llamada.aPagar(minutos, segundos));
 

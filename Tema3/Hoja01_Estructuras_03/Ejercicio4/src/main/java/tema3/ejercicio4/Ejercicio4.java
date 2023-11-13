@@ -13,6 +13,6 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         Billete billete=new Billete(810,8);
-        System.out.printf("Distancia recorrida: %d \nNúmero de días: %d \nImporte total: %.2f",billete.getDistancia(),billete.getN_dias(),billete.importe());
+        System.out.printf("Distancia recorrida: %d \nNúmero de días: %d \nImporte total: %.2f euros",billete.getDistancia(),billete.getN_dias(),billete.importe());
     }
 }

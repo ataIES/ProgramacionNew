@@ -26,18 +26,15 @@ public class Ejercicio3 {
         Scanner teclado = new Scanner(System.in);
         boolean valido = false;
         int minutos = 0;
-        System.out.println("Introduce los minutos: ");
-        minutos = teclado.nextInt();
         do {
+            System.out.println("Introduce los minutos: ");
+            minutos = teclado.nextInt();
             if (minutos > 0) {
                 valido = true;
             } else {
                 System.out.println("Error, debes introducir un número mayor que 0");
-
-                System.out.println("Introduce los minutos: ");
-                minutos = teclado.nextInt();
             }
-        } while (valido);
+        } while (!valido);
         return minutos;
     }
 
@@ -45,19 +42,16 @@ public class Ejercicio3 {
         Scanner teclado = new Scanner(System.in);
         boolean valido = false;
         int segundos = 0;
-        System.out.println("Introduce los minutos: ");
-        segundos = teclado.nextInt();
         do {
+            System.out.println("Introduce los segundos: ");
+            segundos = teclado.nextInt();
             if (segundos > 0) {
                 valido = true;
             } else {
                 System.out.println("Error, debes introducir un número mayor que 0");
-
-                System.out.println("Introduce los minutos: ");
-                segundos = teclado.nextInt();
             }
-            
-        } while (valido);
+
+        } while (!valido);
         return segundos;
     }
 }

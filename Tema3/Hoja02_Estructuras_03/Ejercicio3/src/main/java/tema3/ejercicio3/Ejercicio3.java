@@ -37,6 +37,9 @@ public class Ejercicio3 {
         return (int) Math.pow(num, 2);
     }
     public static int doble(int num){
-        
+        return num*2;
+    }
+    public static int raiz(int num){
+        return (int) Math.sqrt(num);
     }
 }

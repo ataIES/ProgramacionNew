@@ -26,9 +26,13 @@ public class Operaciones {
         }  
     }
     public void metodo2(){
+        Scanner teclado=new Scanner(System.in);
         int numero1=0,numero2=0, suma=0;
-        numero1=validarNumero("Introduce un valor para el primer número:");
-        numero2=validarNumero("Introduce un valor para el segundo número:");
+        System.out.println("Introduce el primer número");
+        numero1=teclado.nextInt();
+        System.out.println("Introduce el segundo número: ");
+        numero2=teclado.nextInt();
+        
         //Creo una condición que dice si el número 1 es mayor que el numero 2, me haga un bucle y si no es mayor me haga otro bucle
         if(numero1<numero2){
             for(int i=numero1; i<numero2;i++){

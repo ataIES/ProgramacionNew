@@ -14,7 +14,8 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int clave = 1234, codigo = 0, intentos = 4;
+        int clave =(int) Math.floor(Math.random()*(9999-1000+1))+1000, codigo=0,intentos=4;
+        System.out.println("Clave "+clave);
         do {
             System.out.println("Introduce la clave de 4 dígitos: ");
             codigo = teclado.nextInt();

@@ -14,6 +14,7 @@ public class Ejercicio4 {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
+        //Numeros aleatorios con Math
         int clave =(int) Math.floor(Math.random()*(9999-1000+1))+1000, codigo=0,intentos=4;
         System.out.println("Clave "+clave);
         do {

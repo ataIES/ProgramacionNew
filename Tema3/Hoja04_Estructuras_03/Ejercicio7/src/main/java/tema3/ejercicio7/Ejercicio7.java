@@ -22,7 +22,8 @@ public class Ejercicio7 {
             System.out.println("\t2.Escribir sus 10 primeros múltiplos");
             System.out.println("\t3.Decir si es perfecto");
             System.out.println("\t4.Cambiar de número");
-            System.out.println("Introduce una opción(-1 para salir)");
+            System.out.println("\t0.Salir");
+            System.out.println("Introduce una opción:");
             opc = teclado.nextInt();
             Operaciones ope = new Operaciones(num);
 
@@ -48,7 +49,7 @@ public class Ejercicio7 {
                 default ->
                     System.out.println("Error, has introducido una opción errónea");
             }
-        } while (opc != -1);
+        } while (opc != 0);
 
     }
 

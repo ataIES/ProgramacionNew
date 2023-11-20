@@ -18,7 +18,7 @@ public class Ejercicio6 {
         int num = 0;
         boolean salir = false;
         double cantidad = 0;
-     do {
+        do {
             System.out.println("Introduce la cantidad a apostar: ");
             cantidad = new Scanner(System.in).nextDouble();
             num = (int) (Math.floor(Math.random() * 2) + 1);

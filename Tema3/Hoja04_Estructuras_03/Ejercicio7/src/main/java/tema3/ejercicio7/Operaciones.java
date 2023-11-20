@@ -22,7 +22,7 @@ public class Operaciones {
         return String.valueOf(num).length();
     }
 
-    //Método que calcula los 10 primeros multiplos de número
+    //Método que calcula los 10 primeros multiplos de un número
     public void multiplos() {
         System.out.println("--- 10 Múltiplos de " + num + " ---");
         for (int i = 1; i <= 10; i++) {

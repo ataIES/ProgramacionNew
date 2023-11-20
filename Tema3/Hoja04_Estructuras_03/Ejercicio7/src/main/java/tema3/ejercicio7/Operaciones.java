@@ -16,10 +16,12 @@ public class Operaciones {
     public Operaciones(int num) {
         this.num = num;
     }
+
     //Método que sirve para contar cuantas cifras tiene el número
     public int contarCifras() {
         return String.valueOf(num).length();
     }
+
     //Método que calcula los 10 primeros multiplos de número
     public void multiplos() {
         System.out.println("--- 10 Múltiplos de " + num + " ---");
@@ -27,6 +29,7 @@ public class Operaciones {
             System.out.print(num * (i + 1) + " ");
         }
     }
+
     //Método que calcula si un número es perfecto
     public boolean perfecto() {
         boolean perfecto = false;

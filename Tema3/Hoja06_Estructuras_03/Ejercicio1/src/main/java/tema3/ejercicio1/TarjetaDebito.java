@@ -9,6 +9,7 @@ package tema3.ejercicio1;
  * @author daw1
  */
 public class TarjetaDebito {
+
     private String nombreTitular;
     private String numeroCuenta;
     private int pin;
@@ -20,7 +21,7 @@ public class TarjetaDebito {
         this.numeroCuenta = numeroCuenta;
         this.pin = pin;
         this.saldo = saldo;
-        this.habilitada=habilitada.BLOQUEADA;
+        this.habilitada = habilitada.BLOQUEADA;
     }
 
     public String getNombreTitular() {
@@ -62,28 +63,62 @@ public class TarjetaDebito {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    public void desbloquea(int nuevo_pin){
-        if(pin==nuevo_pin){
+//Método que desbloquea nuestra tarjeta
+    //Si el pin que introducimos por parámetro es igual al pin, se nos asignará el atributo habilitada a HABILITADA. En caso contrario, seguirá igual
+
+    public void desbloquea(int nuevo_pin) {
+        if (pin == nuevo_pin) {
             setHabilitada(habilitada.HABILITADA);
+            System.out.println("La tarjeta está habilitada");
+        } else {
+            System.out.println("La tarjeta está bloqueada");
         }
     }
-    public void pagar(double importeCompra, int pin, String descripcion,String propina){
-        if(habilitada!=Habilitar.HABILITADA){
-            System.out.println("Error, tarjeta no habilitada");
-        }else if(this.pin!=pin){
-            System.out.println("Error, PIN incorrecto");
+
+    /*Método que recibe por parámetros el importe de la compra, el pin, la descripcion de la compra y si introducimos propina o no
+    Comprueba si está habilitada nuestra tarjeta, si el podemos realizar la compra y si queremos dar propina nos calcule un 5% más, añadiendo que luego nos imprima el ticket
+     */
+    public String pagar(double importeCompra, int pin, String descripcion, String propina) {
+        String cadena = "";
+        double importefinal = 0, importePropina = 0;
+        if (habilitada == Habilitar.HABILITADA) {
+            if (this.pin == pin) {
+                if (saldo >= importeCompra) {
+                    if (propina.equals("Si")) {
+                        importePropina = importeCompra * 0.05;
+                        importefinal += importeCompra + importePropina;
+                        saldo -= importefinal;
+                        cadena = "\n---TICKET---\n\t" + imprimeTicket() + "\n\tImporte de la Compra: " + String.format("%.2f", importeCompra) + "\n\tDescripción de la compra: " + descripcion
+                                + "\n\tCargos: " + importePropina + "\n\tTotal Cargado: " + importefinal;
+                    } else {
+                        saldo -= importeCompra;
+                        cadena = "\n---TICKET---" + imprimeTicket() + "\n\tImporte de la Compra: " + String.format("%.2f", importeCompra) + "\n\tDescripción de la compra: " + descripcion
+                                + "\n\tTotal Cargado: " + importeCompra;
+
+                    }
+                } else {
+                    System.out.println("Error, Importe de la compra mayor");
+                }
+            }
+        } else {
+            System.out.println("Error, Tarjeta está bloqueada");
         }
-        else if(importeCompra>saldo){
-            System.out.println("Error, Importe mayor que el saldo disponible");
-        }
-        else if(propina.equalsIgnoreCase("Si")){
-            importeCompra+=(importeCompra*0.05);
-        }
-        setSaldo(saldo-importeCompra);
+        return cadena;
     }
-    private String 
-    
-    
-   
+//Método que nos establece un * después de los primeros 4 dígitos de la cuenta
+
+    private String nCuenta() {
+        String cadena = "";
+        String ulti = " ";
+        for (int i = 4; i < numeroCuenta.length(); i++) {
+            ulti += "*";
+        }
+        return cadena = numeroCuenta.substring(0, 3) + ulti;
+    }
+//Método que imprime el ticket
+
+    private String imprimeTicket() {
+        return "Nombre del Titular: " + nombreTitular + "\nNúmero de Cuenta: " + nCuenta();
+    }
+
 }

@@ -1,0 +1,125 @@
+/*
+ * Programa que nos pide un número entero positivo y luego nos permita realizar la opción que pulsemos en el siguiente menú:
+1.- contar cuantas cifras tiene
+2.- escriba sus 10 primeros múltiplos
+3.- decir si es perfecto
+4.- salir
+
+Cada una de estas opciones del menú, estarán resueltas en métodos en una clase aparte denominada Operaciones. 
+Esta clase tiene un atributo de tipo entero, que se inicializa con un constructor por parámetros. Las operaciones se realizan sobre este atributo.
+
+Un número perfecto, es cuando la suma de los divisores de un número es igual al propio número.
+El menor número perfecto es el 6. Sus divisores son 1,2 y 3, se cumple que 1+2+3=6
+El siguiente número perfecto es el 28. Sus divisores son 1,2,4,7 y 14, se cumple 1+2+4+7+14=28
+
+La solución es básica. Se puede mejorar e incorporar alguna opción más en el menú.
+ */
+
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Ad
+ */
+public class Ejercicio_07 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+   
+    Scanner scan = new Scanner(System.in);
+    int opcion;
+    
+
+        
+       do{
+           Menu();
+           System.out.println("Introduce un número entero positivo");
+        int numero = scan.nextInt();
+	Operacion o1 = new Operacion(numero);
+           System.out.println("selecciona una opción");
+           opcion= scan.nextInt();
+           switch(opcion){
+               case 1:
+                  System.out.println("El número de cifras es: " + o1.Metodo1());
+                    break; 
+               case 2:
+                   o1.Metodo2();
+                   break;
+               case 3:
+                   if(o1.Metodo3()){
+                       System.out.println("el número es perfecto");
+                   }
+                   else{
+                       System.out.println("el número no es perfecto");
+                   }
+                   break;
+               case 4:
+                   System.out.println("Adioss");
+                   break;
+               default:
+                   System.out.println("Try again");
+                   break;
+           }
+       }while(opcion!=4);
+
+    }
+  private static void Menu() {
+        System.out.println("\nMenú:");
+        System.out.println("1.- Contar cuántas cifras tiene");
+        System.out.println("2.- Escribir sus 10 primeros múltiplos");
+        System.out.println("3.- Decir si es perfecto");
+        System.out.println("4.- Salir");
+    }
+}
+
+//la clase Operación comienza aquí
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Operacion {
+    private int numero;
+
+    public Operacion(int numero) {
+        this.numero = numero;
+    }
+    
+    public int Metodo1(){//contar cuantas cifras tiene
+        return String.valueOf(numero).length();
+        
+    }
+    
+    public void Metodo2(){//los 10 primeros múltiplos
+        int numero1=this.numero;
+        
+         System.out.println("los 10 primeros múltiplos de " + this.numero + " son:");
+        for(int i=1; i<=10; i++){
+            System.out.printf("%d x %d = %d\n", numero1, i, numero1*i);
+            
+        }
+     
+    }
+    
+    public boolean Metodo3(){//es un número perfecto
+    int suma=0;
+    for (int k=1; k<this.numero; k++){
+            if(this.numero%k==0){
+                System.out.printf("El %d es divisor de %d \n", k, numero);
+                suma+=k;
+            }
+        }
+    return suma==numero;
+  
+ }
+ 
+    
+    
+   
+    
+}//final de la clase

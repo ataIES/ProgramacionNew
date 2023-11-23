@@ -11,6 +11,8 @@ package tema3.ejercicio3;
 public class SintonizadorFM {
 
     private double frecuencia;
+    private final double frecuenciaMax=108;
+    private final double frecuenciaMin=80;
 
     public SintonizadorFM() {
         
@@ -21,7 +23,7 @@ public class SintonizadorFM {
             System.out.println("Frecuencia correcta");
             this.frecuencia = frecuencia;
         } else {
-            this.frecuencia = 80;
+            this.frecuencia = frecuenciaMin;
         }
     }
 //Constructor copia
@@ -30,27 +32,27 @@ public class SintonizadorFM {
             System.out.println("Frecuencia correcta");
             s.frecuencia = s.frecuencia;
         } else {
-            s.frecuencia = 80;
+            s.frecuencia = s.frecuenciaMin;
         }
     }
 //Método para subir la frecuencia, cuando sobrepase los 108, nos establezca la frecuencia en 80
     public void subir() {
         frecuencia += 0.05;
         if (frecuencia > 108) {
-            frecuencia = 80;
+            frecuencia = frecuenciaMin;
         }
     }
 //Método para bajar la frecuencia, cuando sea menor que 80, se nos establece la frecuencia en 108
     public void bajar() {
         frecuencia -= 0.05;
         if (frecuencia < 80) {
-            frecuencia = 108;
+            frecuencia = frecuenciaMax;
         }
     }
 //Método privado donde se comprueba si la frecuencia se encuentra dentro del rango 
     private boolean comprobarRango(double frecuencia) {
         boolean valido = false;
-        if (frecuencia >= 80 && frecuencia <= 108) {
+        if (frecuencia >= frecuenciaMin && frecuencia <= frecuenciaMax) {
             valido = true;
         }
         return valido;

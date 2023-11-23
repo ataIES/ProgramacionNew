@@ -26,6 +26,8 @@ public class Ejercicio1 {
         System.out.println("");
         System.out.println("---Imprimir números de 1 hasta "+numero+" ---");
         System.out.println(recu.imprimeNumeros(numero));
+        System.out.println("");
+        
         
         
     }

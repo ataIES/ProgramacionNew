@@ -33,11 +33,23 @@ public class Recursividad {
         }
         return suma;
     }
-    public static String imprimeNumeros(int num){
-       String cadena="";
-       if(num<=1){
-           
-       }
-       return cadena;
+
+    public static String imprimeNumeros(int num) {
+        String cadena = "";
+        if (num <= 0) {
+            cadena += 0;
+        } else {
+            for (int i = 1; i <= num; i++) {
+                cadena += imprimeNumeros(i) + " ";
+            }
+        }
+        return cadena;
     }
+
+    public static int numeroDigitos(int num) {
+        int digitos = 0;
+
+        return digitos;
+    }
+
 }

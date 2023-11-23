@@ -37,19 +37,21 @@ public class Recursividad {
     public static String imprimeNumeros(int num) {
         String cadena = "";
         if (num <= 0) {
-            cadena += 0;
+            cadena = "No hay numero";
         } else {
             for (int i = 1; i <= num; i++) {
-                cadena += imprimeNumeros(i) + " ";
+                cadena += i + " ";
             }
         }
         return cadena;
     }
 
     public static int numeroDigitos(int num) {
-        int digitos = 0;
-
-        return digitos;
+        if (num < 10) {
+            return 1;
+        } else {
+            return 1 + numeroDigitos(num / 10);
+        }
     }
 
 }

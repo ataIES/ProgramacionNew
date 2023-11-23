@@ -13,38 +13,52 @@ public class SintonizadorFM {
     private double frecuencia;
 
     public SintonizadorFM() {
-        this.frecuencia = 80;
+        
     }
 
     public SintonizadorFM(double frecuencia) {
-        this.frecuencia = comprobarRango(frecuencia);
-    }
-    public SintonizadorFM(SintonizadorFM s){
-        this.frecuencia=s.frecuencia;
+        if (comprobarRango(frecuencia) == true) {
+            System.out.println("Frecuencia correcta");
+            this.frecuencia = frecuencia;
+        } else {
+            this.frecuencia = 80;
+        }
     }
 
-    private double comprobarRango(double frecuencia) {
-        double nFrecuencia = 0;
-        if (frecuencia < 80) {
-            nFrecuencia = 108;
-        } else if (frecuencia > 108) {
-            nFrecuencia = 80;
-        } else if (frecuencia > 80 && frecuencia < 108) {
-            nFrecuencia = frecuencia;
+    public SintonizadorFM(SintonizadorFM s) {
+        if (comprobarRango(s.frecuencia) == true) {
+            System.out.println("Frecuencia correcta");
+            s.frecuencia = s.frecuencia;
+        } else {
+            s.frecuencia = 80;
         }
-        return nFrecuencia;
     }
 
     public void subir() {
-        frecuencia += 0.5;
+        frecuencia += 0.05;
+        if (frecuencia > 108) {
+            frecuencia = 80;
+        }
     }
 
     public void bajar() {
-        frecuencia -= 0.5;
+        frecuencia -= 0.05;
+        if (frecuencia < 80) {
+            frecuencia = 108;
+        }
     }
 
-    public double mostrarFrecuencia() {
-        return frecuencia;
+    private boolean comprobarRango(double frecuencia) {
+        boolean valido = false;
+        if (frecuencia >= 80 && frecuencia <= 108) {
+            valido = true;
+        }
+        return valido;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Frecuencia actual: " + String.format("%,.2f", frecuencia) + " Hz";
+    }
+
 }

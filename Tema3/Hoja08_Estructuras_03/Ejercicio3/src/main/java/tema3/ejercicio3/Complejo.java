@@ -85,6 +85,9 @@ public class Complejo {
         
         multiReal=complejo1.getParteReal()*num;
         multiImaginaria=complejo1.getParteImaginaria()*num;
+        complejoMulti=new Complejo(multiReal,multiImaginaria);
+        
+        return complejoMulti;
         
     }
 

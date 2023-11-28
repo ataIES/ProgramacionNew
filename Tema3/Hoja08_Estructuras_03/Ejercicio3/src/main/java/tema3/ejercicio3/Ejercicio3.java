@@ -30,6 +30,11 @@ public class Ejercicio3 {
         Complejo complejoMulti=new Complejo();
         complejoMulti=complejoMulti.multiplicarComplejos(complejo1, complejo2);
         System.out.println(complejoMulti.toString());
+        
+        System.out.println("---Multiplicar complejo por un número");
+        Complejo complejoMultiNumero=new Complejo();
+        complejoMultiNumero=complejoMultiNumero.multiplicarNumero(complejo1);
+        System.out.println(complejoMultiNumero.toString());
        
         
     }

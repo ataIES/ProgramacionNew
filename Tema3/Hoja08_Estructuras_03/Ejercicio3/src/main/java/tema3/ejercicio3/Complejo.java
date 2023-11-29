@@ -15,10 +15,12 @@ public class Complejo {
     private double parteReal;
     private double parteImaginaria;
 
+    //Constructor por defecto que inicializa los datos a 0
     public Complejo() {
         this.parteReal = 0;
         this.parteImaginaria = 0;
     }
+//Constructor por parámetros 
 
     public Complejo(double parteReal, double parteImaginaria) {
         this.parteReal = parteReal;
@@ -40,6 +42,7 @@ public class Complejo {
     public void setParteImaginaria(double parteImaginaria) {
         this.parteImaginaria = parteImaginaria;
     }
+//Metodo que devuelte un objeto del tipo Complejo que suma dos números complejos
 
     public Complejo sumar(Complejo complejo1, Complejo complejo2) {
         Complejo complejoSuma;
@@ -52,6 +55,7 @@ public class Complejo {
         return complejoSuma;
     }
 
+    //Método que devuelve un objeto del tipo Complejo que resta dos números complejos
     public Complejo restar(Complejo complejo1, Complejo complejo2) {
         Complejo complejoResta;
         double restaReal = 0;
@@ -62,6 +66,7 @@ public class Complejo {
         complejoResta = new Complejo(restaReal, restaImaginaria);
         return complejoResta;
     }
+//Método que devuelve un objeto del tipo Complejo que multiplica dos número complejos
 
     public Complejo multiplicarComplejos(Complejo complejo1, Complejo complejo2) {
         Complejo complejoMulti;
@@ -73,6 +78,7 @@ public class Complejo {
         complejoMulti = new Complejo(multiReal, multiImaginaria);
         return complejoMulti;
     }
+//Método que devuelve un objeto del tipo Complejo que multiplica un número complejo por un número
 
     public Complejo multiplicarNumero(Complejo complejo1) {
         Scanner teclado = new Scanner(System.in);
@@ -90,6 +96,7 @@ public class Complejo {
 
         return complejoMulti;
     }
+//Método que devuelve un objeto del tipo Complejo que divide dos números complejos
 
     public Complejo dividrComplejo(Complejo complejo1, Complejo complejo2) {
         Complejo complejoDividir;

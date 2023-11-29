@@ -40,9 +40,10 @@ public class Ejercicio5 {
                 fact_n = fact_n * i;
                 i++;
             }
+             total=total+fact_n;
+             numero1=numero1/10;
         }
-        total=total+fact_n;
-        numero1=numero1/10;
+        
 
         //Condicion para saber si el número es fuerte
         if (total == temp) {

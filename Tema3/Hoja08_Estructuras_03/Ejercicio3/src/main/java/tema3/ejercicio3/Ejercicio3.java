@@ -35,6 +35,11 @@ public class Ejercicio3 {
         Complejo complejoMultiNumero=new Complejo();
         complejoMultiNumero=complejoMultiNumero.multiplicarNumero(complejo1);
         System.out.println(complejoMultiNumero.toString());
+        
+        System.out.println("---Division de Complejos---");
+        Complejo complejoDiv=new Complejo();
+        complejoDiv=complejoDiv.dividrComplejo(complejo1, complejo2);
+        System.out.println(complejoDiv.toString());
        
         
     }

@@ -73,22 +73,34 @@ public class Complejo {
         complejoMulti = new Complejo(multiReal, multiImaginaria);
         return complejoMulti;
     }
-    public Complejo multiplicarNumero(Complejo complejo1){
-        Scanner teclado=new Scanner(System.in);
+
+    public Complejo multiplicarNumero(Complejo complejo1) {
+        Scanner teclado = new Scanner(System.in);
         Complejo complejoMulti;
-        double multiReal=0;
-        double multiImaginaria=0;
-        int num=0;
-        
+        double multiReal = 0;
+        double multiImaginaria = 0;
+        int num = 0;
+
         System.out.println("Introduce el número a multiplicar: ");
-        num=teclado.nextInt();
-        
-        multiReal=complejo1.getParteReal()*num;
-        multiImaginaria=complejo1.getParteImaginaria()*num;
-        complejoMulti=new Complejo(multiReal,multiImaginaria);
-        
+        num = teclado.nextInt();
+
+        multiReal = complejo1.getParteReal() * num;
+        multiImaginaria = complejo1.getParteImaginaria() * num;
+        complejoMulti = new Complejo(multiReal, multiImaginaria);
+
         return complejoMulti;
-        
+    }
+
+    public Complejo dividrComplejo(Complejo complejo1, Complejo complejo2) {
+        Complejo complejoDividir;
+        double dividirReal = 0;
+        double dividirImaginario = 0;
+
+        dividirReal = ((complejo1.getParteReal() * complejo2.getParteReal()) + (complejo1.getParteImaginaria() * complejo2.getParteImaginaria())) / (Math.pow(complejo2.getParteReal(), 2) + Math.pow(complejo2.getParteImaginaria(), 2));
+        dividirImaginario = ((complejo1.getParteImaginaria() * complejo2.getParteImaginaria()) - (complejo1.getParteReal() * complejo2.getParteImaginaria())) / (Math.pow(complejo2.getParteReal(), 2) + Math.pow(complejo2.getParteImaginaria(), 2));
+        complejoDividir = new Complejo(dividirReal, dividirImaginario);
+
+        return complejoDividir;
     }
 
     @Override

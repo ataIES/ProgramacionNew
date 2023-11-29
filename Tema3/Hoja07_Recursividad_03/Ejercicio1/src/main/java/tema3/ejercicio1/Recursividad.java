@@ -11,7 +11,7 @@ package tema3.ejercicio1;
 public class Recursividad {
 
     public Recursividad() {
-
+        
     }
 
     public static int factorial(int num) {

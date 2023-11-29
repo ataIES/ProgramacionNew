@@ -52,6 +52,7 @@ public class Complejo {
         sumaReal = complejo1.getParteReal() + complejo2.getParteReal();
         sumaImaginaria = complejo1.getParteImaginaria() + complejo2.getParteImaginaria();
         complejoSuma = new Complejo(sumaReal, sumaImaginaria);
+        
         return complejoSuma;
     }
 
@@ -64,6 +65,7 @@ public class Complejo {
         restaReal = complejo1.getParteReal() - complejo2.getParteReal();
         restaImaginaria = complejo1.getParteImaginaria() - complejo2.getParteImaginaria();
         complejoResta = new Complejo(restaReal, restaImaginaria);
+        
         return complejoResta;
     }
 //Método que devuelve un objeto del tipo Complejo que multiplica dos número complejos
@@ -76,6 +78,7 @@ public class Complejo {
         multiReal = (complejo1.getParteReal() * complejo2.getParteReal()) - (complejo1.getParteImaginaria() * complejo2.getParteImaginaria());
         multiImaginaria = (complejo1.getParteReal() * complejo2.getParteImaginaria()) + (complejo2.getParteImaginaria() * complejo1.getParteReal());
         complejoMulti = new Complejo(multiReal, multiImaginaria);
+        
         return complejoMulti;
     }
 //Método que devuelve un objeto del tipo Complejo que multiplica un número complejo por un número

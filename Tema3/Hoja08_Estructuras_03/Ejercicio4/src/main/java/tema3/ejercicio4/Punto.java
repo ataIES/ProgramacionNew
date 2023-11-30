@@ -67,7 +67,7 @@ public class Punto {
 
         return aux;
     }
-
+//Método para mostrar información del punto
     @Override
     public String toString() {
         return "Punto{" + "x=" + x + ", y=" + y + '}';

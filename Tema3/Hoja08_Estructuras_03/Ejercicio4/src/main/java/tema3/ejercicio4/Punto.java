@@ -37,6 +37,7 @@ public class Punto {
         this.y = y;
     }
 //Método que devuelve un String y nos diga en que cuadrante está un punto
+
     public String cuadrante() {
         String nCuadrante = "";
         if (x < 0 && y > 0) {
@@ -57,12 +58,13 @@ public class Punto {
     public double distancia(Punto P1, Punto P2) {
         return Math.sqrt((Math.pow((P2.x - P1.x), 2)) + (Math.pow(P2.y, P1.y)));
     }
+
     //Método que devuelve un objeto del tipo Punto que nos dé el punto medio entre las dos coordenadas
-    public Punto puntoMedio(Punto P1, Punto P2){
-        Punto aux=new Punto();
-        aux.x=(P1.x+P2.x)/2;
-        aux.y=(P1.y+P2.y)/2;
-        
+    public Punto puntoMedio(Punto P1, Punto P2) {
+        Punto aux = new Punto();
+        aux.x = (P1.x + P2.x) / 2;
+        aux.y = (P1.y + P2.y) / 2;
+
         return aux;
     }
 
@@ -70,5 +72,5 @@ public class Punto {
     public String toString() {
         return "Punto{" + "x=" + x + ", y=" + y + '}';
     }
-    
+
 }

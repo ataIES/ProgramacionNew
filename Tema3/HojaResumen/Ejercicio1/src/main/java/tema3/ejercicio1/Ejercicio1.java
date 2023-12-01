@@ -35,20 +35,20 @@ public class Ejercicio1 {
         } while (!valido);
         return numero;
     }
+//Método que dibuja una escalera de números
 
     public static void triangulo(int numeroFilas) {
-        int nEspacios = numeroFilas - 1, numero=1;
-        String filas = "";
-        for (int i = 0; i < numeroFilas; i++) {
-            filas=filas.concat(numero+" ");
-            System.out.println(filas);
-            numero++;
-            while (nEspacios <= 0) {
-                System.out.print(" ");
-                nEspacios--;
+        int numero = 1;
+        int columna = 1;
+        String dibujo = "";
+        for (int i = 1; i <= numeroFilas; i++) {
+            for (columna = 1; columna <= i; columna++) {
+                dibujo = dibujo + numero + " ";
+                numero++;
             }
-            
-                
+
+            dibujo = dibujo + "\n";
         }
+        System.out.print(dibujo);
     }
 }

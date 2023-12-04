@@ -104,8 +104,8 @@ public class Ejercicio2 {
     
     public static void validarFecha(int dia, int mes, int anio) {
         boolean valido = false;
-            if (mes % 2 == 0) {
-                if (dia < 31) {
+            if (mes==4 && mes==6 & mes==9 && mes==11) {
+                if (dia <= 31) {
                     System.out.println("Error, el mes de " + mes(mes) + " tiene 30 días");
                     dia=validarDia("Introduce el dia entre 1 y 30");
                 }

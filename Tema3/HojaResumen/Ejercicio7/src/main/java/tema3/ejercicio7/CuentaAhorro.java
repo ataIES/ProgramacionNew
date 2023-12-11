@@ -43,8 +43,8 @@ public class CuentaAhorro {
 
     public void realizarTransferenciaEntreCuentas(CuentaAhorro c, double saldoTrans) {
         if (saldoTrans <= saldoCuenta) {
-            realizarIngreso(saldoTrans);
-            c.realizarIntegro(saldoTrans);
+           this.saldoCuenta+=saldoTrans;
+           c.saldoCuenta-=saldoTrans;
         } else {
             System.out.println("Error, quieres transferir más saldo de el que tienes");
         }

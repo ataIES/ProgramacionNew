@@ -19,17 +19,14 @@ public class Ejercicio5 {
         Fraccion fSuma = new Fraccion();
         fSuma = fSuma.suma(F1, F2);
         System.out.println(fSuma.toString());
-        System.out.println("");
         System.out.println("---Resta de fracciones---");
         Fraccion fResta = new Fraccion();
         fResta = fResta.resta(F1, F2);
         System.out.println(fResta.toString());
-        System.out.println("");
         System.out.println("---Multiplicacion de fracciones---");
         Fraccion fMulti = new Fraccion();
         fMulti = fMulti.multiplicacion(F1, F2);
         System.out.println(fMulti.toString());
-        System.out.println("");
         System.out.println("---Division de fracciones---");
         Fraccion fDiv = new Fraccion();
         fDiv = fDiv.division(F1, F2);

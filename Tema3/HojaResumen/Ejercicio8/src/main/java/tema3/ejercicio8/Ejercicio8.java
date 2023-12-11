@@ -39,7 +39,7 @@ public class Ejercicio8 {
             n = Character.getNumericValue(numero.charAt(i));
             n += 7;
             resto = n % 10;
-            numeroCodificado+=resto;
+            numeroCodificado += resto;
         }
         return numeroCodificado;
     }

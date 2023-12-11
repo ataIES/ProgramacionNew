@@ -24,15 +24,13 @@ public class CuentaAhorro {
         return this.saldoCuenta += saldo;
     }
 
-    public double realizarIntegro(double saldo) {
+    public void realizarIntegro(double saldo) {
         double saldoActual = 0;
         if (saldo <= saldoCuenta) {
-            saldoActual = saldoCuenta - saldo;
+            saldoCuenta -= saldo;
         } else {
             System.out.println("Error, extraer mayor saldo de el que tienes");
-            saldoActual = saldoCuenta;
         }
-        return saldoActual;
     }
 
     public double getSaldoCuenta() {
@@ -43,10 +41,10 @@ public class CuentaAhorro {
         return "----DATOS DE LA CUENTA---- \n\tTitular: " + titular + "\n\tSaldo Actual: " + String.format("%.2f", saldoCuenta) + "\n\tNúmero de Cuenta: " + numeroCuenta;
     }
 
-    public void realizarTransferenciaEntreCuentas(CuentaAhorro c1, CuentaAhorro c2, double saldoTrans) {
-        if (c2.saldoCuenta <= saldoTrans) {
-            c1.realizarIngreso(saldoTrans);
-            c2.saldoCuenta -= saldoTrans;
+    public void realizarTransferenciaEntreCuentas(CuentaAhorro c2, double saldoTrans) {
+        if (saldoCuenta <= saldoTrans) {
+            c2.realizarIngreso(saldoTrans);
+            saldoCuenta -= saldoTrans;
 
         } else {
             System.out.println("Error, quieres transferir más saldo de el que tienes");

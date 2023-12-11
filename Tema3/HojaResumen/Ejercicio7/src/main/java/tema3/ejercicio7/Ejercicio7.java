@@ -26,8 +26,8 @@ public class Ejercicio7 {
         cuenta2.realizarIntegro(500);
         System.out.println(cuenta2.getDatosCuenta());
         System.out.println("");
-        System.out.println("Transferencia de 1000 euros de cuenta1 a cuenta2");
-        cuenta1.realizarTransferenciaEntreCuentas(cuenta2, 700);
+        System.out.println("Transferencia de 1000 euros de cuenta2 a cuenta1");
+        cuenta1.realizarTransferenciaEntreCuentas(cuenta2, 1000);
         System.out.println(cuenta1.getDatosCuenta());
         System.out.println("");
         System.out.println(cuenta2.getDatosCuenta());

@@ -12,9 +12,8 @@ public class Ejercicio5 {
     public static void main(String[] args) {
         Fraccion F1 = new Fraccion(2, 2);
         Fraccion F2 = new Fraccion(3, 5);
-        System.out.println(F1.toString());
-        System.out.println(F2.toString());
-        System.out.println("");
+        System.out.println("Fracción 1: "+F1.toString());
+        System.out.println("Fracción 2: "+F2.toString());
         System.out.println("---Suma de fracciones---");
         Fraccion fSuma = new Fraccion();
         fSuma = fSuma.suma(F1, F2);

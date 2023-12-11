@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Ejercicio8 {
 
     public static void main(String[] args) {
-        int numero=validarNumero();
+        int numero = validarNumero();
         System.out.println(codificarNumero(numero));
     }
 
@@ -31,11 +31,17 @@ public class Ejercicio8 {
         } while (!valido);
         return num;
     }
-    public static String codificarNumero(int num){
-        String numeroCodificado="", numero=String.valueOf(num);
-        for(int i=0;i<4;i++){
-            numero;
+
+    public static String codificarNumero(int num) {
+        String numeroCodificado = "", numero = String.valueOf(num);
+        int n = 0, resto = 0;
+        for (int i = 0; i < 4; i++) {
+            n = Character.getNumericValue(numero.charAt(i));
+            n += 7;
+            resto = n % 10;
+            numeroCodificado+=resto;         
         }
+       
         return numeroCodificado;
     }
 }

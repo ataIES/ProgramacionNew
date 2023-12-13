@@ -13,6 +13,7 @@ public class Ejercicio10 {
         numeroRamanujan();
     }
 //Metodo que nos saca los numeroRamanujan
+
     public static void numeroRamanujan() {
         int primerSum = 0, segundoSum = 0;
 

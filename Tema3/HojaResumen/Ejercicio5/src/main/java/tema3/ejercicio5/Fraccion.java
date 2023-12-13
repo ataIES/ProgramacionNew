@@ -86,7 +86,7 @@ public class Fraccion {
 
     @Override
     public String toString() {
-        return "Fraccion{" + "numerador=" + numerador + ", denominador=" + denominador + '}';
+        return numerador+"/"+denominador;
     }
 
     public static int minimoComunMultiplo(int num1, int num2) {

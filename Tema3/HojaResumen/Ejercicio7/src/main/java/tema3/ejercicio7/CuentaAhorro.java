@@ -17,11 +17,11 @@ public class CuentaAhorro {
     public CuentaAhorro(double saldoCuenta, String titular) {
         this.saldoCuenta = saldoCuenta;
         this.titular = titular;
-        this.numeroCuenta = (long) (Math.floor(Math.random() * (1000000 - 1000 + 1)) + 1000);
+        this.numeroCuenta = (long) (Math.floor(Math.random() * (1000000+ 1)));
     }
 
-    public double realizarIngreso(double saldo) {
-        return this.saldoCuenta += saldo;
+    public void realizarIngreso(double saldo) {
+         this.saldoCuenta += saldo;
     }
 
     public void realizarIntegro(double saldo) {
@@ -41,11 +41,10 @@ public class CuentaAhorro {
         return "----DATOS DE LA CUENTA---- \n\tTitular: " + titular + "\n\tSaldo Actual: " + String.format("%.2f", saldoCuenta) + "\n\tNúmero de Cuenta: " + numeroCuenta;
     }
 
-    public void realizarTransferenciaEntreCuentas(CuentaAhorro c2, double saldoTrans) {
-        if (saldoCuenta <= saldoTrans) {
-            c2.realizarIngreso(saldoTrans);
-            saldoCuenta -= saldoTrans;
-
+    public void realizarTransferenciaEntreCuentas(CuentaAhorro c, double saldoTrans) {
+        if (saldoTrans <= saldoCuenta) {
+           this.saldoCuenta+=saldoTrans;
+           c.saldoCuenta-=saldoTrans;
         } else {
             System.out.println("Error, quieres transferir más saldo de el que tienes");
         }

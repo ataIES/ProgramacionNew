@@ -14,7 +14,6 @@ public class Ejercicio3 {
     public static void main(String[] args) {
         int numeros[] = new int[10];
         int numeroBuscar=0;
-        boolean encontrado=false;
         String cadena="";
         for (int i=0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.floor(Math.random() * 10) + 1);
@@ -22,10 +21,9 @@ public class Ejercicio3 {
         }
         System.out.println(cadena);
         numeroBuscar=validarNumero("Introduce un número a buscar entre (0-10):");
-        for(int i=0;i<numeros.length && !encontrado;i++){
+        for(int i=0;i<numeros.length;i++){
             if(numeros[i]==numeroBuscar){
                 System.out.println("Está en la posición "+i);
-                encontrado=true;
             }else{
                 System.out.println("Número no encontrado");
             }

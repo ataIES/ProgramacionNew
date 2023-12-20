@@ -19,9 +19,8 @@ public class Ejercicio5 {
         System.out.println("");
         System.out.println("Array invertido");
          for (int i = 0, x = numeros.length-1; i < numeros.length/2; i++,x--) {       
-            int aux = numeros[i];
-            
-            numeros[i]=numeros[x]; //el que esta en la posicion i pasa a la posicion contraria. (0/9,2/8,3/7)
+            int aux = numeros[i];   
+            numeros[i]=numeros[x]; 
             numeros[x]=aux;
         }
          //Mostrar el invertido

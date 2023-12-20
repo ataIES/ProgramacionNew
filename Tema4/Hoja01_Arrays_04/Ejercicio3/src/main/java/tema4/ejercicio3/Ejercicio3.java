@@ -13,9 +13,9 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         int numeros[] = new int[10];
-        int numeroBuscar = 0;
+        int numeroBuscar = 0, encontrado = -1;
         String cadena = "";
-        boolean encontrado = false;
+
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.floor(Math.random() * 10) + 1);
             System.out.print(numeros[i] + " ");
@@ -24,14 +24,16 @@ public class Ejercicio3 {
         numeroBuscar = validarNumero("Introduce un número a buscar entre (0-10):");
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] == numeroBuscar) {
-                if (!encontrado) {
-                    System.out.println("Está en la posición "+i);
-                } else{
-                    System.out.println("Número no encontrado");
-                }
+                encontrado = i;
+
+                System.out.println("Está en la posicion " + encontrado);
             }
-            
+
         }
+        if (encontrado == -1) {
+            System.out.println("Número no encontrado");
+        }
+
     }
 
     public static int validarNumero(String mensaje) {

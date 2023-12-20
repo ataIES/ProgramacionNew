@@ -13,20 +13,24 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         int numeros[] = new int[10];
-        int numeroBuscar=0;
-        String cadena="";
-        for (int i=0; i < numeros.length; i++) {
+        int numeroBuscar = 0;
+        String cadena = "";
+        boolean encontrado = false;
+        for (int i = 0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.floor(Math.random() * 10) + 1);
-            cadena+=numeros[i]+" ";
+            System.out.print(numeros[i] + " ");
         }
         System.out.println(cadena);
-        numeroBuscar=validarNumero("Introduce un número a buscar entre (0-10):");
-        for(int i=0;i<numeros.length;i++){
-            if(numeros[i]==numeroBuscar){
-                System.out.println("Está en la posición "+i);
-            }else{
-                System.out.println("Número no encontrado");
+        numeroBuscar = validarNumero("Introduce un número a buscar entre (0-10):");
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] == numeroBuscar) {
+                if (!encontrado) {
+                    System.out.println("Está en la posición "+i);
+                } else{
+                    System.out.println("Número no encontrado");
+                }
             }
+            
         }
     }
 

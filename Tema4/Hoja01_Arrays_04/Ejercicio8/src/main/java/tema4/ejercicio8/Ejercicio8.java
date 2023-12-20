@@ -39,6 +39,7 @@ public class Ejercicio8 {
         int mayor = numeros[0];
         int segundoMayor=0;
         for (int i = 1; i < numeros.length && !encontrado; i++) {
+            //Esta condición es para evitar los duplicados
             if (mayor != numeros[i]) {
                 if (mayor > numeros[i]) {
                     segundoMayor = numeros[i];

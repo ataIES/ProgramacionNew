@@ -12,7 +12,6 @@ public class Ejercicio8 {
     public static void main(String[] args) {
         int numeros[] = new int[10];
         int aux = 0;
-        int segundoMayor = 0;
         boolean encontrado = false;
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.floor(Math.random() * 10) + 1);
@@ -38,6 +37,7 @@ public class Ejercicio8 {
         
         //Obtener el segundo mayor
         int mayor = numeros[0];
+        int segundoMayor=0;
         for (int i = 1; i < numeros.length && !encontrado; i++) {
             if (mayor != numeros[i]) {
                 if (mayor > numeros[i]) {

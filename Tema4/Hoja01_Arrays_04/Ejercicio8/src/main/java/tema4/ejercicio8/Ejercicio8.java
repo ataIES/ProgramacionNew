@@ -14,7 +14,7 @@ public class Ejercicio8 {
         int aux = 0;
         boolean encontrado = false;
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = (int) (Math.floor(Math.random() * 10) + 1);
+            numeros[i] = (int) (Math.floor(Math.random() * 100) + 1);
             System.out.print(numeros[i] + " ");
 
         }
@@ -28,13 +28,7 @@ public class Ejercicio8 {
                 }
             }
         }
-        
-        //Mostrar ordenado de mayor a menor
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.print(numeros[i] + " ");
-        }
-        System.out.println("");
-        
+          
         //Obtener el segundo mayor
         int mayor = numeros[0];
         int segundoMayor=0;

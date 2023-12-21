@@ -28,7 +28,7 @@ public class Ejercicio8 {
                 }
             }
         }
-          
+           
         //Obtener el segundo mayor
         int mayor = numeros[0];
         int segundoMayor=0;

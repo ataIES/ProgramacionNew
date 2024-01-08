@@ -25,6 +25,7 @@ public class Equipo {
         this.categoria = categoria;
 
     }
+    
 //Metodo para crear jugadores
     public Jugador crearJugador() {
         Scanner teclado = new Scanner(System.in);
@@ -40,6 +41,7 @@ public class Equipo {
         jugador = new Jugador(nombre, dorsal, posicion);
         return jugador;
     }
+    
 //Metodo para insertar jugadores
     public void insertarJugadores() {
         Scanner teclado = new Scanner(System.in);
@@ -64,6 +66,7 @@ public class Equipo {
     public String getCategoria() {
         return categoria;
     }
+    
 //Metodo para mostrar equipo
     public void imprime() {
         System.out.println("Nombre del Equipo: " + getNombre_equipo());

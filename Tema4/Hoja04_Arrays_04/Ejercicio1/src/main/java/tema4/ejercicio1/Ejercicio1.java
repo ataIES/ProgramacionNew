@@ -15,7 +15,7 @@ public class Ejercicio1 {
         int matriz1[][] = {{101, 102, 103, 104, 105}, {201, 202, 203, 204, 205},
         {301, 302, 303, 304, 305}, {401, 402, 403, 404, 405}, {501, 502, 503, 504, 505}};
         System.out.println("---Mostrar diagonal---");
-        diagonalInversa(matriz1);
+        arriba(matriz1);
     }
 
     //Validar filas
@@ -72,27 +72,39 @@ public class Ejercicio1 {
     public static void diagonal(int matriz[][]) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                if(i==j){
-                    System.out.print(matriz[i][j]+" ");
+                if (i == j) {
+                    System.out.print(matriz[i][j] + " ");
                 }
                 System.out.print(" ");
             }
             System.out.println(" ");
         }
     }
+
     //Mostrar diagonal inversa
     public static void diagonalInversa(int matriz[][]) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                if(i+j==matriz.length-1){
-                    System.out.print(matriz[i][j]+" ");
+                if (i + j == matriz.length - 1) {
+                    System.out.print(matriz[i][j] + " ");
                 }
                 System.out.print(" ");
             }
             System.out.println(" ");
         }
     }
+
     //Mostrar elementos diagonal hacia arriba
-  
-    
+    public static void arriba(int matriz[][]) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int a =0 ; a < matriz[i].length; a++) {
+                if(i<=a){
+                       System.out.print(matriz[i][a]+" ");
+                }
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
+    }
+
 }

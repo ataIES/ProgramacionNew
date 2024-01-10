@@ -11,6 +11,9 @@ package tema4.ejercicio4;
 public class Ejercicio4 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       Alumno alumno=new Alumno("Adrian");
+        System.out.println("Nota más alta: "+alumno.mayor());
+        System.out.println("Nota más baja: "+alumno.menor());
+        System.out.println("Lista de notas: "+alumno.mostrar());
     }
 }

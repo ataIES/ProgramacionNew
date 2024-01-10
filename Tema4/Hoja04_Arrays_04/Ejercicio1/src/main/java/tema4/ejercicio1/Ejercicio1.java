@@ -99,9 +99,9 @@ public class Ejercicio1 {
         for (int i = 0; i < matriz.length; i++) {
             for (int a =0 ; a < matriz[i].length; a++) {
                 if(i<=a){
-                       System.out.print(matriz[i][a]+" ");
+                       System.out.print(matriz[i][a]);
                 }
-                System.out.print(" ");
+                System.out.printf("\t");
             }
             System.out.print("\n");
         }

@@ -5,6 +5,7 @@
 package tema4.ejercicio1;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -32,20 +33,39 @@ public class Letra {
         this.fechaVencimiento = LocalDate.parse(new Scanner(System.in).nextLine(), f);
     }
 
+    //Método que devuelve un boolean para saber si una letra está vencida
     public boolean vencida() {
-        return LocalDate.now().isBefore(fechaVencimiento);
+        return fechaVencimiento.isBefore(LocalDate.now());
     }
-    public void demora(int dias){
-        fechaVencimiento.plusDays(dias);
+
+    //Metodo que demora el vencimiento hasta n diás
+    public void demora(int dias) {
+        this.fechaVencimiento.plusDays(dias);
     }
-    public int diasFaltan(){
-        int diasFaltan=0;
-        if(vencida()){
-            diasFaltan=0;
-        }else{
-            diasFaltan=
+
+    //Método que devuelve un int para avergüar los dias que faltan
+    public int diasFaltan() {
+        int diasFaltan = Period.between(fechaVencimiento, LocalDate.now()).getDays();
+        if (diasFaltan < 0) {
+            diasFaltan = 0;
         }
-        
+        return diasFaltan;
     }
+
+    //Método que muestra los datos de una letra
+    public void mostrar() {
+        String vencida = vencida() ? "Sí" : "No";
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        System.out.printf("\n---DATOS DE LA LETRA--- \n\tNúmero de letra: %d "
+                + "\n\tTitular: %s \n\tImporte: %.2f \n\tVencida: %s \n\tFecha de Vencimiento: %s", numLetra, getTitular(), importe, vencida, this.fechaVencimiento.format(f));
+    }
+//Metdodo que devuelve el titular
+
+    public String getTitular() {
+        return titular;
+    }
+
+
+    
 
 }

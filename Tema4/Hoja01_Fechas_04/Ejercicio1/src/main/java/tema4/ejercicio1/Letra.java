@@ -43,6 +43,7 @@ public class Letra {
         if (dias > 0) {
             this.fechaVencimiento.plusDays(dias);
         } else {
+            System.out.println("Error, no puedes demorar dias negativos");
             this.fechaVencimiento.plusDays(0);
         }
     }

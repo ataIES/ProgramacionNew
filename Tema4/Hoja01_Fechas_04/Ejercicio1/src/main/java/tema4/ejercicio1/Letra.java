@@ -40,7 +40,11 @@ public class Letra {
 
     //Metodo que demora el vencimiento hasta n diás
     public void demora(int dias) {
-        this.fechaVencimiento.plusDays(dias);
+        if (dias > 0) {
+            this.fechaVencimiento.plusDays(dias);
+        } else {
+            this.fechaVencimiento.plusDays(0);
+        }
     }
 
     //Método que devuelve un int para avergüar los dias que faltan
@@ -64,8 +68,5 @@ public class Letra {
     public String getTitular() {
         return titular;
     }
-
-
-    
 
 }

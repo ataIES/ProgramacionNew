@@ -23,6 +23,7 @@ public class Veterinario {
         if (contador < lista_mascotas.length) {
             lista_mascotas[contador] = nueva_mascota;
             contador++;
+            System.out.println("Añadido correctamente");
         } else {
             System.out.println("La lista está llena");
         }

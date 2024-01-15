@@ -19,7 +19,7 @@ public class Veterinario {
     }
 //Metodo para añadir una mascota al veterinario
     public void aniadir(Mascota nueva_mascota) {
-        if(contador<lista_mascotas){
+        if(contador<lista_mascotas.length){
         lista_mascotas[contador] = nueva_mascota;
         contador++;
         }

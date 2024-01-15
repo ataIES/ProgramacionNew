@@ -18,6 +18,12 @@ public class Mascota {
 
     public Mascota(String nombre,int dia,int mes,int anio) {
         this.nombre = nombre;
+        /*
+        Otra opción es con String
+        String fecha="";
+        fecha=dia+"/"+mes+"/"+anio;
+        */
+        
         this.fechaNacimiento=LocalDate.of(anio, mes, dia);
     }
     public int getEdad(){

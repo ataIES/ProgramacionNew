@@ -22,6 +22,8 @@ public class Veterinario {
         if(contador<lista_mascotas.length){
         lista_mascotas[contador] = nueva_mascota;
         contador++;
+        }else{
+            System.out.println("La lista está llena");
         }
     }
 //Metodo para mostrar todas las mascotas del veterinario

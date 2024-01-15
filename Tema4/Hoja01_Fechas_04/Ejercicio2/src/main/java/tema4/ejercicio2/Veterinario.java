@@ -19,8 +19,10 @@ public class Veterinario {
     }
 //Metodo para añadir una mascota al veterinario
     public void aniadir(Mascota nueva_mascota) {
+        if(contador<lista_mascotas){
         lista_mascotas[contador] = nueva_mascota;
         contador++;
+        }
     }
 //Metodo para mostrar todas las mascotas del veterinario
     public String mostrar() {

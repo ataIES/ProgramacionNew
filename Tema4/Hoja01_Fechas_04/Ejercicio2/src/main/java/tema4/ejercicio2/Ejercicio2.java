@@ -24,7 +24,5 @@ public class Ejercicio2 {
         System.out.println(veterinario.mostrar());
         System.out.println("---Mostrar mascotas mayores de 5 años---");
         System.out.println(veterinario.mostrarMayores());
-        
-
     }
 }

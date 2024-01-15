@@ -33,7 +33,7 @@ public class Mascota {
     @Override
     public String toString() {
         DateTimeFormatter f= DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return "Mascota{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento.format(f) + '}';
+        return "Mascota{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento.format(f) + ", edad="+getEdad()+'}';
     }
     
     

@@ -11,8 +11,8 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
         Veterinario veterinario = new Veterinario();
-        Mascota mascota1 = new Mascota("Perro", 01, 10, 2016);
-        Mascota mascota2 = new Mascota("Gato", 05, 12, 2020);
+        Mascota mascota1 = new Mascota("Perro", 15, 01, 2010);
+        Mascota mascota2 = new Mascota("Gato", 16, 01, 2010);
         Mascota mascota3 = new Mascota("Pajaro", 25, 06, 2023);
         Mascota mascota4 = new Mascota("Urón", 20, 10, 2015);
 

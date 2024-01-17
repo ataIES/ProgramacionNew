@@ -31,7 +31,18 @@ public class Operaciones {
     }
 
     public int division() {
-        return num1 > num2 ? num1/num2 : num2 /num1;
+        int result=0;
+        if(num1==0 || num2==0){
+            System.out.println("Error, no se puede dividir entre 0");
+            result=0;
+        }else{
+            if(num1>num2){
+                result=num1/num2;
+            }else{
+                result= num2/num1;
+            }
+        }
+        return result;
     }
 
     public int getNum1() {
@@ -49,7 +60,7 @@ public class Operaciones {
 
     public static void main(String[] args) {
         int aux = args.length;
-        int num1 = Integer.parseInt(args[0]), num2 = Integer.parseInt(args[1]);
+        int num1 = Integer.parseInt(args[0]), num2 = 0;
         if (aux > 0) {
             Operaciones ope = new Operaciones(num1, num2);
             ope.imprimir();

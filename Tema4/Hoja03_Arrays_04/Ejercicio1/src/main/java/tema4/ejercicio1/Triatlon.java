@@ -59,7 +59,7 @@ public class Triatlon {
         return puntuacion;
     }
 //Metodo que calcula la media de todas las puntuaciones
-    public int pMedia() {
+    public double pMedia() {
         int suma = 0, totalPuntuaciones = puntuaciones.length;
         for (int i = 0; i < puntuaciones.length; i++) {
             suma += puntuaciones[i];
@@ -91,7 +91,7 @@ public class Triatlon {
 //Metodo que muestra los datos
     public String mostrar() {
         return "---DATOS DEL PARTICIPANTE--- \n\tDorsal= " + this.dorsal + "\n\tNombre del participante: " + this.nombre
-                + "\n\tPuntos: " + puntuacion() + "\n\tMedia: " + pMedia();
+                + "\n\tPuntos: " + puntuacion() + "\n\tMedia: " + String.format("%.2f", pMedia());
     }
 
 }

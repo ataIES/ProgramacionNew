@@ -16,8 +16,8 @@ public class Ejercicio1 {
         int primerDig = num / 100;
         int segundoDig = (num / 10) % 10;
         int tercerDig = num % 10;
-        int aux=args.length;
-        if (aux >0) {
+        int aux = args.length;
+        if (aux > 0) {
             if (args[0].length() == 3) {
                 int armstrong = (int) (Math.pow(primerDig, numeroDigitos) + Math.pow(segundoDig, numeroDigitos) + Math.pow(tercerDig, numeroDigitos));
                 if (armstrong == num) {
@@ -28,7 +28,7 @@ public class Ejercicio1 {
             } else {
                 System.out.println("El argumento no tiene 3 cifras");
             }
-        }else{
+        } else {
             System.out.println("No hay ningún argumento");
         }
     }

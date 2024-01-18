@@ -23,11 +23,25 @@ public class Comunidad {
         Scanner teclado=new Scanner(System.in);
         for(int i=0;i<comunidades.length;i++){
             System.out.println("Introduce la "+(i+1)+"º comunidad: ");
-            comunidades[i]=teclado.nextLine();
+            comunidades[i]=new Scanner(System.in).nextLine();
         }
     }
     public String mostrar(){
-        
+        String cadena="";
+        cadena+="---"+nombreComunidad.toUpperCase()+"---\n";
+        for(int i=0;i<comunidades.length;i++){
+            if(comunidades[i].length()<4){
+                cadena+=comunidades.length+" ";
+            }else{
+                if(i==comunidades.length-1){
+                    cadena+=comunidades[i].substring(0, 3)+" ";
+                }else{
+                    cadena+=comunidades[i].substring(0, 4)+", ";
+                }
+                
+            }
+        }
+        return cadena;
     }
     
 }

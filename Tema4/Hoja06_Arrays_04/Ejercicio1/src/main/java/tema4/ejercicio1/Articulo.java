@@ -47,6 +47,6 @@ public class Articulo {
     }
 
     public String mostrar() {
-        return "--Articulo-- \n\tCódigo: " + getCodigo() + "\n\tDescripción: " + getDescripcion() + "\n\tExistencias: " + getExistencias();
+        return "--Articulo-- \n\tCódigo: " + getCodigo() + "\n\tDescripción: " + getDescripcion() + "\n\tExistencias: " + getExistencias()+"\n";
     }
 }

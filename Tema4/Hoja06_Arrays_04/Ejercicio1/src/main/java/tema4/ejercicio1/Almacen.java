@@ -17,7 +17,29 @@ public class Almacen {
         this.cont=0;
     }
     public void llenar(Articulo articulo){
-        if(cont<articulos.length)
+        if(cont<articulos.length){
+            articulos[cont]=articulo;
+            cont++;
+            System.out.println("Artículo añadido correctamente");
+        }else{
+            System.out.println("Error, articulos llenos");
+        }
+    }
+    public String mostrar(){
+        String cadena="";
+        for(int i=0;i<cont;i++){
+            cadena+=articulos[i].mostrar();
+        }
+        return cadena;
+    }
+    public String mostrarMenos10(){
+        String cadena="";
+        for(int i=0;i<cont;i++){
+            if(articulos[i].getExistencias()<10){
+                cadena+=articulos[i].mostrar();
+            }
+        }
+        return cadena;
     }
     
 }

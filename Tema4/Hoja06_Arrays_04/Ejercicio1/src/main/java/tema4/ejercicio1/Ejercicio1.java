@@ -24,7 +24,6 @@ public class Ejercicio1 {
                case 1->{
                    Articulo a=new Articulo();
                    almacen.llenar(a);
-                   
                }
                case 2->System.out.println(almacen.mostrar());
                

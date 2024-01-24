@@ -46,6 +46,11 @@ public class Articulo {
         return existencias;
     }
 
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+    
+
     public String mostrar() {
         return "--Articulo-- \n\tCódigo: " + getCodigo() + "\n\tDescripción: " + getDescripcion() + "\n\tExistencias: " + getExistencias()+"\n";
     }

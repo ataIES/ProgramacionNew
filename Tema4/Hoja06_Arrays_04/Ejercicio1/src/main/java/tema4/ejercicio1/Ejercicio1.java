@@ -15,11 +15,11 @@ public class Ejercicio1 {
     public static void main(String[] args) {
        Scanner teclado=new Scanner(System.in);
        int opc=0;
+       Almacen almacen=new Almacen(3);
        do{
            menu();
            System.out.println("Introduce una opción: ");
            opc=teclado.nextInt();
-           Almacen almacen=new Almacen(3);
            switch(opc){
                case 1->{
                    Articulo a=new Articulo();

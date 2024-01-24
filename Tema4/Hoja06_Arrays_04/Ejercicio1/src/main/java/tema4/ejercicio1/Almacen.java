@@ -18,6 +18,7 @@ public class Almacen {
     }
     public void llenar(Articulo articulo){
         if(cont<articulos.length){
+            articulo.setCodigo(cont+1);
             articulos[cont]=articulo;
             cont++;
             System.out.println("Artículo añadido correctamente");

@@ -51,6 +51,7 @@ public class Pajaro {
     public static int getNumPajaros() {
         return numPajaros;
     }
+
     //Mostrar al pajaro
     public String muestraPajaro() {
         return "---Pajaro---\nColor: " + color + "\nEdad: " + edad;

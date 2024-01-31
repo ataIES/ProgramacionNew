@@ -32,14 +32,18 @@ public class AparatoElectrico {
     //Metodo que incremente el consumo a la potencia y enciende el aparato  
 
     public void enciende() {
-        consumoTotal += potencia;
-        this.encendido = true;
+        if (this.encendido == false) {
+            consumoTotal += potencia;
+            this.encendido = true;
+        }
     }
 
     //Metodo que decrementa el consumo a la potencia y apaga el aparato
     public void apaga() {
-        consumoTotal -= potencia;
-        this.encendido = false;
+        if (this.encendido == false) {
+            consumoTotal -= potencia;
+            this.encendido = false;
+        }
     }
 
     //Muestra los datos del aparato

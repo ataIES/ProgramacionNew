@@ -40,6 +40,7 @@ public class Ejercicio2 {
         System.out.println("Estado de la bombilla general: " + Bombilla.getInterruptorGeneral());
     }
 
+    //Metodo estático que formatea el booleano con un mensaje
     public static String validarLuce(Bombilla b) {
         return b.luce() ? "Está encendida" : "No está encendida";
     }

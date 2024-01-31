@@ -23,23 +23,22 @@ public class Bombilla {
     public Bombilla(Estado interruptorBombilla) {
         this.interruptorBombilla = interruptorBombilla;
     }
+    
 //Metodo que cambia el estado de la bombilla
-
     public void cambiarEstadoBombilla(Estado estado) {
         this.interruptorBombilla = estado;
     }
+    
 //Metodo estático que cambia el estado General 
-
     public static void cambiarEstadoGeneral(Estado estado) {
         interruptorGeneral = estado;
     }
+    
 //Método que muestra el estado de la bombilla
-
     public Estado getInterruptorBombilla() {
         return interruptorBombilla;
     }
 //Método que muestra el estado general
-
     public static Estado getInterruptorGeneral() {
         return interruptorGeneral;
     }

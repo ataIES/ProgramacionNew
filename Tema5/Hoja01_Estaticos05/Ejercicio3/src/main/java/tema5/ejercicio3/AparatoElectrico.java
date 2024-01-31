@@ -40,7 +40,7 @@ public class AparatoElectrico {
 
     //Metodo que decrementa el consumo a la potencia y apaga el aparato
     public void apaga() {
-        if (this.encendido == false) {
+        if (this.encendido == true) {
             consumoTotal -= potencia;
             this.encendido = false;
         }

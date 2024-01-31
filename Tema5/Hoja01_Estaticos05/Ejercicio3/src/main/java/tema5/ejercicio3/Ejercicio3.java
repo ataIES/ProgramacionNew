@@ -26,9 +26,12 @@ public class Ejercicio3 {
         System.out.printf("Consumo total: %.2f w\n", AparatoElectrico.getConsumoTotal());
         System.out.println("");
         
-        System.out.println("---Apaga la bombilla---");
+        System.out.println("---Apago Bombilla---");
         bombilla.apaga();
         System.out.println(bombilla.toString());
         System.out.printf("Consumo total: %.2f w\n", AparatoElectrico.getConsumoTotal());
+        System.out.println("---Apago Plancha---");
+        plancha.apaga();
+        System.out.printf("Consumo total: %.2f w\n",AparatoElectrico.getConsumoTotal());
     }
 }

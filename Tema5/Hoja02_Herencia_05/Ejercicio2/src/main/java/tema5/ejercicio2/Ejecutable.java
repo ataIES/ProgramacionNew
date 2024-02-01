@@ -8,14 +8,16 @@ package tema5.ejercicio2;
  *
  * @author DAW125
  */
-public class Ejercicio2Ampliado {
+public class Ejecutable {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Articulo articulo=new Articulo();
-        Perecedero perecedero=new Perecedero();
+        Articulo articulo=new Articulo(1,"lechuga",2.50f);
+        Perecedero perecedero=new Perecedero(12,2020,2,"Galletas",3.50f);
+        
+        
     }
     
 }

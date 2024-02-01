@@ -31,8 +31,13 @@ public class EnPromocion extends Articulo {
     }
 
     @Override
+    public float getPrecio() {
+        return super.getPrecio() + (super.getPrecio() * (descuento / 100));
+    }
+
+    @Override
     public String mostrar() {
-        return super.mostrar() + "\n\tDescuento: " + getDescuento() + "%" + "\n\tPrecio después de Aplicar Descuento: " + String.format("%.2f", super.getPrecio() + (super.getPrecio() * (getDescuento() / 100)));
+        return super.mostrar() + "\n\tDescuento: " + getDescuento() + "%" + "\n\tPrecio después de Aplicar Descuento: "+String.format("%.2f", getPrecio())+"€";
     }
 
 }

@@ -53,6 +53,6 @@ public class Articulo {
     }
     
     public String mostrar(){
-        return "---ARTÍCULO---\n\tCódigo: "+codigo+"\n\tDescripción: "+descripcion+"\n\tPrecio: "+String.format("%.2f", precio);
+        return "---ARTÍCULO---\n\tCódigo: "+codigo+"\n\tDescripción: "+descripcion+"\n\tPrecio: "+String.format("%.2f", precio)+"€";
     }
 }

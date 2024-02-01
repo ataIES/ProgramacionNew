@@ -4,6 +4,7 @@
  */
 package tema5.ejercicio2;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -32,6 +33,9 @@ public class Perecedero extends Articulo {
     public int getMesCaducidad() {
         return mesCaducidad;
     }
+    public String mes(){
+        return (mesCaducidad<10)?"0"+mesCaducidad:String.valueOf(mesCaducidad);
+    }
 
     public int getAnioCaducidad() {
         return anioCaducidad;
@@ -39,7 +43,7 @@ public class Perecedero extends Articulo {
 
     @Override
     public String mostrar() {
-        return super.mostrar() + "\n\tMes de Caducidad: " + mesCaducidad + "\n\tAño de Caducidad: " + anioCaducidad;
+        return super.mostrar() + "\n\tMes de Caducidad: " + mes() + "\n\tAño de Caducidad: " + anioCaducidad;
     }
 
 }

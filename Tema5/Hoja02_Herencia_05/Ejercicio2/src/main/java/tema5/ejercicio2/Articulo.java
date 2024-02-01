@@ -14,6 +14,7 @@ public class Articulo {
     private int codigo;
     private String descripcion;
     private float precio;
+    private static int contArticulos=0;
 
     public Articulo(int codigo, String descripcion, float precio) {
         this.codigo = codigo;
@@ -28,6 +29,13 @@ public class Articulo {
         this.precio=teclado.nextFloat();
     }
 
+    public static int getContArticulos() {
+        return contArticulos;
+    }
+    public static void setContArticulos(){
+        contArticulos++;
+    }
+    
     public int getCodigo() {
         return codigo;
     }

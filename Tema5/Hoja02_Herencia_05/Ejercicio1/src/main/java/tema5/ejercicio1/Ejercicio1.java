@@ -14,6 +14,7 @@ public class Ejercicio1 {
         Empleado e1=new Empleado("Adrian","Tresgallo",1200.50);
         Encargado encargado1=new Encargado("Juan","Rivero",1300.65);
         System.out.println(e1.mostrarEmpleado());
+        System.out.println("");
         System.out.println(encargado1.mostrarEmpleado());
     }
 }

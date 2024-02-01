@@ -25,7 +25,7 @@ public class Encargado extends Empleado{
     
     @Override
     public String mostrarEmpleado(){
-        return "Nombre: "+super.nombre+"\nApellido: "+super.apellido+"\nSueldo: "+getSueldo();
+        return "---Encargado--- \nNombre: "+super.nombre+"\nApellido: "+super.apellido+"\nSueldo: "+String.format("%.2f", getSueldo())+"€";
     }
     
     

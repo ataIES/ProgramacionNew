@@ -38,7 +38,7 @@ public class Empleado {
     }
     
     public String mostrarEmpleado(){
-        return "Nombre: "+nombre+"\nApellido: "+apellido+"\nSueldo: "+String.format("%.2f",sueldo);
+        return "---Empleado--- \nNombre: "+nombre+"\nApellido: "+apellido+"\nSueldo: "+String.format("%.2f",sueldo)+"€";
     }
     
     

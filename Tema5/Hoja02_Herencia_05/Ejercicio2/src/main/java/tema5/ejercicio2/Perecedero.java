@@ -4,7 +4,6 @@
  */
 package tema5.ejercicio2;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 /**

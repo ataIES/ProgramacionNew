@@ -32,7 +32,8 @@ public class EnPromocion extends Articulo {
 
     @Override
     public float getPrecio() {
-        return super.getPrecio() + (super.getPrecio() * (descuento / 100));
+        float descuentoFinal=getDescuento()/100;
+        return super.getPrecio() + (super.getPrecio() * descuentoFinal);
     }
 
     @Override

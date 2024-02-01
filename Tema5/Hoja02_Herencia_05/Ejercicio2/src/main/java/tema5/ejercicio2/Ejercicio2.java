@@ -24,8 +24,9 @@ public class Ejercicio2 {
         System.out.println("---Mostrar artículos caducados---");
         mostrarCaducados(articulos);
         System.out.println("");
+
         System.out.println("---Mostrar articulo con mayor descuento---");
-        EnPromocion promo=maximoDescuento(articulos);
+        EnPromocion promo = maximoDescuento(articulos);
         System.out.println(promo.mostrar());
 
     }
@@ -69,42 +70,48 @@ public class Ejercicio2 {
             System.out.print(articulo1[i].mostrar() + "\n");
         }
     }
-    
+
 //Método para mostrar los artículos caducados
     public static void mostrarCaducados(Articulo[] articulo1) {
         int contador = Articulo.getContArticulos();
         LocalDate fechaActual = LocalDate.now();
+        boolean encontrado = false;
+        String cadena = "";
         for (int i = 0; i < contador; i++) {
             if (articulo1[i] instanceof Perecedero) {
                 Perecedero pereaux = (Perecedero) articulo1[i];
                 if (pereaux.getAnioCaducidad() < fechaActual.getYear() || (pereaux.getAnioCaducidad() == fechaActual.getYear() && pereaux.getMesCaducidad() < fechaActual.getMonthValue())) {
-                    System.out.println(pereaux.mostrar() + "\n");
-                }else{
-                    System.out.println("No hay artículos caducados");
+                    cadena += pereaux.mostrar() + "\n";
+                    encontrado = true;
                 }
-            }else{
-                System.out.println("No hay artículos perecederos");
             }
+        }
+        if (encontrado) {
+            System.out.println(cadena);
+        } else {
+            System.out.println("Error, no hay articulos perecederos caducados");
         }
     }
-    
+
     //Método para mostrar articulo en Promocion con máximo descuento
-    public static EnPromocion maximoDescuento(Articulo[]articulo1){
-        int contador=Articulo.getContArticulos();
-        int descuentoMayor=0;
-        EnPromocion articuloMayor=null;
-        for(int i=0;i<contador;i++){
-            if(articulo1[i] instanceof EnPromocion){
-                EnPromocion promoAux=(EnPromocion) articulo1[i];
-                
-                if(promoAux.getDescuento()>descuentoMayor){
-                    descuentoMayor=promoAux.getDescuento();
-                    articuloMayor=promoAux;
+    public static EnPromocion maximoDescuento(Articulo[] articulo1) {
+        int contador = Articulo.getContArticulos();
+        int descuentoMayor = 0;
+        EnPromocion articuloMayor = null;
+        for (int i = 0; i < contador; i++) {
+            if (articulo1[i] instanceof EnPromocion) {
+                EnPromocion promoAux = (EnPromocion) articulo1[i];
+
+                if (promoAux.getDescuento() > descuentoMayor) {
+                    descuentoMayor = promoAux.getDescuento();
+                    articuloMayor = promoAux;
+                    
                 }
-            }else{
-                System.out.println("No hay artículos en Promoción");
+            } else{
+                System.out.println("Error, no es una articulo en Promoción");
             }
         }
+       
         return articuloMayor;
     }
 }

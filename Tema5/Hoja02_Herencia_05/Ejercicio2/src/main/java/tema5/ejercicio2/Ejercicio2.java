@@ -101,6 +101,8 @@ public class Ejercicio2 {
                     descuentoMayor=promoAux.getDescuento();
                     articuloMayor=promoAux;
                 }
+            }else{
+                System.out.println("No hay artículos en Promoción");
             }
         }
         return articuloMayor;

@@ -15,6 +15,7 @@ public class Rombo extends Figura {
     }
 
     public Rombo() {
+        super();
     }
     @Override
     public String toString(){

@@ -15,6 +15,7 @@ public class Triangulo extends Figura{
     }
 
     public Triangulo() {
+        super();
     }
     @Override
     public String toString(){

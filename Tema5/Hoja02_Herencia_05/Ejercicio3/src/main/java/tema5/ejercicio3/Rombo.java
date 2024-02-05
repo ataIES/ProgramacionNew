@@ -8,16 +8,16 @@ package tema5.ejercicio3;
  *
  * @author DAW125
  */
-public class Triangulo extends Figura{
+public class Rombo extends Figura {
 
-    public Triangulo(int id) {
+    public Rombo(int id) {
         super(id);
     }
 
-    public Triangulo() {
+    public Rombo() {
     }
     @Override
     public String toString(){
-        return "Triángulo-> id: "+super.getId();
+        return "Rombo-> id: "+super.getId();
     }
 }

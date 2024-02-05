@@ -11,10 +11,10 @@ package tema5.ejercicio3;
 public class Ejercicio3 {
 
     public static void main(String[] args) {
-        Circulo c=new Circulo(1);
-        Triangulo t= new Triangulo(2);
-        Cuadrado cuadrado=new Cuadrado(3);
-        Rombo r=new Rombo(4);
+        Circulo c=new Circulo();
+        Triangulo t= new Triangulo();
+        Cuadrado cuadrado=new Cuadrado();
+        Rombo r=new Rombo();
         
         System.out.println(c.toString());
         System.out.println(t.toString());

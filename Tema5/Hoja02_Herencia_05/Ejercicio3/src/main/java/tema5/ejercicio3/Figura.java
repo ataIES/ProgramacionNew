@@ -10,13 +10,14 @@ package tema5.ejercicio3;
  */
 public abstract class Figura {
     private int id;
+    private static int contador=1;
 
     public Figura(int id) {
         this.id = id;
     }
 
     public Figura() {
-        this.id++;
+        id=contador++;
     }
 
     public int getId() {

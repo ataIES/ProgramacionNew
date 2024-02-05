@@ -17,7 +17,7 @@ public abstract class Figura {
     }
 
     public Figura() {
-        id=contador++;
+        this.id=contador++;
     }
 
     public int getId() {

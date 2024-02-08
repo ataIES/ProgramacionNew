@@ -53,7 +53,7 @@ public class Metodos {
     }
 
 //Método que crea un Libro
-    public static Libro crearLibro() {
+    private static Libro crearLibro() {
         Scanner teclado = new Scanner(System.in);
         Libro aux = null;
 
@@ -75,7 +75,7 @@ public class Metodos {
     }
 
     //Método que crea un disco
-    public static Disco crearDisco() {
+    private static Disco crearDisco() {
         Scanner teclado = new Scanner(System.in);
         Disco aux = null;
 

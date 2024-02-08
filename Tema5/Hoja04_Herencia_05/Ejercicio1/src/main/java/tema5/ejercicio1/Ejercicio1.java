@@ -10,7 +10,7 @@ package tema5.ejercicio1;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-        Publicacion publicaciones[] = new Publicacion[3];
+        Publicacion publicaciones[] = new Publicacion[4];
         Metodos.aniadirPublicaciones(publicaciones);
         Metodos.mostrar(publicaciones);
 
@@ -19,5 +19,8 @@ public class Ejercicio1 {
 
         System.out.println("---Mostrar titulo y autor de libros editados en el mes en curso y que tenga más de 1000 páginas--- ");
         System.out.println(Metodos.libro1000paginas(publicaciones));
+        
+        System.out.println("---Mostrar título y autor de discos editados en los últimos 2 años---");
+        System.out.println(Metodos.discos2anios(publicaciones));
     }
 }

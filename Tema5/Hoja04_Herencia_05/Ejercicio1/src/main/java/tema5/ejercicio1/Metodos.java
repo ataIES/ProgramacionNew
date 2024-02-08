@@ -5,6 +5,7 @@
 package tema5.ejercicio1;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -52,7 +53,7 @@ public class Metodos {
     }
 
 //Método que crea un Libro
-    public static Libro crearLibro() {
+    private static Libro crearLibro() {
         Scanner teclado = new Scanner(System.in);
         Libro aux = null;
 
@@ -74,7 +75,7 @@ public class Metodos {
     }
 
     //Método que crea un disco
-    public static Disco crearDisco() {
+    private static Disco crearDisco() {
         Scanner teclado = new Scanner(System.in);
         Disco aux = null;
 
@@ -96,39 +97,54 @@ public class Metodos {
     }
 
     public static String discoLargaDuracion(Publicacion[] publicaciones) {
-        boolean encontrado=false;
         int duracionMayor = 0;
         String cadena = "";
         for (int i = 0; i < contPublicaciones; i++) {
             if (publicaciones[i] instanceof Disco discoaux) {
-                encontrado=true;
                 if (discoaux.getDuracionMinutos() >= duracionMayor) {
                     duracionMayor = discoaux.getDuracionMinutos();
                     cadena += "Título: " + discoaux.getTitulo().substring(0, 3) + "\nAutor: " + discoaux.getAutor()
-                            + "\nDuracion en minutos: " + discoaux.getDuracionMinutos()+"\n";
+                            + "\nDuracion en minutos: " + discoaux.getDuracionMinutos() + "\n";
                 }
-            }
-            if(encontrado){
-                cadena="No existe ningun disco";
+            } else {
+                cadena = "No hay ningún disco publicado";
             }
         }
         return cadena;
     }
 
     public static String libro1000paginas(Publicacion[] publicaciones) {
-        boolean encontrado=false;
         LocalDate hoy = LocalDate.now();
-        String cadena="";
+        String cadena = "";
         for (int i = 0; i < contPublicaciones; i++) {
             if (publicaciones[i] instanceof Libro libroaux) {
-                encontrado=true;
                 if (libroaux.getFecha().getMonthValue() == hoy.getMonthValue() && libroaux.getNumPaginas() > 1000) {
-                    cadena+=libroaux.toString();
+                    cadena += libroaux.toString();
+                }else{
+                    cadena="No hay ningún libro publicado en este mes y con más de 1000 páginas";
                 }
+            }else{
+                cadena="No existe ningún libro publicado";
             }
         }
-        if(encontrado){
-            cadena="No se ha encontrado ningún libro";
+       
+        return cadena;
+    }
+
+    public static String discos2anios(Publicacion[] publicaciones) {
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String cadena = "";
+        LocalDate hoy = LocalDate.now();
+        for (int i = 0; i < contPublicaciones; i++) {
+            if (publicaciones[i] instanceof Disco discoaux) {
+                if (discoaux.getFecha().isAfter(hoy.minusYears(2))) {
+                    cadena += "Título: " + discoaux.getTitulo() + "\nAutor: " + discoaux.getAutor() + " Fecha: " + discoaux.getFecha().format(f) + "\n";
+                } else {
+                    cadena = "No hay ningún disco en los últimos dos años";
+                }
+            } else {
+                cadena = "No hay ningún disco publicado";
+            }
         }
         return cadena;
     }

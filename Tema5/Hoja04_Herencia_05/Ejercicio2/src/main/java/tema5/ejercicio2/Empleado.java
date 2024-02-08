@@ -32,8 +32,33 @@ public abstract class Empleado {
         this.nombre = new Scanner(System.in).nextLine();
         System.out.println("Introduce su departamento: ");
         this.departamento = new Scanner(System.in).nextLine();
-        this.edad=validarEdad();
-        
+        this.edad = validarEdad();
+        this.casado = esCasado();
+        this.salario = teclado.nextDouble();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public boolean isCasado() {
+        return casado;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     private int validarEdad() {
@@ -50,11 +75,47 @@ public abstract class Empleado {
         } while (!valido);
         return edad;
     }
-    private boolean esCasado(){
-        String opc="";
-        do{
-            
-        }while(!valido)
+
+    private boolean esCasado() {
+        String opc = "";
+        boolean valido = false;
+        boolean casado = false;
+        do {
+            System.out.println("¿Está casado?");
+            opc = new Scanner(System.in).nextLine();
+            if (opc.equalsIgnoreCase("Si")) {
+                casado = true;
+                valido = true;
+            } else if (opc.equalsIgnoreCase("No")) {
+                valido = true;
+            } else {
+                System.out.println("Error,vuelve a introducir si está casado");
+            }
+        } while (!valido);
+        return casado;
+    }
+
+    public String clasificacion() {
+        String clasificacion = "";
+        if (edad <= 21) {
+            clasificacion = "Principiante";
+        } else if (edad >= 22 && edad <= 35) {
+            clasificacion = "Intermedio";
+        } else {
+            clasificacion = "Senior";
+        }
+        return clasificacion;
+    }
+
+    public void aumentarSalario(int porcentaje) {
+        double porcentaje1 = porcentaje / 100;
+        this.salario = getSalario() + (getSalario() * porcentaje1);
+    }
+
+    public String mostrarEmpleado() {
+        String casado = esCasado() ? "Sí" : "No";
+        return "---Empleado---\n\tNombre: " + getNombre() + "\n\tDepartamento: " + getDepartamento() + "\n\tEdad: " + getEdad()
+                + "\n\tCasado: " + casado + "\nSalario: " + String.format("%.2f", getSalario() + "\n");
     }
 
 }

@@ -21,6 +21,7 @@ public class Plantilla {
     public void insertarEmpleado(Empleado e) {
         if (contEmpleados < empleados.length) {
             empleados[contEmpleados] = e;
+            System.out.println("Empleado "+e.nombre+" añadido correctamente");
             contEmpleados++;
         } else {
             System.out.println("Error, número máximo de empleados alcanzados");
@@ -51,13 +52,15 @@ public class Plantilla {
     }
     public String senior(){
         String senior="";
+        boolean encontrado=false;
         for(int i=0;i<contEmpleados;i++){
             if(empleados[i].clasificacion().equalsIgnoreCase("Senior")){
+                encontrado=true;
                 senior+=empleados[i].mostrarEmpleado();
-            }
-            else{
-                senior="No existe ningún empleado senior";
-            }
+            } 
+        }
+        if(!encontrado){
+            senior="No existe ningún empleado senior";
         }
         return senior; 
     }

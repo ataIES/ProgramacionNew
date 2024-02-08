@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author DAW125
  */
-public abstract class Empleado {
+public class Empleado {
 
     protected String nombre;
     protected String departamento;
@@ -34,6 +34,7 @@ public abstract class Empleado {
         this.departamento = new Scanner(System.in).nextLine();
         this.edad = validarEdad();
         this.casado = esCasado();
+        System.out.println("Introduce su salario: ");
         this.salario = teclado.nextDouble();
     }
 
@@ -108,14 +109,14 @@ public abstract class Empleado {
     }
 
     public void aumentarSalario(int porcentaje) {
-        double porcentaje1 = porcentaje / 100;
-        this.salario = getSalario() + (getSalario() * porcentaje1);
+        this.salario += this.salario * porcentaje / 100;
+        System.out.println("Salario aumentado en un " + porcentaje + "%");
     }
 
     public String mostrarEmpleado() {
-        String casado = esCasado() ? "Sí" : "No";
+        String casado = isCasado() ? "Sí" : "No";
         return "---Empleado---\n\tNombre: " + getNombre() + "\n\tDepartamento: " + getDepartamento() + "\n\tEdad: " + getEdad()
-                + "\n\tCasado: " + casado + "\nSalario: " + String.format("%.2f", getSalario() + "\n");
+                + "\n\tCasado: " + casado + "\n\tSalario: " + String.format("%.2f", getSalario()) + "\n";
     }
 
 }

@@ -18,6 +18,7 @@ public class Ejercicio2 {
         Programador programador2=new Programador(200,"Phyton","Marta","Informática",23,false,2200.21);
         System.out.println("");
         
+        
         System.out.println("---AÑADIR EMPLEADOS---");
         p.insertarEmpleado(empleado1);
         p.insertarEmpleado(programador1);

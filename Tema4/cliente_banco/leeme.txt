@@ -1,0 +1,4 @@
+en este archvivo hay dos versiones distintas del ejercicio de ayer de clase.
+ambas son soluciones válidas (auqnue admiten detalles que las mejoran)
+comparad la vuestra con cada una de ellas para ver qué se contempla y qué no en cada caso.
+espero que os sean útiles

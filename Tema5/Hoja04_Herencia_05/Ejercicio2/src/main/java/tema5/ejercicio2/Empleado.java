@@ -61,7 +61,7 @@ public class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
+//Método que valida la edad entre 18 y 65 años
     private int validarEdad() {
         boolean valido = false;
         do {
@@ -76,7 +76,7 @@ public class Empleado {
         } while (!valido);
         return edad;
     }
-
+//Método que valida si está casado
     private boolean esCasado() {
         String opc = "";
         boolean valido = false;
@@ -95,7 +95,7 @@ public class Empleado {
         } while (!valido);
         return casado;
     }
-
+//Método que muestra la clasificación de los empleados según su edad
     public String clasificacion() {
         String clasificacion = "";
         if (edad <= 21) {
@@ -107,10 +107,9 @@ public class Empleado {
         }
         return clasificacion;
     }
-
+//Método que aumenta el salario pasado por parámetro el porcentaje
     public void aumentarSalario(int porcentaje) {
         this.salario += this.salario * porcentaje / 100;
-        System.out.println("Salario aumentado en un " + porcentaje + "%");
     }
 
     public String mostrarEmpleado() {

@@ -17,7 +17,8 @@ public class Plantilla {
         this.empleados = new Empleado[100];
         this.contEmpleados = 0;
     }
-
+    
+//Método que inserta empleados
     public void insertarEmpleado(Empleado e) {
         if (contEmpleados < empleados.length) {
             empleados[contEmpleados] = e;
@@ -27,7 +28,8 @@ public class Plantilla {
             System.out.println("Error, número máximo de empleados alcanzados");
         }
     }
-
+    
+//Método que muestra todos los empleados
     public String mostrarEmpleados() {
         String cadena = "";
         for (int i = 0; i < contEmpleados; i++) {
@@ -35,21 +37,26 @@ public class Plantilla {
         }
         return cadena;
     }
+    
+//Método que obtiene el programador con más líneas de código
     public Programador masLineasCodigo(){
         int codigoMayor=0;
         Programador programaresult=null;
+        boolean encontrado=false;
         for(int i=0;i<contEmpleados;i++){
             if(empleados[i]instanceof Programador programaaux){
                 if(programaaux.getLineasCodigo() >codigoMayor){
                     programaresult=programaaux;
                 }
-            }else{
-                
-                System.out.println("No existe ningún programador");
             }
+        }
+        if(programaresult==null){
+            System.out.println("No existe ningún programador");
         }
         return programaresult;
     }
+    
+//Método que muestra los empleados senior
     public String senior(){
         String senior="";
         boolean encontrado=false;
@@ -59,19 +66,25 @@ public class Plantilla {
                 senior+=empleados[i].mostrarEmpleado();
             } 
         }
-        if(!encontrado){
+        if(encontrado==false){
             senior="No existe ningún empleado senior";
         }
+        
         return senior; 
     }
+    
+    //Método que aumenta el salario en un 20% a todos los intermedios
     public void sueldoIntermedios(){
+        boolean encontrado=false;
         for(int i=0;i<contEmpleados;i++){
             if(empleados[i].clasificacion().equalsIgnoreCase("Intermedio")){
                 empleados[i].aumentarSalario(20);
+                System.out.println(empleados[i].mostrarEmpleado());
+                encontrado=true;
             }
-            else{
-                System.out.println("No existe ningún empleado intermedio");
-            }
+        }
+        if(!encontrado){
+            System.out.println("No existe ningún empleado intermedio");
         }
     }
 

@@ -12,10 +12,10 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
         Plantilla p=new Plantilla();
-        Empleado empleado1=new Empleado("Adrian","Ventas",23,false,1200.45);
-        Empleado empleado2=new Empleado("Juan","Compras",40,true,1500.66);
-        Programador programador1=new Programador(200,"Java","Maria","Informática",22,true,1800);
-        Programador programador2=new Programador(200,"Phyton","Marta","Informática",60,false,2200.21);
+        Empleado empleado1=new Empleado("Adrian","Ventas",18,false,1200.45);
+        Empleado empleado2=new Empleado("Juan","Compras",60,true,1500.66);
+        Programador programador1=new Programador(200,"Java","Maria","Informática",30,true,1800);
+        Programador programador2=new Programador(200,"Phyton","Marta","Informática",23,false,2200.21);
         System.out.println("");
         
         System.out.println("---AÑADIR EMPLEADOS---");
@@ -31,9 +31,13 @@ public class Ejercicio2 {
         
         System.out.println("---Mostrar todos los empleados senior---");
         System.out.println(p.senior());
-        System.out.println("");
         
-        System.out.println("---Au");
+        System.out.println("---Aumentar salario en un 20% a todos los intermedios---");
+        p.sueldoIntermedios();
+        
+        System.out.println("---Programador con más líneas de código---");
+        Programador programaaux=p.masLineasCodigo();
+        System.out.println(programaaux.mostrarEmpleado());
        
         
         

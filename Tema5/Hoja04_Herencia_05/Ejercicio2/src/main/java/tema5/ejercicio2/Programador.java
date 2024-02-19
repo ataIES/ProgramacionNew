@@ -42,6 +42,6 @@ public class Programador extends Empleado {
     public String mostrarEmpleado() {
         String casado = super.isCasado() ? "Sí" : "No";
         return "---Programador---\n\tNombre: " + super.getNombre() + "\n\tDepartamento: " + super.getDepartamento() + "\n\tEdad: " + super.getEdad()
-                + "\n\tCasado: " + casado + "\n\tSalario: " + String.format("%.2f", super.getSalario()) +"\n\tLíneas de código por hora: "+getLineasCodigo()+"\n\tLenguaje Dominante: "+getLenguajeDominante()+"\n";
+                + "\n\tCasado: " + casado + "\n\tSalario: " + String.format("%.2f", super.getSalario()) +"€\n\tLíneas de código por hora: "+getLineasCodigo()+"\n\tLenguaje Dominante: "+getLenguajeDominante()+"\n";
     }
 }

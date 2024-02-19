@@ -115,7 +115,7 @@ public class Empleado {
     public String mostrarEmpleado() {
         String casado = isCasado() ? "Sí" : "No";
         return "---Empleado---\n\tNombre: " + getNombre() + "\n\tDepartamento: " + getDepartamento() + "\n\tEdad: " + getEdad()
-                + "\n\tCasado: " + casado + "\n\tSalario: " + String.format("%.2f", getSalario()) + "\n";
+                + "\n\tCasado: " + casado + "\n\tSalario: " + String.format("%.2f", getSalario()) + "€\n";
     }
 
 }

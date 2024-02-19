@@ -27,7 +27,7 @@ public class Ejercicio4 {
             }
         }
     }
-
+//Metodo que valida si un número es entero
     public static int validarNumero() {
         boolean valido = false;
         int numero = 0;
@@ -42,7 +42,7 @@ public class Ejercicio4 {
         }
         return numero;
     }
-
+//Metodo que comprueba si un número está dentro de un rango
     public static void rango(int numero) throws Exception {
         if (numero >= 0 && numero <= 100) {
             System.out.println("El número " + numero + " está dentro del rango 0-100");

@@ -42,9 +42,11 @@ public class Plantilla {
     public Programador masLineasCodigo(){
         int codigoMayor=0;
         Programador programaresult=null;
+        Programador[]lista=new Programador[100];
         boolean encontrado=false;
         for(int i=0;i<contEmpleados;i++){
             if(empleados[i]instanceof Programador programaaux){
+                lista[i]=programaaux;
                 if(programaaux.getLineasCodigo() >codigoMayor){
                     programaresult=programaaux;
                     codigoMayor=programaaux.getLineasCodigo();

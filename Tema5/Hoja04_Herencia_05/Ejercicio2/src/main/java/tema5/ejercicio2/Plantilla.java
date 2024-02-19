@@ -47,6 +47,7 @@ public class Plantilla {
             if(empleados[i]instanceof Programador programaaux){
                 if(programaaux.getLineasCodigo() >codigoMayor){
                     programaresult=programaaux;
+                    codigoMayor=programaaux.getLineasCodigo();
                 }
             }
         }

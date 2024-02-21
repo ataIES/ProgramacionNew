@@ -18,5 +18,12 @@ public class Ejercicio4 {
         i.tocarNota();
         p.tocarNota();
         f.tocarNota();
+        System.out.println("Vemos el ejemplo de la ligadura dinámica");
+        tocarInstrumento(f);
+        tocarInstrumento(p);
+    }
+    //ligadura dinamica
+    public static void tocarInstrumento(Instrumento instrumento1){
+        instrumento1.tocarNota(); //es en tiempo de ejecución cuando se decide qué instrumento es y que nota toca
     }
 }

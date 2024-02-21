@@ -19,6 +19,19 @@ public class Mamifero {
         this.alimento = alimento;
     }
 
+    public String getRaza() {
+        return raza;
+    }
+
+    public int getNpatas() {
+        return npatas;
+    }
+
+    public String getAlimento() {
+        return alimento;
+    }
+    
+
     @Override
     public String toString() {
         return "Mamifero{" + "raza=" + raza + ", npatas=" + npatas + ", alimento=" + alimento + '}';

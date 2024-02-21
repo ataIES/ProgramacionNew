@@ -17,12 +17,14 @@ public class Main2 {
         DeDos de2=new DeDos();
         DeTres de3= new DeTres();
         System.out.println("---Pruebo con la clase deDos---");
+        //Muestro deDos mediante la interfaz series
         Series inter=de2;
         for(int i=0;i<5;i++){
             System.out.println("Muestro el siguiente "+inter.getSiguiente());
             
         }
         System.out.println("---Pruebo con la clase deTres---");
+        //Muestro deTres mediante la interfaz series
         Series inter2=de3;
         for(int i=0;i<5;i++){
             System.out.println("Muestro el siguiente "+inter2.getSiguiente());

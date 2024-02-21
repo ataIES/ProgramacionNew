@@ -31,7 +31,6 @@ public class Mamifero {
         return alimento;
     }
     
-
     @Override
     public String toString() {
         return "Mamifero{" + "raza=" + raza + ", npatas=" + npatas + ", alimento=" + alimento + '}';

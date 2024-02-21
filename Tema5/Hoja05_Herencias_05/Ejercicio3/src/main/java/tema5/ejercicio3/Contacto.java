@@ -30,7 +30,7 @@ public class Contacto implements Comparable<Contacto>{
     public Contacto() {
         crearContacto();
     }
-
+//Metodo privado que crea un contacto
     private void crearContacto() {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduce el nombre: ");
@@ -78,7 +78,7 @@ public class Contacto implements Comparable<Contacto>{
         DateTimeFormatter f=DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return "Contacto{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", tlf=" + tlf + ", fechaNac=" + fechaNac.format(f) + '}';
     }
-
+//Metodo de la interfaz comparable que compara los nombre mediante su nombre
     @Override
     public int compareTo(Contacto o) {
        return this.nombre.compareTo(o.nombre);

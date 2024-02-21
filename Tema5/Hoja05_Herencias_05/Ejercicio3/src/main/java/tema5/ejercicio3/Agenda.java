@@ -19,6 +19,7 @@ public class Agenda  {
         this.agenda=new Contacto[nContacto];
         this.contContacto=0;
     }
+    //Método que inserta un contacto
     public void insertar(Contacto contacto){
         if(contContacto<agenda.length){
             contacto.setId(contContacto);
@@ -29,6 +30,7 @@ public class Agenda  {
             System.out.println("Error, no se puede agregar a "+contacto.getNombre()+" agenda llena");
         }
     }
+    //Metodo que busca un contacto pasando por parámetros su nombre
     public void buscar(String nombreContacto){
         boolean encontrado=false;
         String cadena="";
@@ -44,8 +46,8 @@ public class Agenda  {
             System.out.println(cadena);
         }
     }
+    //Metodo que elimina un contacto pasando su nombre por parámetros
     public void eliminar(String nombreContacto){
-        int encontrados=0;
         boolean encontrado=false;
         int posInicial=0;
         for(int i=0;i<contContacto;i++){
@@ -62,6 +64,7 @@ public class Agenda  {
             System.out.println("Error, no existe ningún contacto con el nombre "+nombreContacto);
         }
     }
+    //Metodo que ordena el array 
     public void ordenar(){
         Arrays.sort(agenda,0,contContacto);
     }

@@ -14,7 +14,7 @@ public class DeDos implements Series {
     
     public DeDos(){
         this.valor=Series.inicio;
-        this.anterior=Series.inicio-2;
+        this.anterior=valor-2;
     }
     @Override
     public int getSiguiente(){
@@ -24,7 +24,7 @@ public class DeDos implements Series {
     @Override
     public void reiniciar(){
         this.valor=Series.inicio;
-        this.anterior=inicio-2;
+        this.anterior=valor-2;
     }
     @Override
     public void setComenzar(int nValor){

@@ -34,4 +34,21 @@ public class Trabajos {
             System.out.print(trabajos[i].detalleServicio()+"\n");
         }
     }
+    //Metodo que muestra por pintura
+    public static void mostrarPorPintura(){
+        for(int i=0;i<contTrabajos;i++){
+            if(trabajos[i] instanceof Pintura pinturaaux){
+                System.out.println(pinturaaux.detalleServicio()+"\n");
+            }
+        }
+    }
+    
+    //Metodo que muestra por Alarma
+    public static void mostrarPorAlarma(){
+        for(int i=0;i<contTrabajos;i++){
+            if(trabajos[i] instanceof Alarma alarmaaux){
+                System.out.println(alarmaaux.detalleServicio()+"\n");
+            }
+        }
+    }
 }

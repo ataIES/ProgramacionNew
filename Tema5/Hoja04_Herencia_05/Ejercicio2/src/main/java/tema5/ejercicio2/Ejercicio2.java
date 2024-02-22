@@ -37,8 +37,12 @@ public class Ejercicio2 {
         p.sueldoIntermedios();
         
         System.out.println("---Programador con más líneas de código---");
-        Programador programaaux=p.masLineasCodigo();
-        System.out.println(programaaux.mostrarEmpleado());
+        Programador[]aux=p.listaProgramador();
+        for(int i=0;i<aux.length;i++){
+            System.out.println(aux[i].mostrarEmpleado());
+        }
+        /*Programador programaaux=p.masLineasCodigo();
+        System.out.println(programaaux.mostrarEmpleado());*/
        
         
         

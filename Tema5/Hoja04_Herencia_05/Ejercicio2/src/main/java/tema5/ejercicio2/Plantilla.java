@@ -59,6 +59,16 @@ public class Plantilla {
         return programaresult;
     }
     
+    public Programador[]listarProgramador(){
+        Programador lista[]=new Programador[100];
+        for(int i=0;i<contEmpleados;i++){
+            if(empleados[i] instanceof Programador programaaux){
+                lista[i]=programaaux;
+            }
+        }
+        return lista;
+    }
+    
 //Método que muestra los empleados senior
     public String senior(){
         String senior="";

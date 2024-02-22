@@ -14,21 +14,21 @@ public class Ejercicio1 {
         DeDos deDos = new DeDos();
         System.out.println("---Imprimir los primeros 5 números de la serie---");
         for (int i = 0; i < 5; i++) {
-            System.out.print(deDos.getSiguiente() + " ");
+            System.out.print(deDos.getSiguiente() + "\t");
         }
         System.out.println("");
         System.out.println("---Reinicio la serie---");
         deDos.reiniciar();
         System.out.println("---Vuelvo a mostrar los 5 siguientes elementos---");
         for (int i = 0; i < 5; i++) {
-            System.out.print(deDos.getSiguiente() + " ");
+            System.out.print(deDos.getSiguiente() + "\t");
         }
         System.out.println("");
         System.out.println("---Inicializo la serie en 100---");
         deDos.setComenzar(100);
         System.out.println("---Muestro los 5 siguientes elementos---");
         for (int i = 0; i < 5; i++) {
-            System.out.print(deDos.getSiguiente() + " ");
+            System.out.print(deDos.getSiguiente() + "\t");
         }
     }
 

@@ -17,7 +17,7 @@ public class Trabajos {
         trabajos=new Servicio[nTrabajos];
         contTrabajos=0;  
     }
-    
+    //Metodo estático que comrpueba si se añade el servicio
     public static boolean insertarTrabajos(Servicio s){
        boolean insertado=false;
        if(contTrabajos<trabajos.length){
@@ -27,6 +27,8 @@ public class Trabajos {
        }
        return insertado;
     }
+    
+    //Metodo estatico que muestra todos los trabajos
     public static void mostrarTrabajos(){
         for(int i=0;i<contTrabajos;i++){
             System.out.print(trabajos[i].detalleServicio()+"\n");

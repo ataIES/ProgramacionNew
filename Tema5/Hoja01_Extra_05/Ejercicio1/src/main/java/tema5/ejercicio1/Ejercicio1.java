@@ -33,7 +33,7 @@ public class Ejercicio1 {
         Trabajos.mostrarTrabajos();
         
     }
-
+//Metodo que inserte trabajos mostrando un mensaje
     public static void insertar(Servicio s) {
         if (Trabajos.insertarTrabajos(s)) {
             System.out.println("Trabajo insertado correctamente");

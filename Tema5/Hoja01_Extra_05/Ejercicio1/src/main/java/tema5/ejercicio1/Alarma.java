@@ -15,8 +15,8 @@ public class Alarma extends Servicio {
     private int numAlarmas;
 
     //Constructor que inicializa el trabajador a Revisor Especialista Humos
-    public Alarma(int numAlarmas, LocalDate fechaInicio, String cliente) {
-        super("Revisor Especialista Humos", fechaInicio, cliente);
+    public Alarma(int numAlarmas, LocalDate fechaInicio1, String cliente1) {
+        super("Revisor Especialista Humos", fechaInicio1, cliente1);
         this.numAlarmas = numAlarmas;
     }
 

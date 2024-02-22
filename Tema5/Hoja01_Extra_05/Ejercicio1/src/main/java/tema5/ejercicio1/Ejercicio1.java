@@ -31,6 +31,10 @@ public class Ejercicio1 {
         insertar(pintura3);
         System.out.println("---Mostrar todos los trabajos---");
         Trabajos.mostrarTrabajos();
+        System.out.println("---Mostrar solo los trabajos del tipo pintura---");
+        Trabajos.mostrarPorPintura();
+        System.out.println("---Mostrar solo los trabajos del tipo Alarma---");
+        Trabajos.mostrarPorAlarma();;
         
     }
 //Metodo que inserte trabajos mostrando un mensaje

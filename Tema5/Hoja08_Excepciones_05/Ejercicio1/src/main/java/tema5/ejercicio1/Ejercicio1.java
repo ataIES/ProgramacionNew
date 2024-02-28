@@ -17,7 +17,9 @@ public class Ejercicio1 {
         System.out.println("");
         System.out.println("---Mostrar alumnos---");
         MetodosAlumnos.mostrarAlumnos(listaAlumnos);
-        System.out.println("--Buscar un alumno---");
-        MetodosAlumnos.buscarAlumno(listaAlumnos); 
+        System.out.println("--Buscar un alumno por posicion---");
+        MetodosAlumnos.buscarAlumnoPorPosicion(listaAlumnos); 
+        System.out.println("---Buscar un alumno por nombre---");
+        MetodosAlumnos.buscarAlumnoPorNombre(listaAlumnos);
     }
 }

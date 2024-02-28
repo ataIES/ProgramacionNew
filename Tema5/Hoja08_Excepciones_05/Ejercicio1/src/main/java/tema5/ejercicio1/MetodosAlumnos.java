@@ -33,7 +33,7 @@ public class MetodosAlumnos {
     }
 
     //Metodo que busca un alumno por su nombre
-    public static void buscarAlumno(Alumno[] lista) {
+    public static void buscarAlumnoPorNombre(Alumno[] lista) {
         String nombre = "";
         try {
             System.out.println("Introduce el nombre del alumno a buscar: ");
@@ -42,11 +42,28 @@ public class MetodosAlumnos {
                 if (lista[i].getNombre().equalsIgnoreCase(nombre)) {
                     lista[i].mostrarAlumno();
                 }else{
-                    throw new IndexOutOfBoundsException("Error, el alumno "+nombre+" no existe");
+                    throw new MiExcepcion("Error, el alumno "+nombre+" no existe");
+                }
+            }
+        }catch(MiExcepcion m){
+            System.err.println(m.getMessage());
+        }
+    }
+    //Metodo que busca un alumno por posicion
+    public static void buscarAlumnoPorPosicion(Alumno[]lista){
+        int pos=0;
+        try{
+            System.out.println("Introduce la posicion del alumno a buscar: ");
+            pos=new Scanner(System.in).nextInt();
+            for(int i=0;i<contAlumnos;i++){
+                if(i==pos){
+                    lista[i].mostrarAlumno();;
+                }else{
+                    throw new IndexOutOfBoundsException("Error, la posición no existe");
                 }
             }
         }catch(IndexOutOfBoundsException i){
-            System.err.println(i.getMessage());
+            System.out.println(i.getMessage());
         }
     }
 

@@ -4,7 +4,7 @@
  */
 package tema5.ejercicio2;
 
-import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -20,9 +20,16 @@ public class Validacion {
             try {
                 System.out.println(mensaje);
                 edad = new Scanner(System.in).nextInt();
-                valido = true;
-            } catch (PersonaException p) {
-                p.getMessage();
+                if(edad>=0 && edad<=90){
+                    System.out.println("Edad introducida correctamente");
+                    valido = true;
+                }else{
+                    throw new PersonaException("Error, edad tiene que estar en el intervalo [0-90]");
+                }
+            } catch (InputMismatchException i) {
+                System.out.println("Error, has introducido caracteres");
+            }catch(PersonaException p){
+                System.out.println("");
             }
         }
         return edad;
@@ -36,22 +43,16 @@ public class Validacion {
             try {
                 System.out.println(mensaje);
                 opc = new Scanner(System.in).nextLine();
-                switch (opc) {
-                    case "casado" -> {
-                        estado = EstadoCivil.CASADO;
-                        valido = true;
-                    }
-                    case "soltero" -> {
-                        estado = EstadoCivil.SOLTERO;
-                        valido = true;
-                    }
-                    default -> {
-                        throw new Exception("Error, Estado Civil incorrecto");
-                    }
+                if(opc.equalsIgnoreCase("Soltero")){
+                   estado=EstadoCivil.SOLTERO;
+                   valido=true;
+                }else if(opc.equalsIgnoreCase("Casado")){
+                    estado=EstadoCivil.CASADO;
+                    valido=true;
+                }else{
+                    throw new PersonaException("Error, no has introducido si está casado o soltero");
                 }
-            } catch (IOException i) {
-                System.err.println("Error, has introducido números");
-            } catch (Exception e) {
+            }catch (PersonaException e) {
                 System.err.println(e.getMessage());
             }
         }

@@ -21,7 +21,32 @@ public class Persona {
         this.edad=Validacion.validarEdad("Introduce su edad: ");
         this.estadoCivil=Validacion.validarEstadoCivil("Introduce su estado civil: ");
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public EstadoCivil getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+    
     public String mostrarPersona(){
-        return""
+        return "Nombre: "+getNombre()+"\nEdad: "+getEdad()+"\nEstado Civil: "+getEstadoCivil();
     }
 }

@@ -4,17 +4,21 @@
  */
 package tema5.ejercicio2;
 
-import java.util.InputMismatchException;
-
 /**
  *
  * @author DAW125
  */
-public class PersonaException extends InputMismatchException {
+public class PersonaException extends Exception{
     
-    @Override
-    public String getMessage(){
-        return "Error, has introducido caracteres" ;
+    public PersonaException(String mensaje){
+        super(mensaje);
     }
     
+    @Override
+    public String getMessage() {
+        return super.getMessage();
+    }
+
+    
 }
+

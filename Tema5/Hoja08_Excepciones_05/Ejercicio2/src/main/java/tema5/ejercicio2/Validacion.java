@@ -51,15 +51,14 @@ public class Validacion {
                 } else if (opc.equalsIgnoreCase("Casado")) {
                     estado = EstadoCivil.CASADO;
                     valido = true;
-                }else if(estado==null){
+                } else if (opc == "") {
                     throw new NullPointerException("Error, el Estado Civil está vacío");
-                } 
-                else {
+                } else {
                     throw new PersonaException("Error, no has introducido si está casado o soltero");
                 }
             } catch (PersonaException e) {
                 System.err.println(e.getMessage());
-            } catch (NullPointerException n){
+            } catch (NullPointerException n) {
                 System.err.println(n.getMessage());
             }
         }

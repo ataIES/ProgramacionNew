@@ -4,7 +4,6 @@
  */
 package tema5.ejercicio2;
 
-import java.util.Scanner;
 
 /**
  *
@@ -16,8 +15,7 @@ public class Persona {
     private EstadoCivil estadoCivil;
     
     public Persona(){
-        System.out.println("Introduce su nombre: ");
-        this.nombre=new Scanner(System.in).nextLine();
+        this.nombre=Validacion.validarNombre("Introduce su nombre: ");
         this.edad=Validacion.validarEdad("Introduce su edad: ");
         this.estadoCivil=Validacion.validarEstadoCivil("Introduce su estado civil: ");
     }

@@ -12,7 +12,8 @@ import java.util.Scanner;
  * @author DAW125
  */
 public class Validacion {
-
+    
+//Metodo que valida la edad
     public static int validarEdad(String mensaje) {
         int edad = 0;
         boolean valido = false;
@@ -29,12 +30,13 @@ public class Validacion {
             } catch (InputMismatchException i) {
                 System.out.println("Error, has introducido caracteres");
             }catch(PersonaException p){
-                System.out.println("");
+                System.out.println(p.getMessage());
             }
         }
         return edad;
     }
 
+    //Metodo que valida el estado civil
     public static EstadoCivil validarEstadoCivil(String mensaje) {
         boolean valido = false;
         EstadoCivil estado = null;

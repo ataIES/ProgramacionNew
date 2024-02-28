@@ -12,6 +12,27 @@ import java.util.Scanner;
  * @author DAW125
  */
 public class Validacion {
+    
+//Metodo que valida el nombre
+    public static String validarNombre(String mensaje){
+        boolean valido=false;
+        String nombre="";
+        while(!valido){
+            try{
+                System.out.println(mensaje);
+                nombre=new Scanner(System.in).nextLine();
+                if(nombre!=""){
+                    System.out.println("Nombre introducido correctamente");
+                    valido=true;
+                }else{
+                    throw new NullPointerException("Error, el nombre está vacío");
+                }
+            }catch(NullPointerException n){
+                System.err.println(n.getMessage());
+            }
+        }
+        return nombre;
+    }
 
 //Metodo que valida la edad
     public static int validarEdad(String mensaje) {

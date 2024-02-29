@@ -30,28 +30,28 @@ public class Ejercicio1 {
         System.out.println(horaExacta1.toString());
         System.out.println("---Mostrar hora2---");
         System.out.println(horaExacta2.toString());
-        /*
+
         System.out.println("---Comprobar si se ha modificado los minutos---");
         System.out.println(setMinutos(horaExacta1));
         System.out.println(horaExacta1.toString());
-        
+
         System.out.println("---Comprobar si se ha modificado la hora---");
         System.out.println(setHora(horaExacta1));
         System.out.println(horaExacta1.toString());
         System.out.println("---Comprobar si se ha modificado los segundos---");
         System.out.println(setSegundo(horaExacta1));
-        
+
         System.out.println("---Vuelvo a mostrar la hora---");
         System.out.println(horaExacta1.toString());
-        
+
         System.out.println("---Incrementar en un minuto---");
         horaExacta1.inc();
-        
+
         System.out.println("---Mostrar después de incrementar---");
         System.out.println(horaExacta1.toString());
-*/
+
         System.out.println("---Comprobar si hora1 y hora2 son iguales--");
-       compararHoras(horaExacta1,horaExacta2);
+        compararHoras(horaExacta1, horaExacta2);
     }
 
     //Metodo que muestra un mensaje si se ha modificado o no los minutos
@@ -67,17 +67,18 @@ public class Ejercicio1 {
         int nHora = new Scanner(System.in).nextInt();
         return h.setHora(nHora) ? "Se ha modificado la hora" : "No se ha modificado la hora";
     }
-    
-     public static String setSegundo(HoraExacta h) {
+
+    public static String setSegundo(HoraExacta h) {
         System.out.println("Introduce los nuevos segundos: ");
         int nSegundo = new Scanner(System.in).nextInt();
         return h.setSegundos(nSegundo) ? "Se ha modificado los segundos" : "No se ha modificado los segundos";
     }
-     public static void compararHoras(HoraExacta h1,HoraExacta h2){
-         if(h1.equals(h2)){
-             System.out.println("Son iguales");
-         }else{
-             System.out.println("No son iguales");
-         }
-     }
+
+    public static void compararHoras(HoraExacta h1, HoraExacta h2) {
+        if (h1.equals(h2)) {
+            System.out.println("Son iguales");
+        } else {
+            System.out.println("No son iguales");
+        }
+    }
 }

@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Validacion {
 
     public static int validarHora() {
-        boolean valido = true;
+        boolean valido = false;
         int hora = 0;
         while (!valido) {
             try {
@@ -37,7 +37,7 @@ public class Validacion {
     }
 
     public static int validarMinuto() {
-        boolean valido = true;
+        boolean valido = false;
         int minuto = 0;
         while (!valido) {
             try {
@@ -57,6 +57,27 @@ public class Validacion {
         }
         return minuto;
     }
+    public static int validarSegundos(){
+        boolean valido = false;
+        int segundo = 0;
+        while (!valido) {
+            try {
+                System.out.println("Introduce unos segundos: ");
+                segundo = new Scanner(System.in).nextInt();
+                if (validarRangoMinutos(segundo)) {
+                    System.out.println("Segundos válidos");
+                    valido = true;
+                } else {
+                    throw new IOException("Error, segundos debe estar entre [0-59]");
+                }
+            } catch (InputMismatchException i) {
+                System.err.println("Error, has introducido caracteres");
+            } catch (IOException io) {
+                System.err.println(io.getMessage());
+            }
+        }
+        return segundo;
+    }
 
     public static boolean validarRangoHora(int hora) {
         return hora >= 0 && hora <= 23;
@@ -64,5 +85,8 @@ public class Validacion {
 
     public static boolean validarRangoMinutos(int minutos) {
         return minutos >= 0 && minutos <= 59;
+    }
+    public static boolean validarRangoSegundos(int seg){
+        return seg >= 0 && seg <= 59;
     }
 }

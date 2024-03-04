@@ -13,21 +13,21 @@ import java.util.Scanner;
 public class Ejercicio4 {
 
     public static void main(String[] args) {
-        int numero = 0, contIntentos = 0;
-        boolean valido = false;
+        int numero = 0, contIntentos=0;
+        boolean valido=false;
         while (!valido) {
             try {
                 numero = validarNumero();
                 rango(numero);
-                System.out.println("Número de intentos: " + contIntentos);
-                valido = true;
+                System.out.println("Número de intentos: "+contIntentos);
+                valido=true;
             } catch (Exception e) {
                 System.err.println(e.getMessage());
                 contIntentos++;
             }
         }
     }
-//Metodo que valida si un número es entero
+
     public static int validarNumero() {
         boolean valido = false;
         int numero = 0;
@@ -42,11 +42,11 @@ public class Ejercicio4 {
         }
         return numero;
     }
-//Metodo que comprueba si un número está dentro de un rango
+
     public static void rango(int numero) throws Exception {
         if (numero >= 0 && numero <= 100) {
             System.out.println("El número " + numero + " está dentro del rango 0-100");
-        } else {
+        } else {    
             throw new Exception("Error, el número " + numero + " no se encuentra en el rango 0-100");
         }
     }

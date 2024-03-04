@@ -45,7 +45,7 @@ public class CompararTodos {
         }
         System.out.println("Museo ordenado");
         Arrays.sort(museo);
-         for (Pintor p : museo) {
+        for (Pintor p : museo) {
             if (p != null) {
                 System.out.println(p.toString());
             }

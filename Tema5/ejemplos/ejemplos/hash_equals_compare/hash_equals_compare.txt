@@ -1,0 +1,194 @@
+Ejemplo de Hash, Equals y Compare
+
+
+
+
+
+
+vamos a crear un array de 4 pintores
+
+  Artista[] pintores = new Artista[10];
+        
+        pintores[0] = new Artista("Goya", "Fuendetodos", 1746);
+        pintores[1] = new Artista("Picasso", "Málaga", 1881);
+        pintores[2] = new Artista("Dalí", "Figueras", 1904);
+        pintores[3] = new Artista("Velázaquez", "Sevilla", 1599);
+        pintores[4] = pintores[0];
+        
+
+        for(String s : pintores) { //for each o for mejorado
+            if(s!=null)
+            System.out.println(s);
+        }
+
+//vamos a ver cómo funciona hashCode()
+        for(String s : pintores) {
+            if(s!=null)
+            System.out.println("Pintor" + s + " Hash code " + s.hashCode());
+        }
+
+
+Tenemos la siguiente salida (en este momento)
+
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746}
+Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881}
+Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904}
+Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599}
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746}
+
+
+0->Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746} HashCode:1705736037
+1-> Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881} HashCode:1023892928
+2-> Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904} HashCode:558638686
+3-> Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599} HashCode:1149319664
+4-> Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746} HashCode:1705736037
+
+Podemos comprobar que cada uno tiene su HashCode -un número entero-. Coincide el de 1 y 5 (apuntan al mismo espacio)
+Si añadimos a nuestro array un pintor más -pintor[5] - vemos el resultado:
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	
+Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881	
+Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904	
+Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599	
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	
+
+0->Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:1705736037
+Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881	 HashCode:1023892928
+Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904	 HashCode:558638686
+Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599	 HashCode:1149319664
+4-> Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:1705736037
+5-> Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:2093631819
+
+Muy importante ver la igualdad en el HashCode de 0 y 1; y la diferencia de ambos con 5
+
+Ahora, comprobamos equals
+System.out.println(pintores[0].equals(pintores[1]));
+System.out.println(pintores[0].equals(pintores[4]));
+System.out.println(pintores[0].equals(pintores[5]));
+System.out.println(pintores[0].equals(pintores[2]));
+System.out.println(pintores[0].equals(pintores[8]));
+
+La salida obtenida con estas sentencias es:
+false	//son pintores distintos
+true	//el mismo pintor
+false	//el mismo pintor pero diferente objeto
+false	//pintores distintos
+false
+
+Probamos compareTo
+
+
+
+System.out.println(pintores[0].getNombre().compareTo(pintores[1].getNombre()));
+System.out.println(pintores[0].getNombre().compareTo(pintores[4].getNombre()));
+System.out.println(pintores[0].getNombre().compareTo(pintores[5].getNombre()));
+System.out.println(pintores[0].getNombre().compareTo(pintores[2].getNombre()));
+
+y obtenemos en consola:
+
+-9
+0
+0
+3
+
+¿por qué esos resultados?
+Si el resultado es <0, entonces la cadena que llama al método es lexicográficamente primero
+Si el resultado es == 0 entonces las dos cadenas son lexicográficamente equivalentes
+Si el resultado es > 0 entonces el parámetro pasado al método java compareTo() es lexicográficamente primero.
+
+Podemos comprobar los nombres de los pintores para corroborar el resultado
+
+//ahora probamos sort
+        //previamente debo implementar la interfaz Comparable en la clase Artista
+        //además reduzco el tamaño del array a 6 y comento la línea
+        //System.out.println(pintores[0].equals(pintores[8])); de más arriba
+        
+       Arrays.sort(pintores);
+         System.out.println("Array de pintores");
+        for(Artista a : pintores){
+            if(a!=null)
+            System.out.println(a.toString() + " HashCode:" + a.hashCode());
+        }
+        
+
+La salida obtenida es
+
+Array de pintores en orden
+Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904	 	HashCode:558638686
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:1705736037
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:1705736037
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:2093631819
+Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881	 	HashCode:1023892928
+Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599	 HashCode:1149319664
+
+
+Sobreescribimos hashCode y equals() como vimos en la clase (nos ayudamos del IDE)
+
+  @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        hash = 97 * hash + Objects.hashCode(this.ciudad);
+        hash = 97 * hash + this.nacimiento;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Artista other = (Artista) obj;
+        if (this.nacimiento != other.nacimiento) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return Objects.equals(this.ciudad, other.ciudad);
+    }
+    
+La salida obtenida es:
+
+Array de pintores en orden
+Nombre=Dalí, Ciudad=Figueras, Año de nacimiento=1904	 	HashCode:-1665953435
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:-1056588675
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:-1056588675
+Nombre=Goya, Ciudad=Fuendetodos, Año de nacimiento=1746	 HashCode:-1056588675
+Nombre=Picasso, Ciudad=Málaga, Año de nacimiento=1881	 	HashCode:1773232667
+Nombre=Velázaquez, Ciudad=Sevilla, Año de nacimiento=1599	 HashCode:1160885062
+
+Vemos cómo ahora hay diferencias con lo obtenido anteriormente y ahora el pintor repetido tiene el mismo HashCode (lo que es lógico porque son iguales -su estado-)
+
+
+
+vemos ahora el compareTo sobreescrito para ordenar por año de nacimiento (de más joven a menos joven)
+
+public int compareTo(Pintor otroPintor) {
+    // Ordenar por año de nacimiento de manera descendente
+    int comparacionPorNacimiento = Integer.compare(otroPintor.nacimiento, this.nacimiento);
+    if (comparacionPorNacimiento != 0) {
+        return comparacionPorNacimiento;
+    } else {
+        // Si los años de nacimiento son iguales, ordenar por nombre
+        return this.nombre.compareTo(otroPintor.nombre);
+    }
+}
+
+
+Muy importante:
+La clave es definir un criterio de ordenación coherente y consistente para tu clase. 
+Esto significa que el método compareTo debe seguir la regla de que si a.compareTo(b) devuelve un número negativo, 
+a debería estar antes de b en la secuencia de ordenación; 
+si devuelve cero, a y b son iguales en términos de ordenación; 
+y si devuelve un número positivo, a debería estar después de b en la secuencia de ordenación. 
+
+
+os recomiendo estudiar el código y comprender los detalles que implica sobrescribir o no los métodos que se presentan.
+También os recomiendo que hagáis pruebas con el ejercicio de Agendas (Ejercicio 3 de la Hoja 5).

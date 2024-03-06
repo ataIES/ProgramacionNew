@@ -12,9 +12,9 @@ package tema5.ejercicio1;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-       Publicacion[]publicaciones=new Publicacion[2];
+       Publicacion[]publicaciones=new Publicacion[3];
        if(MetodosPublicacion.insertarPublicaciones(publicaciones)){
-           System.out.println("Insertado");
+           System.out.println("Gracias!!!");
        }
         System.out.println(MetodosPublicacion.mostrarPublicaciones(publicaciones));
     }

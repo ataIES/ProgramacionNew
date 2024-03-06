@@ -40,7 +40,6 @@ public class MetodosPublicacion {
                                 throw new Exception("Error, no has introducido una opción valida");
                             }
                         } else if (opc.equalsIgnoreCase("No")) {
-                            System.out.println("Gracias!!");
                             insertado = true;
                         } else {
                             throw new Exception("Error no has introducido (Si o no)");

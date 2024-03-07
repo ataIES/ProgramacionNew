@@ -4,6 +4,7 @@
  */
 package tema5.ejercicio1;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 /**
@@ -62,6 +63,55 @@ public class MetodosPublicacion {
             cadena += publicaciones[i].toString() + "\n";
         }
         return cadena;
+    }
+
+    public static void discoLargaDuracion(Publicacion[] publicaciones) {
+        int duracionMayor = 0;
+        Calendar anioMayor = Calendar.getInstance();
+        int contDisco = 0;
+        Disco aux = null;
+        Disco[] lista = new Disco[contPublicacion];
+        boolean encontrado = false;
+        for (int i = 0; i < contPublicacion; i++) {
+            if (publicaciones[i] instanceof Disco discoaux) {
+                encontrado = true;
+                if (discoaux.getDuracionMinutos() >= duracionMayor && encontrado) {
+                    duracionMayor = discoaux.getDuracionMinutos();
+                    lista[contDisco] = discoaux;
+                    contDisco++;
+                }
+            }
+        }
+
+        anioMayor.set(0, 0, 0);
+        for (int i = 0; i < contDisco; i++) {
+            if (lista[i].fecha.after(anioMayor)) {
+                anioMayor.setTime(lista[i].fecha.getTime());
+                aux = lista[i];
+            }
+        }
+        if(encontrado)
+
+        System.out.println("---DISCO MÁS LARGA DURACIÓN---\n\tTítulo: " + aux.titulo.substring(0, 4) + "\n\tAutor: " + aux.autor);
+    }
+
+    public static void libro1000Paginas(Publicacion[] publicaciones) {
+        int numPaginas = 0;
+        int contLibros = 0;
+        boolean encontrado = false;
+        System.out.println("---Libros con más de 1000 páginas---");
+        for (int i = 0; i < contPublicacion; i++) {
+            if (publicaciones[i] instanceof Libro libroaux) {
+                encontrado = true;
+                if (libroaux.getNumPaginas() >= 1000 && libroaux.getFecha().getTime().getMonth() == 3) {
+                    System.out.println("\n\tTítulo: " + libroaux.titulo + "\n\tAutor: " + libroaux.getAutor());
+                }
+            }
+        }
+        if (encontrado) {
+            System.out.println("No existe ningún libro");
+        }
+
     }
 
     private static Libro crearLibro() {

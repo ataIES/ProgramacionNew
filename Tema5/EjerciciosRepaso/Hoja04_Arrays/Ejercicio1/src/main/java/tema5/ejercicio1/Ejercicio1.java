@@ -17,5 +17,9 @@ public class Ejercicio1 {
            System.out.println("Gracias!!!");
        }
         System.out.println(MetodosPublicacion.mostrarPublicaciones(publicaciones));
+        
+        MetodosPublicacion.discoLargaDuracion(publicaciones);
+        
+        MetodosPublicacion.libro1000Paginas(publicaciones);
     }
 }

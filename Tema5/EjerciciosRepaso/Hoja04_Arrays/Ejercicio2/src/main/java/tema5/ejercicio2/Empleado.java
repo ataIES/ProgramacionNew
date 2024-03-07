@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author atres
  */
-public abstract class Empleado {
+public class Empleado {
 
     protected String nombre;
     protected String departamento;
@@ -81,10 +81,25 @@ public abstract class Empleado {
         if (edad <= 21) {
             clasificacion = "Principiante";
         } else if (edad >= 22 && edad <= 35) {
-            clasificacion = "Avanzado";
+            clasificacion = "Intermedio";
         } else {
             clasificacion = "Senior";
         }
         return clasificacion;
+    }
+
+    public String mostrarEmpleado() {
+        return "\nNombre: " + getNombre() + "\tDepartamento: " + getDepartamento()
+                + "\nEdad: " + getEdad() + "\tCasado: " + esCasado()
+                + "\nSalario: " +String.format("%.2f", getSalario())+ "\tClasificación: " + clasificacion();
+    }
+
+    public void aumentarSalario(int porcentaje) {
+         this.salario += salario * (porcentaje / 100);
+    }
+
+    private String esCasado() {
+
+        return isCasado() ? "Si" : "No";
     }
 }

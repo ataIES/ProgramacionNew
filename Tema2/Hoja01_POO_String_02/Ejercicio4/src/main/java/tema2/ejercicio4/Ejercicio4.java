@@ -14,8 +14,7 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         String frase="Hola, me llamo Pepito",frase_mitad=" ";
         frase_mitad=frase.substring(0,frase.length()/2);
-        //System.out.println(frase+"\nLongitud: "+frase.length()+"\n"+frase_mitad+"\nLongitud: "+frase_mitad.length());
-        System.out.println(frase.indexOf("Hola",5));
+        System.out.println(frase+"\nLongitud: "+frase.length()+"\n"+frase_mitad+"\nLongitud: "+frase_mitad.length());
     }
   
 }

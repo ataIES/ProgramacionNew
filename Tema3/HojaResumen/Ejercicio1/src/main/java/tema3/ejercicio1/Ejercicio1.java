@@ -43,7 +43,7 @@ public class Ejercicio1 {
         String dibujo = "";
         for (int i = 1; i <= numeroFilas; i++) {
             for (columna = 1; columna <= i; columna++) {
-                dibujo = dibujo + numero + " ";
+                dibujo = dibujo + "*" + " ";
                 numero++;
             }
 

@@ -5,8 +5,7 @@
 package tema5.ejercicio1;
 
 import java.util.Calendar;
-import java.util.Locale;
-import java.util.Scanner;
+
 
 /**
  *
@@ -14,9 +13,9 @@ import java.util.Scanner;
  */
 public abstract class Publicacion {
 
-    private String titulo;
-    private String autor;
-    private Calendar fecha;
+    protected String titulo;
+    protected String autor;
+    protected Calendar fecha;
 
     public Publicacion(String titulo1, String autor1, int dia, int mes, int anio) {
         this.titulo = titulo1;

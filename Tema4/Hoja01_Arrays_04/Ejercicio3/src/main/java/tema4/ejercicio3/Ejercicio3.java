@@ -25,7 +25,6 @@ public class Ejercicio3 {
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] == numeroBuscar) {
                 encontrado = i;
-
                 System.out.println("Está en la posicion " + encontrado);
             }
 

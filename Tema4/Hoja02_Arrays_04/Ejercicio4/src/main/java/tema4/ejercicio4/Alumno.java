@@ -25,17 +25,33 @@ public class Alumno {
             notas[i] = nota;
         }
     }
-    public int mayor(){
-        int mayor=notas[0];
-        for(int i=0;i<notas.length;i++){
-            if(mayor<notas[i]){
-                mayor=notas[i];
+
+    public int mayor() {
+        int mayor = notas[0];
+        for (int i = 0; i < notas.length; i++) {
+            if (mayor < notas[i]) {
+                mayor = notas[i];
             }
         }
         return mayor;
     }
-    public int menor(){
-        
+
+    public int menor() {
+        int menor = notas[0];
+        for (int i = 0; i < notas.length; i++) {
+            if (menor >= notas[i]) {
+                menor = notas[i];
+            }
+        }
+        return menor;
+    }
+
+    public String mostrar() {
+        String cadena=" ";
+        for(int i=0;i<notas.length;i++){
+            cadena+=notas[i]+" ";
+        }
+        return cadena;
     }
 
 }

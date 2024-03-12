@@ -130,7 +130,6 @@ public class ValidaDatos {
                             } else {
                             throw new Exception("Error, formato del DNI erróneo(8 números y 1 letra) ");
                             }
-
                         }
                     } else {
                         throw new Exception("Error la longitud debe de ser 9 caracteres");

@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class ValidaDatos {
 
+    //Metodo que valida el nombre
     public static String validarNombre() {
         String nombre = "";
         boolean valido = false;
@@ -34,6 +35,7 @@ public class ValidaDatos {
         return nombre;
     }
 
+    //Metodo que valida el dia
     private static int validarDia() {
         boolean valido = false;
         int dia = 0;
@@ -55,6 +57,7 @@ public class ValidaDatos {
         return dia;
     }
 
+    //Metodo que valida el mes
     private static int validarMes() {
         boolean valido = false;
         int mes = 0;
@@ -76,6 +79,7 @@ public class ValidaDatos {
         return mes;
     }
 
+    //Metodo que valida el año
     private static int validarAnio() {
         boolean valido = false;
         int anio = 0;
@@ -98,6 +102,7 @@ public class ValidaDatos {
         return anio;
     }
 
+    //Metodo que crea la fecha
     public static LocalDate validarFecha() {
         int dia = validarDia();
         int mes = validarMes();
@@ -106,7 +111,8 @@ public class ValidaDatos {
 
         return fecha;
     }
-
+    
+//Metodo que valida el dni
     public static String validarDni() {
         boolean valido = false;
         String dni = "";
@@ -129,6 +135,7 @@ public class ValidaDatos {
         return dni;
     }
 
+    //Metodo que pide el dni y valida longitud y que tenga 8 números y 1 letra
     private static String introducirDNI() throws Exception, IOException {
         boolean valido = false;
         String dni = "";
@@ -158,6 +165,8 @@ public class ValidaDatos {
         return dni;
     }
 
+    
+    //Metodo que valida la letra
     private static boolean validarLetra(String dni) throws IOException {
         String codigoLetra = "TRWAGMYFPDXBNJZSQVHLCKE";
         int numeroDNI = Integer.parseInt(dni.substring(0, dni.length() - 1));

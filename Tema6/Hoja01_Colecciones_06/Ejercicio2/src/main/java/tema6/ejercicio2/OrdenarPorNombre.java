@@ -10,6 +10,8 @@ import java.util.Comparator;
  *
  * @author atres
  */
+
+//Clase que ordena mediante comparator que compara por nombre
 public class OrdenarPorNombre implements Comparator<Persona> {
 
     @Override

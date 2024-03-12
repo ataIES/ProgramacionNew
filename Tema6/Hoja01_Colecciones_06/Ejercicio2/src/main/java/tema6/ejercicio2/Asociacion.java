@@ -21,6 +21,7 @@ public class Asociacion {
         this.listaPersona = new ArrayList<>(nPersona);
     }
 
+    //Metodo queinserta una persona
     public void insertarPersona() {
         Persona persona = new Persona();
         if (listaPersona.add(persona)) {
@@ -30,6 +31,7 @@ public class Asociacion {
         }
     }
 
+    //Metodo que busca una persona por dni
     public void buscarPorDNI(String dni) {
         boolean encontrado = false;
         Iterator<Persona> it = listaPersona.iterator();
@@ -45,6 +47,7 @@ public class Asociacion {
         }
     }
 
+    //Metodo que calcua la cuota de una persona
     public double cuotaAPagar(Persona persona) {
         final double CUOTA;
         int edad = persona.edad();
@@ -60,11 +63,13 @@ public class Asociacion {
         return CUOTA;
     }
 
+    //Metodo ordenar por DNI
     public void ordenarPorDNI() {
         Collections.sort(listaPersona);
         System.out.println("Array ordenado por DNI");
     }
 
+    //Metodo que ordena por nombre
     public void ordenarPorNombre() {
         OrdenarPorNombre compPersona=new OrdenarPorNombre();
        /* Comparator<Persona> compPersona = new Comparator<>() {
@@ -76,6 +81,7 @@ public class Asociacion {
         Collections.sort(listaPersona, compPersona);
     }
 
+    //Metodo que muestra los datos de la lista
     public String mostrarLista() {
         String cadena = "";
         for (Persona persona : listaPersona) {

@@ -110,42 +110,50 @@ public class ValidaDatos {
     public static String validarDni() {
         boolean valido = false;
         String dni = "";
-        char letra;
-        String digitos;
         while (!valido) {
             try {
-                System.out.println("Introduce su dni: ");
-                dni = new Scanner(System.in).nextLine();
-                if (!dni.equals("")) {
-                    if (dni.length() == 9) {
-                        digitos = dni.substring(0, dni.length() - 1);
-                        letra = dni.charAt(dni.length() - 1);
-                        for (int i = 0; i < dni.length() - 1; i++) {
-                            if (Character.isDigit(digitos.charAt(i)) && Character.isLetter(letra)) {
-                                if (validarLetra(dni)) {
-                                    valido = true;
-                                } else {
-
-                                }
-                            } else {
-                            throw new Exception("Error, formato del DNI erróneo(8 números y 1 letra) ");
-                            }
-                        }
-                    } else {
-                        throw new Exception("Error la longitud debe de ser 9 caracteres");
-                    }
-                } else {
-                    throw new IOException("Error, el dni no puede ser nulo");
+                dni = introducirDNI();
+                if (validarLetra(dni)) {
+                    valido = true;
                 }
             } catch (IOException io) {
                 System.out.println(io.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+            } catch (Exception i) {
+                System.out.println(i.getMessage());
             }
         }
-        
-        if(valido){
+
+        if (valido) {
             System.out.println("DNI válido");
+        }
+        return dni;
+    }
+
+    private static String introducirDNI() throws Exception, IOException {
+        boolean valido = false;
+        String dni = "";
+        char letra;
+        String digitos;
+        while (!valido) {
+            System.out.println("Introduce su dni: ");
+            dni = new Scanner(System.in).nextLine();
+            if (!dni.equals("")) {
+                digitos = dni.substring(0, dni.length() - 1);
+                letra = dni.charAt(dni.length() - 1);
+                if (dni.length() == 9) {
+                    for (int i = 0; i < dni.length() - 1; i++) {
+                        if (Character.isDigit(digitos.charAt(i)) && Character.isLetter(letra)) {
+                            valido = true;
+                        } else {
+                            throw new Exception("Error, dni debe ser 8 dígitos y un número");
+                        }
+                    }
+                } else {
+                    throw new Exception("Error la longitud debe de ser 9 caracteres");
+                }
+            } else {
+                throw new IOException("Error, el dni no puede ser nulo");
+            }
         }
         return dni;
     }

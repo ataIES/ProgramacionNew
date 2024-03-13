@@ -67,7 +67,7 @@ public class Metodos {
     public static void mostrarResultados(ArrayList<Integer> lista) {
         int suma = calcularSuma(lista);
         double media = calcularMedia(lista);
-        System.out.println("\nLista de números");
+        System.out.println("\n---Lista de números entero---");
         for (int num : lista) {
             System.out.printf("%d\t", num);
         }

@@ -16,6 +16,7 @@ public class Ejercicio1 {
         ArrayList<Integer>lista=new ArrayList<>();
         System.out.println("---Introducción de números---");
         lista=Metodos.leeValores();
+        System.out.println("---Mostrar resultados---");
         Metodos.mostrarResultados(lista);
     }
 }

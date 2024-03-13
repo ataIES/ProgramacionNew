@@ -48,7 +48,9 @@ public class Metodos {
     //Metodo que calcula la media de los elementos de la lista
     public static double calcularMedia(ArrayList<Integer> lista) {
         int totalNumeros = lista.size();
-        return calcularSuma(lista) / totalNumeros;
+        int media = calcularSuma(lista) / totalNumeros;
+
+        return media;
     }
 
     public static int numerosSuperioresMedia(ArrayList<Integer> lista, double media) {

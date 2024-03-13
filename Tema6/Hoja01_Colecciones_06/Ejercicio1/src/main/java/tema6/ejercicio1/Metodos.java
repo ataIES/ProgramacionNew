@@ -50,10 +50,11 @@ public class Metodos {
         int totalNumeros = lista.size();
         return calcularSuma(lista) / totalNumeros;
     }
-    public static int numerosSuperioresMedia(ArrayList<Integer>lista, int media){
-        int superioresMedia=0;
-        for(int num : lista){
-            if(num>media){
+
+    public static int numerosSuperioresMedia(ArrayList<Integer> lista, int media) {
+        int superioresMedia = 0;
+        for (int num : lista) {
+            if (num > media) {
                 superioresMedia++;
             }
         }
@@ -62,15 +63,15 @@ public class Metodos {
 
     //Metodo que muestra lo que contiene la lista con su suma y media;
     public static void mostrarResultados(ArrayList<Integer> lista) {
-        int suma=calcularSuma(lista);
-        int media=calcularMedia(lista);
+        int suma = calcularSuma(lista);
+        int media = calcularMedia(lista);
         System.out.println("\nLista de números");
         for (int num : lista) {
             System.out.printf("%d\t", num);
         }
         System.out.printf("\nLa suma es: %d", suma);
         System.out.printf("\nLa media es: %d", media);
-        System.out.printf("\nNúmeros superiores a la media: %d",numerosSuperioresMedia(lista,media));
+        System.out.printf("\nNúmeros superiores a la media: %d", numerosSuperioresMedia(lista, media));
     }
 
 }

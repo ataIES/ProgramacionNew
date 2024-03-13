@@ -16,9 +16,9 @@ public class Metodos {
     //Metodo que pide números y los añade a la lista -99 para dejar de añadir
     public static ArrayList<Integer> leeValores() {
         ArrayList<Integer> lista = new ArrayList<>();
-        boolean negativo = false;
+        boolean insertado = false;
         int num = 0;
-        while (!negativo) {
+        while (!insertado) {
             num = Validacion.validarNumeros();
             if (num != -99) {
                 if (lista.add(num)) {
@@ -28,7 +28,7 @@ public class Metodos {
                 }
             } else {
                 System.out.println("Fin de la insercción");
-                negativo = true;
+                insertado = true;
             }
         }
 
@@ -50,16 +50,27 @@ public class Metodos {
         int totalNumeros = lista.size();
         return calcularSuma(lista) / totalNumeros;
     }
+    public static int numerosSuperioresMedia(ArrayList<Integer>lista, int media){
+        int superioresMedia=0;
+        for(int num : lista){
+            if(num>media){
+                superioresMedia++;
+            }
+        }
+        return superioresMedia;
+    }
 
     //Metodo que muestra lo que contiene la lista con su suma y media;
-    public static void mostrarResultados(ArrayList<Integer> lista, int suma, int media) {
-        System.out.println("Lista de números");
+    public static void mostrarResultados(ArrayList<Integer> lista) {
+        int suma=calcularSuma(lista);
+        int media=calcularMedia(lista);
+        System.out.println("\nLista de números");
         for (int num : lista) {
             System.out.printf("%d\t", num);
         }
-        System.out.println("");
         System.out.printf("\nLa suma es: %d", suma);
         System.out.printf("\nLa media es: %d", media);
+        System.out.printf("\nNúmeros superiores a la media: %d",numerosSuperioresMedia(lista,media));
     }
 
 }

@@ -4,7 +4,7 @@
  */
 package tema6.ejercicio1;
 
-import java.io.IOException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

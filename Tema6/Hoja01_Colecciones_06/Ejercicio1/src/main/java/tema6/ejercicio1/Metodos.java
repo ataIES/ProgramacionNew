@@ -26,9 +26,9 @@ public class Metodos {
                 } else {
                     System.out.println("No se pudo añadir el número " + num);
                 }
-            }else{
+            } else {
                 System.out.println("Fin de la insercción");
-                negativo=true;
+                negativo = true;
             }
         }
 
@@ -50,12 +50,12 @@ public class Metodos {
         int totalNumeros = lista.size();
         return calcularSuma(lista) / totalNumeros;
     }
-    
+
     //Metodo que muestra lo que contiene la lista con su suma y media;
     public static void mostrarResultados(ArrayList<Integer> lista, int suma, int media) {
         System.out.println("Lista de números");
         for (int num : lista) {
-            System.out.printf("%d\t",num);
+            System.out.printf("%d\t", num);
         }
         System.out.println("");
         System.out.printf("\nLa suma es: %d", suma);

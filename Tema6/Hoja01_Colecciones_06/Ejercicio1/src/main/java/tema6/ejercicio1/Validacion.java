@@ -21,13 +21,7 @@ public class Validacion {
             try{
                 System.out.println("Introduce un número: ");
                 num=new Scanner(System.in).nextInt();
-                if(num>0 || num==-99){
-                    valido=true;
-                }else{
-                    throw new IOException("Error, los número negativos no son válidos");
-                }
-            }catch(IOException io){
-                System.out.println(io.getMessage());
+                valido=true;
             }catch(InputMismatchException i){
                 System.out.println("Error, has introducido caracteres");
             }

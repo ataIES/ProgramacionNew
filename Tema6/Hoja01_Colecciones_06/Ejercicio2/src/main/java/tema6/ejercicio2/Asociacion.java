@@ -88,7 +88,7 @@ public class Asociacion {
         for (Persona persona : listaPersona) {
             cadena += persona.toString();
         }
-        cadena += "\n" + cuotaAPagar(listaPersona);
+        cadena += "\nCuota: " + cuotaAPagar(listaPersona);
         return cadena;
     }
 }

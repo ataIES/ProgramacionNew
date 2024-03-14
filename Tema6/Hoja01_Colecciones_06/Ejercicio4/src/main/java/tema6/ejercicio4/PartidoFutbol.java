@@ -54,10 +54,6 @@ public class PartidoFutbol {
         this.golesVisitante = golesVisitante;
     }
 
-  
-
-  
-
     public String mostrarPartido() {
         String cadena = "\n" + getEquipoLocal()+" "+getGolesLocal()+" - "+getGolesVisitante()+" "+getEquipoVisitante();
 

@@ -59,8 +59,7 @@ public class PartidoFutbol {
   
 
     public String mostrarPartido() {
-        String cadena = "\n---Partido---\n" + getEquipoLocal() + " vs" + getEquipoVisitante()
-                + "\n" + getGolesLocal() + "\t " + getGolesVisitante();
+        String cadena = "\n" + getEquipoLocal()+" "+getGolesLocal()+" - "+getGolesVisitante()+" "+getEquipoVisitante();
 
         return cadena;
     }

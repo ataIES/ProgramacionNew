@@ -29,6 +29,7 @@ public class Jornada {
         this.idJornada = idJornada;
     }
 
+    //Metodo que inserta partidos
     public void insertarPartidos() {
         PartidoFutbol p = new PartidoFutbol();
         if (listaJornada.add(p)) {
@@ -38,25 +39,29 @@ public class Jornada {
         }
     }
 
+    //Metodo que muestra el número de partidos
     public int numeroPartidos() {
         return listaJornada.size();
     }
 
+    //Metodo que muestra la jornada
     public String mostrarJornada() {
         String cadena = "";
+        System.out.print("---Jornada "+idJornada+" ---");
         for (PartidoFutbol p : listaJornada) {
             cadena += p.mostrarPartido();
         }
         return cadena;
     }
-    public void eliminarPartidoEmpate(){
-        Iterator<PartidoFutbol>it=listaJornada.iterator();
-        int golesLocal=0, golesVisitante=0;
-        while(it.hasNext()){
-            PartidoFutbol partido=it.next();
-            golesLocal=partido.getGolesLocal();
-            golesVisitante=partido.getGolesVisitante();
-            if()
+
+    //Metodo que elimina los partidos que no sean empate
+    public void eliminarPartidoEmpate() {
+        Iterator<PartidoFutbol> it = listaJornada.iterator();
+        while (it.hasNext()) {
+            PartidoFutbol partido = it.next();
+            if (partido.getGolesLocal() != partido.getGolesVisitante()) {
+                it.remove();
+            }
         }
     }
 }

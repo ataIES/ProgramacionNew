@@ -48,19 +48,20 @@ public class Asociacion {
     }
 
     //Metodo que calcua la cuota de una persona
-    public double cuotaAPagar(Persona persona) {
-        final double CUOTA;
-        int edad = persona.edad();
-        if (edad >= 5 && edad <= 10) {
-            CUOTA = 1;
-        } else if (edad >= 11 && edad <= 17) {
-            CUOTA = 2.5;
-        } else if (edad >= 18) {
-            CUOTA = 3.5;
-        } else {
-            CUOTA = 0;
+    public double cuotaAPagar(ArrayList<Persona> lista) {
+        double cuota = 0;
+        int edad = 0;
+        for (Persona p : lista) {
+            edad = p.edad();
+            if (edad >= 5 && edad <= 10) {
+                cuota += 1;
+            } else if (edad >= 11 && edad <= 17) {
+                cuota += 2.5;
+            } else if (edad >= 18) {
+                cuota += 3.5;
+            }
         }
-        return CUOTA;
+        return cuota;
     }
 
     //Metodo ordenar por DNI
@@ -71,8 +72,8 @@ public class Asociacion {
 
     //Metodo que ordena por nombre
     public void ordenarPorNombre() {
-        OrdenarPorNombre compPersona=new OrdenarPorNombre();
-       /* Comparator<Persona> compPersona = new Comparator<>() {
+        OrdenarPorNombre compPersona = new OrdenarPorNombre();
+        /* Comparator<Persona> compPersona = new Comparator<>() {
             @Override
             public int compare(Persona o1, Persona o2) {
                 return o1.getNombre().compareToIgnoreCase(o2.getNombre());
@@ -85,8 +86,9 @@ public class Asociacion {
     public String mostrarLista() {
         String cadena = "";
         for (Persona persona : listaPersona) {
-            cadena += persona.toString() + "\nCuota: " + cuotaAPagar(persona) + "€\n";
+            cadena += persona.toString();
         }
+        cadena += "\n" + cuotaAPagar(listaPersona);
         return cadena;
     }
 }

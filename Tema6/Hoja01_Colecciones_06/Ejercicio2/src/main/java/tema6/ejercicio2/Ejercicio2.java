@@ -18,9 +18,10 @@ public class Ejercicio2 {
         asociacion.insertarPersona();
         asociacion.insertarPersona();
         asociacion.insertarPersona();
+        asociacion.insertarPersona();
         
         
-        System.out.println("---BUSCAR EL DNI 72350548T---");
+        System.out.println("---Buscar un dni---");
         String dni = new Scanner(System.in).nextLine();
         asociacion.buscarPorDNI(dni);
         System.out.println("---Mostrar lista---");

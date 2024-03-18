@@ -17,7 +17,7 @@ public class Persona implements Comparable<Persona> {
     public Persona() {
         this.nombre = ValidaDatos.validaNombre("Introduce su nombre: ");
         this.apellido = ValidaDatos.validaNombre("Introduce su apellido: ");
-        this.dni = ValidaDatos.validarDni();
+        this.dni = ValidaDatos.validarDni("Introduce el dni: ");
     }
 
     public String getNombre() {
@@ -46,7 +46,7 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public String toString() {
-        return "\nNombre: " + getNombre() + " " + getApellido() + " DNI: " + getDni();
+        return "Nombre: " + getNombre() + " " + getApellido() + " DNI: " + getDni();
     }
 
     @Override

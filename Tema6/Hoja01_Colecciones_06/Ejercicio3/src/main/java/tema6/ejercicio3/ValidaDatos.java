@@ -22,7 +22,14 @@ public class ValidaDatos {
                 nombre = new Scanner(System.in).nextLine();
                 if (!nombre.equals("")) {
                     if (nombre.length() >= 3) {
-                        valido = true;
+                        for (int i = 0; i < nombre.length(); i++) {
+                            if (!Character.isDigit(nombre.charAt(i))) {
+                                valido = true;
+                            } else {
+                                throw new ExcepcionPersonalizada("Error, debe ser solo letras");
+                            }
+                        }
+
                     } else {
                         throw new ExcepcionPersonalizada("Error, debe contener más de 3 letras");
                     }
@@ -38,12 +45,12 @@ public class ValidaDatos {
         return nombre;
     }
 
-    public static String validarDni() {
+    public static String validarDni(String mensaje) {
         boolean valido = false;
         String dni = "";
         while (!valido) {
             try {
-                dni = introducirDNI();
+                dni = introducirDNI(mensaje);
                 if (validarLetra(dni)) {
                     valido = true;
                 }
@@ -60,13 +67,13 @@ public class ValidaDatos {
         return dni;
     }
 
-    private static String introducirDNI() throws ExcepcionPersonalizada, IOException {
+    private static String introducirDNI(String mensaje) throws ExcepcionPersonalizada, IOException {
         boolean valido = false;
         String dni = "";
         char letra;
         String digitos;
         while (!valido) {
-            System.out.println("Introduce su dni: ");
+            System.out.println(mensaje);
             dni = new Scanner(System.in).nextLine();
             if (!dni.equals("")) {
                 digitos = dni.substring(0, dni.length() - 1);

@@ -89,7 +89,7 @@ public class Agenda {
         Iterator<Persona> it = agenda.iterator();
         while (it.hasNext()) {
             personaux = it.next();
-            if (personaux.getDni().equals(dni)) {
+            if (personaux.getDni().equals(dni) && !encontrado) {
                 encontrado = true;
                 personaux.setNombre(ValidaDatos.validaNombre("Introduce su nuevo nombre: "));
                 personaux.setApellido(ValidaDatos.validaNombre("Introduce su nuevo apellido: "));

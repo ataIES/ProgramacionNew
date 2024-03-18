@@ -6,7 +6,6 @@ package tema6.ejercicio3;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 /**
  *
@@ -20,6 +19,7 @@ public class Agenda {
         this.agenda = new ArrayList<>();
     }
 
+    //Metodo que inserta una persona
     public void insertarPersona(Persona p) {
         if (agenda.add(p)) {
             System.out.println(p.getNombre() + " " + p.getApellido() + " añadido correctamente");
@@ -29,22 +29,47 @@ public class Agenda {
 
     }
 
-    public void eliminarPersona(String dni) {
-        boolean borrado = false;
-        for (Persona persona : agenda) {
-            if (persona.getDni().equalsIgnoreCase(dni) && !borrado) {
-                if (agenda.remove(persona)) {
-                    borrado = true;
-                }
+    //Metodo que buscará por dni
+    public Persona buscarPorDni(String dni) {
+        Persona result = null;
+        boolean encontrado = false;
+
+        for (Persona p : agenda) {
+            if (p.getDni().equalsIgnoreCase(dni) && !encontrado) {
+                encontrado = true;
+                result = p;
             }
         }
-        if (borrado) {
-            System.out.println("Persona con dni " + dni + " borrada correctamente");
-        } else {
-            System.out.println("Error, no se pudo borrar a la persona con dni " + dni);
+        return result;
+    }
+
+    
+    //Metodo que eliminará una persona por dni
+    public void eliminarPersona(String dni) {
+        Persona personaux = buscarPorDni(dni);
+        boolean borrado = false;
+        try {
+            if (personaux != null) {
+                if (agenda.remove(personaux)) {
+                    borrado = true;
+                }
+            } else {
+                throw new NullPointerException("Error, la persona con dni " + dni + " no existe");
+            }
+
+            if (borrado) {
+                System.out.println("Persona con dni " + dni + " borrada correctamente");
+            } else {
+                throw new ExcepcionPersonalizada("Error, no se pudo borrar a la persona con dni " + dni);
+            }
+        } catch (NullPointerException n) {
+            System.out.println(n.getMessage());
+        } catch (ExcepcionPersonalizada e) {
+            System.out.println(e.getMessage());
         }
     }
 
+    //Metodo que muestra los datos de la agenda ordenada por nombre y apellidos
     public String mostrarAgenda() {
         String cadena = "";
         Collections.sort(agenda);
@@ -55,37 +80,34 @@ public class Agenda {
         return cadena;
     }
 
+    //Metodo que mostrará los datos de una persona por dni
     public void mostrarPersonaPorDni(String dni) {
-        boolean encontrado = false;
-        Persona personaux = null;
-        Iterator<Persona> it = agenda.iterator();
-        while (it.hasNext()) {
-            personaux = it.next();
-            if (personaux.getDni().equals(dni) && !encontrado) {
-                encontrado = true;
+        Persona personaux = buscarPorDni(dni);
+        try {
+            if (personaux != null) {
                 System.out.println(personaux.toString());
+            } else {
+                throw new NullPointerException("Error, la persona con dni " + dni + " no existe");
             }
+        } catch (NullPointerException n) {
+            System.out.println(n.getMessage());
         }
-        if (!encontrado) {
-            System.out.println("Error, no existe la persona con dni " + dni);
-        }
+
     }
 
+    //Metodo que modificará los datos de una persona por dni
     public void modificarPersona(String dni) {
-        Persona personaux = null;
-        boolean encontrado = false;
-        Iterator<Persona> it = agenda.iterator();
-        while (it.hasNext()) {
-            personaux = it.next();
-            if (personaux.getDni().equals(dni) && !encontrado) {
-                encontrado = true;
-                personaux.setNombre(ValidaDatos.validaNombre("Introduce su nuevo nombre: "));
-                personaux.setApellido(ValidaDatos.validaNombre("Introduce su nuevo apellido: "));
-                personaux.setDni(ValidaDatos.validarDni("Introduce su nuevo dni: "));
+        Persona personaux = buscarPorDni(dni);
+        try {
+            if (personaux != null) {
+                personaux.setNombre(ValidaDatos.validaNombre("Introduce el nuevo nombre: "));
+                personaux.setApellido(ValidaDatos.validaNombre("Introduce los nuevos apellidos: "));
+                personaux.setDni(ValidaDatos.validarDni("Introduce el nuevo dni: "));
+            } else {
+                throw new NullPointerException("Error, la persona con dni " + dni + " no existe");
             }
-        }
-        if (!encontrado) {
-            System.out.println("Error, no existe la persona con dni " + dni + " en la agenda");
+        } catch (NullPointerException n) {
+            System.out.println(n.getMessage());
         }
     }
 }

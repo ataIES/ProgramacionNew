@@ -49,6 +49,7 @@ public class Persona implements Comparable<Persona> {
         return "Nombre: " + getNombre() + " " + getApellido() + " DNI: " + getDni();
     }
 
+    //Metodo que ordenará por nombre y por apellido
     @Override
     public int compareTo(Persona o) {
         int compNombre = this.getNombre().compareToIgnoreCase(o.getNombre());

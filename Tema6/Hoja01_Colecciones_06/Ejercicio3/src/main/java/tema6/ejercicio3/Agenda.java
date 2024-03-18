@@ -7,7 +7,6 @@ package tema6.ejercicio3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.Scanner;
 
 /**
  *
@@ -33,16 +32,16 @@ public class Agenda {
     public void eliminarPersona(String dni) {
         boolean borrado = false;
         for (Persona persona : agenda) {
-            if (persona.getDni().equals(dni) && !borrado) {
+            if (persona.getDni().equalsIgnoreCase(dni) && !borrado) {
                 if (agenda.remove(persona)) {
                     borrado = true;
                 }
             }
         }
-        if (!borrado) {
-            System.out.println("Persona con dni " + dni + " borrado correctamente");
+        if (borrado) {
+            System.out.println("Persona con dni " + dni + " borrada correctamente");
         } else {
-            System.out.println("No se pudo borrar a la persona con dni " + dni);
+            System.out.println("Error, no se pudo borrar a la persona con dni " + dni);
         }
     }
 
@@ -56,30 +55,19 @@ public class Agenda {
         return cadena;
     }
 
-    private Persona buscarPersona(String dni) {
-        Persona personaux = null;
+    public void mostrarPersonaPorDni(String dni) {
         boolean encontrado = false;
+        Persona personaux = null;
         Iterator<Persona> it = agenda.iterator();
         while (it.hasNext()) {
             personaux = it.next();
-            if (personaux.getDni().equals(dni)) {
+            if (personaux.getDni().equals(dni) && !encontrado) {
                 encontrado = true;
-
+                System.out.println(personaux.toString());
             }
         }
-        return personaux;
-    }
-
-    public void mostrarPersonaPorDni(String dni) {
-        try {
-            Persona p1 = buscarPersona(dni);
-            if (p1 != null) {
-                System.out.println(p1.toString());
-            } else {
-                throw new NullPointerException("No existe ninguna persona con el dni " + dni);
-            }
-        } catch (NullPointerException n) {
-            System.out.println(n.getMessage());
+        if (!encontrado) {
+            System.out.println("Error, no existe la persona con dni " + dni);
         }
     }
 

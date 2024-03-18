@@ -11,10 +11,9 @@ import java.util.Scanner;
  * @author atres
  */
 public class Ejercicio3 {
-    
+
     public static void main(String[] args) {
         int opc = 0;
-        boolean salir = false;
         Agenda agenda1 = new Agenda();
         do {
             menu();
@@ -25,34 +24,36 @@ public class Ejercicio3 {
                     agenda1.insertarPersona(p);
                 }
                 case 2 -> {
-                    String dni = ValidaDatos.validarDni("Introduce el dni a borrar: ");
+                    System.out.println("Introduce un dni a buscar: ");
+                    String dni = new Scanner(System.in).nextLine();
                     agenda1.eliminarPersona(dni);
                 }
                 case 3 ->
                     System.out.println(agenda1.mostrarAgenda());
-                
+
                 case 4 -> {
-                    
-                    String dni = ValidaDatos.validarDni("Introduce el dni a buscar: ");
+                    System.out.println("Introduce un dni a buscar: ");
+                    String dni = new Scanner(System.in).nextLine();
+
                     agenda1.mostrarPersonaPorDni(dni);
                 }
                 case 5 -> {
-                    
-                    String dni = ValidaDatos.validarDni("Introduce el dni a modificar");
+                    System.out.println("Introduce un dni a modificar: ");
+                    String dni = new Scanner(System.in).nextLine();
                     agenda1.modificarPersona(dni);
                 }
                 case 6 ->
                     System.out.println("Hasta Luego!!!");
-                
+
                 default ->
                     System.out.println("Error, opción incorrecta");
             }
-        } while (!salir);
-        
+        } while (opc != 6);
+
     }
-    
+
     public static void menu() {
-        
+
         System.out.println(" ---MENÚ DE LA AGENDA---");
         System.out.println(" \t1.Insertar contactos");
         System.out.println("\t2.Borrar una persona por dni");

@@ -51,6 +51,7 @@ public class Curso {
     
     public String mostrarCurso(){
         String cadena="";
+        
         return cadena;
     }
 }

@@ -11,7 +11,18 @@ package tema6.ejercicio1;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-      String descripcion=Teclado.validarDescripcion("Introduce una descripcion: ");
-      
+      Academia a=new Academia();
+      Curso curso1=new Curso();
+      Curso curso2=new Curso();
+      Curso curso3=new Curso();
+     
+      System.out.println("---Insertando cursos---");
+      a.insertarCursoAlFinal(curso1);
+      a.insertarCursoAlFinal(curso2);
+      a.insertarCurso(curso3, 1);
+
+      System.out.println("---Mostrar cursos---");
+      System.out.println(a.mostrarCurso());
+
     }
 }

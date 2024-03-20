@@ -52,6 +52,7 @@ public class Curso {
     public String mostrarCurso(){
         String cadena="";
         
+        cadena+="\n---Curso "+getCodigo()+"---"+"\nDescripción: "+getDescripcion()+"\nNúmero de Horas Cursadas: "+getnHoras();
         return cadena;
     }
 }

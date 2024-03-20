@@ -18,6 +18,7 @@ public class Teclado {
 
     //Método que valida la descripcion
     public static String validarDescripcion(String mensaje) {
+        Scanner teclado=new Scanner(System.in);
         String descripcion = "";
         boolean valido = false;
         Pattern condicion1=Pattern.compile("[a-zA-záéíóúÁÉÍÓÚ]",Pattern.UNICODE_CASE);
@@ -27,7 +28,7 @@ public class Teclado {
         while (!valido) {
             try {
                 System.out.println(mensaje);
-                descripcion = new Scanner(System.in).nextLine();
+                descripcion =teclado.nextLine();
                 matcher = condicion.matcher(descripcion);
                 matcher1=condicion1.matcher(descripcion);
                 if (matcher.find() || matcher1.find()) {
@@ -38,6 +39,7 @@ public class Teclado {
                 }
             } catch (PatternSyntaxException p) {
                 System.out.println("Error, formato erróneo");
+                teclado.close();
             }
         }
         return descripcion;
@@ -45,12 +47,13 @@ public class Teclado {
 
     //Metodo que valida el número de horas
     public static int validarNúmeroHoras(String mensaje) {
+        Scanner teclado=new Scanner(System.in);
         int nHoras = 0;
         boolean valido = false;
         while (!valido) {
             try {
                 System.out.println(mensaje);
-                nHoras = new Scanner(System.in).nextInt();
+                nHoras = teclado.nextInt();
                 if (nHoras > 0) {
                     valido = true;
                 } else {
@@ -58,8 +61,10 @@ public class Teclado {
                 }
             } catch (ExcepcionPersonalizada e) {
                 System.out.println(e.getMessage());
+                teclado.close();
             } catch (InputMismatchException i) {
                 System.out.println("Error, solo admite número enteros");
+                teclado.close();
             }
         }
         return nHoras;

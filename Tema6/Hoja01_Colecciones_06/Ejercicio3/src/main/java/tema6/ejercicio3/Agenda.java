@@ -43,7 +43,6 @@ public class Agenda {
         return result;
     }
 
-    
     //Metodo que eliminará una persona por dni
     public void eliminarPersona(String dni) {
         Persona personaux = buscarPorDni(dni);

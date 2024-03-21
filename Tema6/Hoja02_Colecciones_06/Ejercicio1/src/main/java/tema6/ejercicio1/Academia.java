@@ -1,49 +1,51 @@
 package tema6.ejercicio1;
 
 import java.util.LinkedList;
-import java.util.Iterator;
 
 public class Academia {
+    
     private LinkedList<Curso> listaCursos;
-
+    
     public Academia() {
         this.listaCursos = new LinkedList<>();
     }
-
+    
     public void insertarCursoAlFinal(Curso c) {
+        int pos =1;
         listaCursos.addLast(c);
-        c.setCodigo(listaCursos.lastIndexOf(c));
+        pos+= listaCursos.indexOf(c);
+        listaCursos.getLast().setCodigo(pos);
+        
     }
-
+    
     public void insertarCurso(Curso c, int posicion) {
-        Curso cursoaux=listaCursos.get(posicion);
-        try{
-            if(cursoaux==null){
+        Curso cursoaux = listaCursos.get(posicion);
+        try {
+            if (cursoaux == null) {
                 c.setCodigo(posicion);
                 listaCursos.add(posicion, c);
-            }else{
+            } else {
                 throw new ExcepcionPersonalizada("Error, ya existe un curso en esa posición.");
             }
-        }catch(ExcepcionPersonalizada e){
+        } catch (ExcepcionPersonalizada e) {
             System.out.println(e.getMessage());
-        }catch(IndexOutOfBoundsException a){
-            System.out.println("Error");
+        } catch (IndexOutOfBoundsException a) {
+            System.out.println("Error, posición inexistente");
         }
     }
-
+    
     public Curso buscarCurso(int codigo) {
         Curso cursoaux = null;
         boolean encontrado = false;
-        Iterator<Curso> it = listaCursos.iterator();
-        while (it.hasNext()) {
-            cursoaux = it.next();
-            if (cursoaux.getCodigo() == codigo && !encontrado) {
+        for (Curso curso : listaCursos) {
+            if (curso.getCodigo() == codigo && !encontrado) {
+                cursoaux = curso;
                 encontrado = true;
             }
         }
         return cursoaux;
     }
-
+    
     public void borrarCurso(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
         try {
@@ -62,7 +64,7 @@ public class Academia {
             System.out.println(e.getMessage());
         }
     }
-
+    
     public void modificarHoras(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
         try {
@@ -75,10 +77,11 @@ public class Academia {
             System.out.println(n.getMessage());
         }
     }
-    public String mostrarCurso(){
-        String cadena="";
-        for(Curso cursoaux:listaCursos){
-            cadena+=cursoaux.mostrarCurso();
+    
+    public String mostrarCurso() {
+        String cadena = "";
+        for (Curso cursoaux : listaCursos) {
+            cadena += cursoaux.mostrarCurso();
         }
         return cadena;
     }

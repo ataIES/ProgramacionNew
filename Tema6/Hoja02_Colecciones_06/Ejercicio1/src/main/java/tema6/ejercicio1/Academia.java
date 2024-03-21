@@ -10,6 +10,7 @@ public class Academia {
         this.listaCursos = new LinkedList<>();
     }
     
+    //Metodo que inserta un curso al final
     public void insertarCursoAlFinal(Curso c) {
         int pos =1;
         listaCursos.addLast(c);
@@ -18,6 +19,8 @@ public class Academia {
         
     }
     
+    
+    //Metodo que inserto un curso en una posicion cualquiera
     public void insertarCurso(Curso c, int posicion) {
         Curso cursoaux = listaCursos.get(posicion);
         try {
@@ -34,6 +37,8 @@ public class Academia {
         }
     }
     
+    
+    //Metodo que busca un curso por codigo
     public Curso buscarCurso(int codigo) {
         Curso cursoaux = null;
         boolean encontrado = false;
@@ -46,6 +51,7 @@ public class Academia {
         return cursoaux;
     }
     
+    //Metodo que borra un curso mediante por codigo
     public void borrarCurso(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
         try {
@@ -65,6 +71,8 @@ public class Academia {
         }
     }
     
+    
+    //Metodo que modifica las horas mediante el código
     public void modificarHoras(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
         try {
@@ -78,6 +86,7 @@ public class Academia {
         }
     }
     
+    //Muestra el curso
     public String mostrarCurso() {
         String cadena = "";
         for (Curso cursoaux : listaCursos) {

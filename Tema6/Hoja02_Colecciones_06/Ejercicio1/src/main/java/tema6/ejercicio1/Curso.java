@@ -13,6 +13,7 @@ public class Curso {
     private String descripcion;
     private int nHoras;
     
+    //Constructor que pide por teclado la descripcion y el número de horas
     public Curso(){
         this.codigo=0;
         this.descripcion=Teclado.validarDescripcion("Introduce su descripcion: ");
@@ -48,7 +49,8 @@ public class Curso {
     public void setnHoras(int nHoras) {
         this.nHoras = nHoras;
     }
-    
+   
+    //Metodo que muestra el curso
     public String mostrarCurso(){
         String cadena="";
         

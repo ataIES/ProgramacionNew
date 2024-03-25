@@ -34,11 +34,7 @@ public class Ejercicio1 {
                 }
 
                 case 2 -> {
-                    System.out.println("Insertando un curso en cualquier posición...");
-                    Curso curso = new Curso();
-                    System.out.println("Introduce la posición donde se insertará: ");
-                    int pos = teclado.nextInt();
-                    academia1.insertarCurso(curso, pos);
+                    insertarCurso(academia1);
                 }
 
                 case 3 -> {
@@ -68,5 +64,24 @@ public class Ejercicio1 {
             }
         } while (opc != 6);
 
+    }
+
+    public static void insertarCurso(Academia a) {
+        int nCursos = a.getListaCursos().size();
+        int pos = 0;
+        try {
+            Scanner teclado = new Scanner(System.in);
+            System.out.println("Insertando un curso en cualquier posición...");
+            Curso curso = new Curso();
+            System.out.println("Introduce la posición donde se insertará: ");
+            pos = teclado.nextInt();
+            if (pos <= nCursos) {
+                a.insertarCurso(curso, pos-1);
+            } else {
+                throw new IndexOutOfBoundsException("Error, la posición excede con el número de cursos");
+            }
+        } catch (IndexOutOfBoundsException i) {
+            System.out.println(i.getMessage());
+        } 
     }
 }

@@ -10,34 +10,24 @@ public class Academia {
         this.listaCursos = new LinkedList<>();
     }
     
+    public LinkedList<Curso> getListaCursos() {
+        return listaCursos;
+    }
+
     //Metodo que inserta un curso al final
     public void insertarCursoAlFinal(Curso c) {
-        int pos =1;
+        int pos = 1;
         listaCursos.addLast(c);
-        pos+= listaCursos.indexOf(c);
+        pos += listaCursos.indexOf(c);
         listaCursos.getLast().setCodigo(pos);
         
     }
-    
-    
+
     //Metodo que inserto un curso en una posicion cualquiera
     public void insertarCurso(Curso c, int posicion) {
-        Curso cursoaux = listaCursos.get(posicion);
-        try {
-            if (cursoaux == null) {
-                c.setCodigo(posicion);
-                listaCursos.add(posicion, c);
-            } else {
-                throw new ExcepcionPersonalizada("Error, ya existe un curso en esa posición.");
-            }
-        } catch (ExcepcionPersonalizada e) {
-            System.out.println(e.getMessage());
-        } catch (IndexOutOfBoundsException a) {
-            System.out.println("Error, posición inexistente");
-        }
+        listaCursos.add(posicion, c);
     }
-    
-    
+
     //Metodo que busca un curso por codigo
     public Curso buscarCurso(int codigo) {
         Curso cursoaux = null;
@@ -50,7 +40,7 @@ public class Academia {
         }
         return cursoaux;
     }
-    
+
     //Metodo que borra un curso mediante por codigo
     public void borrarCurso(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
@@ -70,8 +60,7 @@ public class Academia {
             System.out.println(e.getMessage());
         }
     }
-    
-    
+
     //Metodo que modifica las horas mediante el código
     public void modificarHoras(int codigo) {
         Curso cursoaux = buscarCurso(codigo);
@@ -85,7 +74,7 @@ public class Academia {
             System.out.println(n.getMessage());
         }
     }
-    
+
     //Muestra el curso
     public String mostrarCurso() {
         String cadena = "";

@@ -19,7 +19,6 @@ public class Taller {
     private Queue<FichaVehiculo> reparados;
     private Queue<FichaVehiculo> finalizados;
 
-    
     //Constructor por defecto
     public Taller() {
         enEspera = new LinkedList<>();
@@ -27,7 +26,6 @@ public class Taller {
         finalizados = new LinkedList<>();
     }
 
-    
     //Metodo que inserta un vehiculo a la lista enEspera
     public void insertarVehiculo() {
         FichaVehiculo vehiculo = new FichaVehiculo();
@@ -39,17 +37,17 @@ public class Taller {
         }
     }
 
-    
     //Metodo que reparar un vehiculo y elimina de la lista enEspera
     public void repararVehiculo(String matricula) {
-        FichaVehiculo vehiculo = buscarVehiculoEnEspera(matricula);
+        FichaVehiculo vehiculo = buscarVehiculo(matricula, enEspera);
         LocalDateTime fechaReparado = null;
         try {
             if (vehiculo != null) {
-                fechaReparado = vehiculo.fechaMayor(vehiculo.getFechaEntrada(),"Introduciendo al fecha de reparación...");
+                fechaReparado = vehiculo.fechaMayor(vehiculo.getFechaEntrada(), "Introduciendo al fecha de reparación...");
                 if (reparados.add(vehiculo)) {
                     vehiculo.setFechaReparacion(fechaReparado);
-                    eliminarVehiculoEnEspera(vehiculo);
+                    eliminarVehiculo(vehiculo, enEspera);
+                    System.out.println("Vehiculo " + matricula + " reparadp");
                 } else {
                     throw new ExcepcionPersonalizada("Error, no se pudo añadir el vehiculo " + matricula);
                 }
@@ -63,17 +61,17 @@ public class Taller {
         }
     }
 
-    
     //Metodo que da salida un vehiculo y elimina de la lista reparados
     public void darSalidaVehiculo(String matricula) {
-        FichaVehiculo vehiculo = buscarVehiculoReparado(matricula);
+        FichaVehiculo vehiculo = buscarVehiculo(matricula, reparados);
         LocalDateTime fechaSalida = null;
         try {
             if (vehiculo != null) {
-                fechaSalida=vehiculo.fechaMayor(vehiculo.getFechaReparacion(),"Introduciendo al fecha de salida...");
+                fechaSalida = vehiculo.fechaMayor(vehiculo.getFechaReparacion(), "Introduciendo al fecha de salida...");
                 if (finalizados.add(vehiculo)) {
                     vehiculo.setFechaSalida(fechaSalida);
-                    eliminarVehiculoReparado(vehiculo);
+                    eliminarVehiculo(vehiculo, reparados);
+                    System.out.println("Vehiculo "+matricula+" finalizado");
                 } else {
                     throw new ExcepcionPersonalizada("Error, no se pudo añadir el vehiculo " + matricula);
                 }
@@ -87,7 +85,6 @@ public class Taller {
         }
     }
 
-    
     //Metodos que muestra el taller
     public String mostrarEstado() {
         String cadena = "";
@@ -98,7 +95,6 @@ public class Taller {
         return cadena;
     }
 
-    
     //Metodo que muestra la lista enEspera
     private String mostrarEnEspera() {
         String cadena = "";
@@ -108,7 +104,6 @@ public class Taller {
         return cadena;
     }
 
-    
     //Metodo que muestra la lista reparados
     private String mostrarReparados() {
         String cadena = "";
@@ -118,7 +113,6 @@ public class Taller {
         return cadena;
     }
 
-    
     //Metodo que muestra la lista finalizados
     private String mostrarFinalizados() {
         String cadena = "";
@@ -128,46 +122,24 @@ public class Taller {
         return cadena;
     }
 
-    
-    //Metodo que elimina un vehiculo de la lista enEspera
-    private void eliminarVehiculoEnEspera(FichaVehiculo vehiculo) throws ExcepcionPersonalizada {
+    //Metodo que elimina un vehiculo en una lista
+    private void eliminarVehiculo(FichaVehiculo vehiculo, Queue<FichaVehiculo> lista) throws ExcepcionPersonalizada {
         String matricula = vehiculo.getMatricula();
         boolean borrado = false;
-        if (enEspera.remove(vehiculo)) {
+        if (lista.remove(vehiculo)) {
             borrado = true;
         }
 
-        if (borrado) {
-            System.out.println("Vehiculo " + matricula + " borrado correctamente");
-        } else {
+        if (!borrado) {
             throw new ExcepcionPersonalizada("Error, no se pudo borrar el vehiculo " + matricula);
         }
-
     }
 
-    
-    //Metodo que elimina un vehiculo de la lista reparados
-    private void eliminarVehiculoReparado(FichaVehiculo vehiculo) throws ExcepcionPersonalizada {
-        String matricula = vehiculo.getMatricula();
-        boolean borrado = false;
-        if (reparados.remove(vehiculo)) {
-            borrado = true;
-        }
-
-        if (borrado) {
-            System.out.println("Vehiculo " + matricula + " borrado correctamente");
-        } else {
-            throw new ExcepcionPersonalizada("Error, no se pudo borrar el vehiculo " + matricula);
-        }
-
-    }
-
-    
-    //Metodo que busca un vehiculo en la lista enEspera
-    private FichaVehiculo buscarVehiculoEnEspera(String matricula) {
+//Metodo que busca un vehiculo en una lista
+    private FichaVehiculo buscarVehiculo(String matricula, Queue<FichaVehiculo> lista) {
         FichaVehiculo vehiculo = null;
         boolean encontrado = false;
-        for (FichaVehiculo f : enEspera) {
+        for (FichaVehiculo f : lista) {
             if (f.getMatricula().equalsIgnoreCase(matricula) && !encontrado) {
                 encontrado = true;
                 vehiculo = f;
@@ -176,17 +148,4 @@ public class Taller {
         return vehiculo;
     }
 
-    
-    //Metodo que busca un vehiculo en la lista reparados
-    private FichaVehiculo buscarVehiculoReparado(String matricula) {
-        FichaVehiculo vehiculo = null;
-        boolean encontrado = false;
-        for (FichaVehiculo f : reparados) {
-            if (f.getMatricula().equalsIgnoreCase(matricula) && !encontrado) {
-                encontrado = true;
-                vehiculo = f;
-            }
-        }
-        return vehiculo;
-    }
 }

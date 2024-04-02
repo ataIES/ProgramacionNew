@@ -19,6 +19,7 @@ import java.util.regex.PatternSyntaxException;
  */
 public class Teclado {
 
+    //Metodo que valida el código para que solo valide 4 caracteres
     public static String introducirCodigo(String mensaje) {
         Scanner teclado = new Scanner(System.in);
         boolean valido = false;
@@ -42,6 +43,7 @@ public class Teclado {
         return codigo;
     }
 
+    //Metodo qye valida el origen  y que permita entre 1 a 15 letras
     public static String introducirOrigen(String mensaje) {
         Scanner teclado = new Scanner(System.in);
         boolean valido = false;

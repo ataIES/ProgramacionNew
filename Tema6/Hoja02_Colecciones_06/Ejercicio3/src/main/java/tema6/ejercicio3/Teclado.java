@@ -186,6 +186,7 @@ public class Teclado {
         if ((anio % 4 == 0) || ((anio % 100 == 0) && (anio % 400 != 0))) {
             bisiesto = true;
         }
+        
         return bisiesto;
     }
     //Metodo que formatea la fecha

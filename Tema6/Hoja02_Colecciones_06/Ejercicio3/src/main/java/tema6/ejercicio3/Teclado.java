@@ -6,7 +6,6 @@ package tema6.ejercicio3;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;

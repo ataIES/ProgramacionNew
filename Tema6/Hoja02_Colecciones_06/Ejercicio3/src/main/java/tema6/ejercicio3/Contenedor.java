@@ -4,9 +4,7 @@
  */
 package tema6.ejercicio3;
 
-import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;

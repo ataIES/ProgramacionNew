@@ -1,4 +1,4 @@
-<center><h1>Apuntes Adrián Tresgallo</h1></center>
+ # Apuntes Adrián Tresgallo
 ---
    # **ÍNDICE**
    1. ELEMENTOS DE UN PROGRAMA INFROMÁTICO

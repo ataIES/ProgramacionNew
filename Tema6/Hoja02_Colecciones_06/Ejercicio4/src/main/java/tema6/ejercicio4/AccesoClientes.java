@@ -73,6 +73,7 @@ public class AccesoClientes {
         for (Cliente c : llegados) {
            tiempoTotal+= Duration.between(c.getFechaLlegada(), LocalDateTime.now()).getSeconds();
         }
+        
         tiempoMedio=tiempoTotal/llegados.size();
           
         return tiempoMedio;

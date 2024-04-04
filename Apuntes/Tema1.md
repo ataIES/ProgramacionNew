@@ -32,7 +32,7 @@ Y se puede declarar más de una variable a la vez del mismo tipo
 ```java
 int dias=365, anio=23, semanas=12;
 ```
-## **Tipos de Datos**
+## ***Tipos de Datos***
 |  Tipo   | Tamaño |     Dato      |
 | ------  | ------ | ------------- |
 | Byte    |    8   |    Entero     |
@@ -43,6 +43,38 @@ int dias=365, anio=23, semanas=12;
 | Double  |   64   | Coma Flotante |
 | Boolean |   16   | Booleanos     |
 | Char    |   8    | Carácter      |
+---
+***Caracteres Especiales***
+| Caracter |    Significado   |
+| -------- | ---------------  |
+|   \b     |    Retroceso     |
+|   \t     |    Tabulador     |
+|   \n     |    Nueva Línea   |
+|   \r     | Retorno de Carro |
+|    "     | Dobles comillas  |
+|    '     | Comillas Simples |
+|    \     | Barra Inclinada  |
+
+## ***Conversión entre tipos (Casting)***
+```java
+int a;
+byte b;
+b=(byte) a;
+```
+Otro ejemplo
+```java
+byte n1=100, n2=100, n3;
+n3=(byte)(n1 * n2 / 100);
+```
+
+***Operadores***
+| Operador | Descripción |
+| -------- | ----------- |
+|   +      | Suma dos operandos |
+|   -      | Resta dos operandos |
+|   *      | Multiplica dos operandos |
+|   /      | Divide dos operandos |
+|   %      | Calcula el resto de dividir el Operador1 entre el operador2 |
 
 
 

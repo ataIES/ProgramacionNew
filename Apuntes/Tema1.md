@@ -3,4 +3,4 @@
 Los pasos a realizar son: 
 1. Abrir el entorno de netbeans
 2. Seleccionar la opción de crear un proyecto nuevo con la categoría "Java with Maven" y proyecto "Java Aplication"
-![](/Imagenes/JavaAplicattion.jpg)
+<img src="/Imagenes/Finalizar proyecto.png" alt="Imagen de unas nubes">

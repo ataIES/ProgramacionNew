@@ -9,7 +9,7 @@ Los pasos a realizar son:
 ![](/Imagenes/CreacionProyecto.png)
 
 4. Y se nos genera un código
-![](/Imagenes/Finalizar%20proyecto.png)
+![](/Imagenes/Finalizarproyecto.png)
 ---
 ## ***Variables en Java***
 Las variables son contenedores que sirven para almacenar los datos que utiliza un programa. Tienen un nombre (identificador) que solo contiene letras y números y el caracter de subrayado
@@ -24,7 +24,25 @@ tipo nombreVariable;
 int dias; // días es un número entero, sin decimales
 boolean decision; //solo puede ser true o false
 ```
-
+Se puede hacer que una variable tome un valor inicial
+```java
+int dias=365;
+```
+Y se puede declarar más de una variable a la vez del mismo tipo 
+```java
+int dias=365, anio=23, semanas=12;
+```
+## **Tipos de Datos**
+|  Tipo   | Tamaño |     Dato      |
+| ------  | ------ | ------------- |
+| Byte    |    8   |    Entero     |
+| Short   |   16   |    Entero     |
+| Int     |   32   |    Entero     |
+| Long    |   64   |    Entero     |
+| Float   |   32   | Coma Flotante |
+| Double  |   64   | Coma Flotante |
+| Boolean |   16   | Booleanos     |
+| Char    |   8    | Carácter      |
 
 
 

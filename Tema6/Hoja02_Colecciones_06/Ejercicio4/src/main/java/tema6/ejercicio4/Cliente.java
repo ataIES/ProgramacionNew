@@ -67,7 +67,7 @@ public class Cliente {
         String fechaLlegada=Teclado.formatoFecha(getFechaLlegada());
         String fechaAtencion=Teclado.formatoFecha(getFechaAtencion());
         
-        cadena=String.format("\n\t...CLIENTE... \nNombre: %s\nTeléfono: %s\nFecha de Llegada: "
+        cadena=String.format("\nNombre: %s\nTeléfono: %s\nFecha de Llegada: "
                 + "%s\nFecha de Atención: %s", getNombre(),getTlf(),fechaLlegada,fechaAtencion);
         
         return cadena;

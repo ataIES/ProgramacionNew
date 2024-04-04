@@ -23,7 +23,7 @@ public class Teclado {
     public static String introNombre(String mensaje) {
         String nombre = "";
         boolean valido = false;
-        String condApellido = "[A-ZÁÉÍÓÚ][a-záéíóú]*[\s]{1}[A-ZÁÉÍÓÚ][a-záéíóú]*";
+        String condApellido = "[A-ZÁÉÍÓÚ][a-záéíóú]*[\s]{1}+";
         Pattern patron = Pattern.compile(condApellido, Pattern.CASE_INSENSITIVE);
         Matcher matcher = null;
         while (!valido) {

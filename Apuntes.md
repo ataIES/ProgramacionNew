@@ -1,6 +1,6 @@
-# Apuntes Adrián Tresgallo
+# :Apuntes Adrián Tresgallo:
 ---
-   # **TEMA 1 ELEMENTOS DE UN PROGRAMA INFORMÁTICO**
+   # **ÍNDICE**
    1. ELEMENTOS DE UN PROGRAMA INFROMÁTICO
    2. UTILIZACIÓN DE OBJETOS Y DESARROLLO DE CLASES
        * STRINGS

@@ -5,4 +5,5 @@ Los pasos a realizar son:
 2. Seleccionar la opción de crear un proyecto nuevo con la categoría "Java with Maven" y proyecto "Java Aplication"
 ![](/Imagenes/CreacionProyecto.png)
 
-dsadasdsa
+3. Una vez seleccionado daremos nombre al proyecto y asignaremos un directorio donde se guardará el proyecto
+![](/Imagenes/Finalizar%20proyecto.png)

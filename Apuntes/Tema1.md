@@ -44,7 +44,7 @@ int dias=365, anio=23, semanas=12;
 | Boolean |   16   | Booleanos     |
 | Char    |   8    | Carácter      |
 ---
-***Caracteres Especiales***
+## ***Caracteres Especiales***
 | Caracter |    Significado   |
 | -------- | ---------------  |
 |   \b     |    Retroceso     |
@@ -67,7 +67,7 @@ byte n1=100, n2=100, n3;
 n3=(byte)(n1 * n2 / 100);
 ```
 
-***Operadores***
+## ***Operadores***
 | Operador | Descripción |
 | -------- | ----------- |
 |   +      | Suma dos operandos |

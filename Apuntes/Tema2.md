@@ -1,5 +1,5 @@
 # TEMA 2 UTILIZACIÓN DE OBJETOS Y DESARROLLO DE CLASES
-## ***Java y la programación orientada a objetos(POO)
+## ***Java y la programación orientada a objetos(POO)***
 
 Con la POO los problemas se dividen en objetos. Cada uno de ellos funcionan de forma totalmente independiente.
 

@@ -237,7 +237,6 @@ edad=teclado.nextInt();
 System.out.println("Nombre: "+nombre+"\nApellidos: "+apellido+"\nEdad: "+edad);
 ```
 ## ***Enumerados***
-
 Son una forma de declarar una variable con un conjunto restringido de valores
 ```java
 enum TamanoDeCafe{PEQUEÑO,MEDIANO,GRANDE};

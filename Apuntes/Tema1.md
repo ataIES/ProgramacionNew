@@ -96,7 +96,7 @@ System.out.println(y++)  //Imprime 5
 System.out.println(y)    //Imprime 6
 ```
 
-## ***Relacionales ***
+## ***Relacionales***
 | Operador |  Uso  |     Devuelve Verdadero   |
 |----------| ------| -------------------------|
 |     >    |  x>y  | x es mayor que y         |
@@ -110,7 +110,7 @@ System.out.println(y)    //Imprime 6
 | Operador |           Uso            |         Devuelve verdadero         |
 | -------- | -------------------------| -----------------------------------|
 | && (and) | Condicion1 && Condicion2 | Condicion1 y Condicion2 verdaderas |
-| || (or)  | Condicion1 || Condicion2 | Condicion1 o Condicion2 verdaderas |
+| ||(or)   | Condicion1||Condicion2   | Condicion1 o Condicion2 verdaderas |
 | !( not)  | !Condicion               | Condicion falsa                    |
 
 ## ***Asignación***
@@ -122,6 +122,7 @@ System.out.println(y)    //Imprime 6
 |     *=   | x*=valor | Equivalente a x=x*valor  |
 |     /=   | x/=valor | Equivalente a x=x/=valor |
 
+## ***Ternario***
 
 
 

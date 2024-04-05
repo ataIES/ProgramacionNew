@@ -10,7 +10,9 @@ Los pasos a realizar son:
 
 4. Y se nos genera un código
 ![](/Imagenes/Finalizarproyecto.png)
+
 ---
+
 ## ***Variables en Java***
 Las variables son contenedores que sirven para almacenar los datos que utiliza un programa. Tienen un nombre (identificador) que solo contiene letras y números y el caracter de subrayado
 
@@ -75,6 +77,49 @@ n3=(byte)(n1 * n2 / 100);
 |   *      | Multiplica dos operandos |
 |   /      | Divide dos operandos |
 |   %      | Calcula el resto de dividir el Operador1 entre el operador2 |
+
+---
+
+## ***Incrementales o unarios***
+| Operador | Uso |           Descripción              |             
+|    ++    | x++ |  Incrementa x en 1. Evalúa antes   |
+|    ++    | ++x |  Incrementa x en 1. Evalúa después |
+|    --    | x-- |  Decrementa x en 1. Evalúa antes   |
+|    --    | --x |  Decrementa x en 1. Evalúa después |
+
+```java
+int x=5, y=5
+System.out.println(++x); //Imprime 6
+System.out.println(x);   //Imprime 6
+System.out.println(y++)  //Imprime 5
+System.out.println(y)    //Imprime 6
+```
+
+## ***Relacionales ***
+| Operador |  Uso  |     Devuelve Verdadero   |
+|     >    |  x>y  | x es mayor que y         |
+|     >=   |  x>=y | x es mayor o igual que y |
+|     <    |  x<y  | x es menor que y         |
+|     <=   |  x<=y | x es menor o igual que y |
+|     ==   |  x==y | x es igual a y           |
+|     !=   |  x!=y | x es distinto de y       |
+
+## ***Lógicos***
+
+| Operador |           Uso            |         Devuelve verdadero         |
+| && (and) | Condicion1 && Condicion2 | Condicion1 y Condicion2 verdaderas |
+| || (or)  | Condicion1 || Condicion2 | Condicion1 o Condicion2 verdaderas |
+| !( not)  | !Condicion               | Condicion falsa                    |
+
+## ***Asignacion***
+| Operador | Uso      |       Descripcion        |
+|     =    | x=y      | Asigna a x el valor de y |
+|     +=   | x+=valor | Equivalente a x=x+valor  |
+|     -=   | x-=valor | Equivalente a x=x-valor  |
+|     *=   | x*=valor | Equivalente a x=x*valor  |
+|     /=   | x/=valor | Equivalente a x=x/=valor |
+
+
 
 
 

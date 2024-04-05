@@ -1,5 +1,6 @@
 # TEMA 1 Elementos de un Programa Informático
 ## ***Crear nuestro Primer Programa***
+
 Los pasos a realizar son: 
 1. Abrir el entorno de netbeans
 2. Seleccionar la opción de crear un proyecto nuevo con la categoría "Java with Maven" y proyecto "Java Aplication"
@@ -14,6 +15,7 @@ Los pasos a realizar son:
 ---
 
 ## ***Variables en Java***
+
 Las variables son contenedores que sirven para almacenar los datos que utiliza un programa. Tienen un nombre (identificador) que solo contiene letras y números y el caracter de subrayado
 
 ```java
@@ -35,6 +37,7 @@ Y se puede declarar más de una variable a la vez del mismo tipo
 int dias=365, anio=23, semanas=12;
 ```
 ## ***Tipos de Datos***
+
 |  Tipo   | Tamaño |     Dato      |
 | ------  | ------ | ------------- |
 | Byte    |    8   |    Entero     |
@@ -47,6 +50,7 @@ int dias=365, anio=23, semanas=12;
 | Char    |   8    | Carácter      |
 ---
 ## ***Caracteres Especiales***
+
 | Caracter |    Significado   |
 | -------- | ---------------  |
 |   \b     |    Retroceso     |
@@ -58,6 +62,7 @@ int dias=365, anio=23, semanas=12;
 |    \     | Barra Inclinada  |
 
 ## ***Conversión entre tipos (Casting)***
+
 ```java
 int a;
 byte b;
@@ -70,6 +75,7 @@ n3=(byte)(n1 * n2 / 100);
 ```
 
 ## ***Operadores***
+
 | Operador | Descripción |
 | -------- | ----------- |
 |   +      | Suma dos operandos |
@@ -81,6 +87,7 @@ n3=(byte)(n1 * n2 / 100);
 ---
 
 ## ***Incrementales o unarios***
+
 | Operador | Uso |           Descripción              | 
 | ---------| ----| -----------------------------------|            
 |    ++    | x++ |  Incrementa x en 1. Evalúa antes   |
@@ -97,6 +104,7 @@ System.out.println(y)    //Imprime 6
 ```
 
 ## ***Relacionales***
+
 | Operador |  Uso  |     Devuelve Verdadero   |
 |----------| ------| -------------------------|
 |     >    |  x>y  | x es mayor que y         |
@@ -107,13 +115,15 @@ System.out.println(y)    //Imprime 6
 |     !=   |  x!=y | x es distinto de y       |
 
 ## ***Lógicos***
+
 | Operador |           Uso            |         Devuelve verdadero         |
 | -------- | -------------------------| -----------------------------------|
 | && (and) | Condicion1 && Condicion2 | Condicion1 y Condicion2 verdaderas |
-| ||(or)   | Condicion1||Condicion2   | Condicion1 o Condicion2 verdaderas |
+| "||(or)" | "Condicion1||Condicion2" | Condicion1 o Condicion2 verdaderas |
 | !( not)  | !Condicion               | Condicion falsa                    |
 
 ## ***Asignación***
+
 | Operador | Uso      |       Descripcion        |
 | ---------| ---------| -------------------------|
 |     =    | x=y      | Asigna a x el valor de y |
@@ -123,6 +133,71 @@ System.out.println(y)    //Imprime 6
 |     /=   | x/=valor | Equivalente a x=x/=valor |
 
 ## ***Ternario***
+
+Este operador devuelve un valor que se selecciona de dos posibles. Puede tomar dos valores verdadero o falso
+```java
+expresioncondicional ? valor1 : valor2
+```
+En caso de que se devuelva verdadero, devuelve valor1, y cuando resulte false, devuelve valor2
+```java
+int num=11;
+int valorAbs=num>0?num:-num;
+
+System.out.println("El valor absoluto de "+num+" es: "+valorAbs);
+```
+## ***Constantes***
+
+Es una variable de sólo lectura. Es un valor que no puede variar (por lo tanto no es una variable). 
+Las constantes deberían en mayúsculas.
+```java
+final int MAXIMO=999999;
+```
+---
+## ***Escritura por pantalla***
+
+### ***Orden Printf***
+
+Utiliza códigos de conversión para indicar de qué tipo es el contenido a mostrar. Se caracterizan porque llevan delante el simbolo %.
+
+* %c: Escribe un carácter
+* %s: Escribe una cadena de texto
+* %d: Escribe un entero
+* %f: Escribe un número en punto flotante
+* %e: Escribe un núemro en punto flotante en notación científica
+
+```java
+System.out.printf("%,.2f\n",12345.1684);
+```
+
+### ***Lectura por Teclado***
+
+Se hace de tres formas distintas:
+1. Visualizando una caja por pantalla
+* Hay que incluir el apquete javax.swing y utilizar la clase JOptionPane:
+```java
+import javax.swing.JOptionPane;
+
+String texto; 
+int num;
+
+texto= JOptionPane.showInoutDialog("Escribe un número");
+num=Integer.parseInt(texto);
+System.out.println("Has introducido el número "+num);
+
+//Mostrando el resultado en un cuadro de diálogo
+JOptionPane.showMessageDialog(null,"Has introducio el número "+num);
+
+//Mensaje de advertencia
+JOptionPane.showMessageDialog(null, "Advertencia","Peligro",JOptionPane.Warning_Message);
+
+//Mensaje de Error
+JOptionPane.showMessageDialog(null,"Error","Fatal Error",JOptionPane.Error_Message);
+
+//Mensaje de pregunta
+JOptionPane.showMessageDialog(null,"Pregunta","Mensaje de Pregunra",JOptionPane.Question_Message);
+```
+
+ 
 
 
 

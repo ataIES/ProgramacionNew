@@ -81,7 +81,8 @@ n3=(byte)(n1 * n2 / 100);
 ---
 
 ## ***Incrementales o unarios***
-| Operador | Uso |           Descripción              |             
+| Operador | Uso |           Descripción              | 
+| ---------| ----| -----------------------------------|            
 |    ++    | x++ |  Incrementa x en 1. Evalúa antes   |
 |    ++    | ++x |  Incrementa x en 1. Evalúa después |
 |    --    | x-- |  Decrementa x en 1. Evalúa antes   |
@@ -97,6 +98,7 @@ System.out.println(y)    //Imprime 6
 
 ## ***Relacionales ***
 | Operador |  Uso  |     Devuelve Verdadero   |
+|----------| ------| -------------------------|
 |     >    |  x>y  | x es mayor que y         |
 |     >=   |  x>=y | x es mayor o igual que y |
 |     <    |  x<y  | x es menor que y         |
@@ -105,14 +107,15 @@ System.out.println(y)    //Imprime 6
 |     !=   |  x!=y | x es distinto de y       |
 
 ## ***Lógicos***
-
 | Operador |           Uso            |         Devuelve verdadero         |
+| -------- | -------------------------| -----------------------------------|
 | && (and) | Condicion1 && Condicion2 | Condicion1 y Condicion2 verdaderas |
 | || (or)  | Condicion1 || Condicion2 | Condicion1 o Condicion2 verdaderas |
 | !( not)  | !Condicion               | Condicion falsa                    |
 
-## ***Asignacion***
+## ***Asignación***
 | Operador | Uso      |       Descripcion        |
+| ---------| ---------| -------------------------|
 |     =    | x=y      | Asigna a x el valor de y |
 |     +=   | x+=valor | Equivalente a x=x+valor  |
 |     -=   | x-=valor | Equivalente a x=x-valor  |

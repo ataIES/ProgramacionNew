@@ -253,7 +253,7 @@ public class Ejemplo_Enumerados {
  
 
 
->>>>>>> refs/remotes/origin/main
+
 
 
 

@@ -100,3 +100,60 @@ Más ejemplos de creación de objetos de la clase Pez
 Pez carpa=new Pez();
 Pez grande=new Pez(50);
 Pez cometa= new Pez("Naranja","Cometa",8);
+```
+
+### ***Palabra reservada this***
+
+Su utilidad es resolver ambigüedades cuando existen atributos con el mismo identificador que alguna variable local o parámetro.
+
+```java
+public class Pez
+{
+    private int tamano;
+    public Pez(int tamano)
+    {
+        this.tamano=tamano;
+    }
+}
+```
+
+### ***Métodos get y set***
+
+Sirve para obtener o modificar los atributos de una clase
+ ```java
+  //Método para obtener el radio del circulo
+    public double getRadio() {
+        return radio;
+    }
+
+    //Método para asignar el valor de radio
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+```
+### ***Operador "."***
+
+Se utiliza para acceder a los miembros de una clase
+
+```java
+//Introduzco la radio por teclado para c3
+System.out.println("Introduce un radio para c3: ");
+radio = teclado.nextDouble();
+c3 = new Circulo(radio);
+
+//Cambiamos el radio de c1 a 5
+c1.setRadio(5);
+System.out.printf("El radio de c1 es: %.2f", c1.getRadio());
+```
+### ***Modificadores de Acceso***
+
+|           | La Misma Clase | Otra clase del mismo paquete | Subclase de otro paquete | Otra clase de otro paquete |
+|-----------| -------------- | ---------------------------- | ------------------------ | -------------------------- |
+| public    |       x        |              x               |              x           |               x            |
+| protected |       x        |              x               |              x           |                            |
+| default   |       x        |              x               |                          |                            |
+| private   |       x        |                              |                          |                            |
+
+### ***Definir Métodos***
+
+Un **método** es una llamada a una operación de un determinado objeto. La mayoría de métodos devuelven un resultado (gracias a un return). Si el método no devuelve ningún resultado se indica como tipo de datos a devolver se

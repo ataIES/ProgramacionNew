@@ -173,7 +173,7 @@ System.out.printf("%,.2f\n",12345.1684);
 
 Se hace de tres formas distintas:
 1. Visualizando una caja por pantalla
-* Hay que incluir el apquete javax.swing y utilizar la clase JOptionPane:
+* Hay que incluir el paquete javax.swing y utilizar la clase JOptionPane:
 ```java
 import javax.swing.JOptionPane;
 
@@ -194,7 +194,57 @@ JOptionPane.showMessageDialog(null, "Advertencia","Peligro",JOptionPane.Warning_
 JOptionPane.showMessageDialog(null,"Error","Fatal Error",JOptionPane.Error_Message);
 
 //Mensaje de pregunta
-JOptionPane.showMessageDialog(null,"Pregunta","Mensaje de Pregunra",JOptionPane.Question_Message);
+JOptionPane.showMessageDialog(null,"Pregunta","Mensaje de Pregunta",JOptionPane.Question_Message);
+```
+
+2. Usando la clase System
+
+Con esta opción, se va a capturar el contenido de System.in, mediante el uso de dos clases que se encuentran dentro del paquete java.io(import java.io.*)
+
+*InputStreamReader: Captura los bytes del buffer y los convierte a caracteres
+*BufferedReader: Clase que proporciona un método que permite leer hasta el final de la línea
+
+```java
+InputStreamReader isr= new InputStreamReader(System.in);
+BufferedReader br= new BufferedReader(isr);
+
+System.out.println("Introduce un número:m ");
+String cad= br.readLine();
+
+//Conversión de la variable cad a el tipo de dato que quiero
+int num1=Integer.parseInt;
+System.out.println(num1);
+```
+
+3. Usando la clase Scanner
+```java
+int edad;
+String nombre,apellido;
+Scanner teclado=new Scanner(System.in);
+       
+System.out.println("Introduce tu nombre: ");
+nombre=teclado.nextLine();
+        
+System.out.println("Introduce tus apellidos: ");
+apellido=teclado.nextLine();
+        
+System.out.println("Introduce tu edad: ");
+edad=teclado.nextInt();
+        
+System.out.println("Nombre: "+nombre+"\nApellidos: "+apellido+"\nEdad: "+edad);
+```
+## ***Enumerados***
+
+Son una forma de declarar una variable con un conjunto restringido de valores
+```java
+enum TamanoDeCafe{PEQUEÑO,MEDIANO,GRANDE};
+```
+O creando una clase aparte
+```java
+public class Ejemplo_Enumerados {
+    public enum nivel{
+        BAJO,MEDIO,ALTO;
+    }
 ```
 
  

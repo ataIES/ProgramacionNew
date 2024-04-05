@@ -76,6 +76,7 @@ n3=(byte)(n1 * n2 / 100);
 |   /      | Divide dos operandos |
 |   %      | Calcula el resto de dividir el Operador1 entre el operador2 |
 
+## ***Incrementales o unarios
 
 
 

@@ -201,8 +201,8 @@ JOptionPane.showMessageDialog(null,"Pregunta","Mensaje de Pregunta",JOptionPane.
 
 Con esta opción, se va a capturar el contenido de System.in, mediante el uso de dos clases que se encuentran dentro del paquete java.io(import java.io.*)
 
-*InputStreamReader: Captura los bytes del buffer y los convierte a caracteres
-*BufferedReader: Clase que proporciona un método que permite leer hasta el final de la línea
+* InputStreamReader: Captura los bytes del buffer y los convierte a caracteres
+* BufferedReader: Clase que proporciona un método que permite leer hasta el final de la línea
 
 ```java
 InputStreamReader isr= new InputStreamReader(System.in);

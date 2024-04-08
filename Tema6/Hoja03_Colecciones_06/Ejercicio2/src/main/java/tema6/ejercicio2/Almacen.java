@@ -6,6 +6,7 @@ package tema6.ejercicio2;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.NoSuchElementException;
 
 /**
  *
@@ -54,18 +55,18 @@ public class Almacen {
             if (articuloAMostrar!=null) {
                 System.out.println(articuloAMostrar.mostrarArticulo());
             }else{
-                throw new ExcepcionPersonalizada("Error, no existe el artículo "+articuloAMostrar.getCodigo());
+                throw new NoSuchElementException();
             }
-        }catch(ExcepcionPersonalizada e){
-            System.out.println(e.getMessage());
+        }catch(NoSuchElementException e){
+            System.out.println("Error, el articulo no existe");
         }
     }
 
     public String pedidos() {
-        String cadena = "";
+        String cadena = "\nArticulos en el almacén";
         for (Articulo a : listaArticulos) {
             if (a.getExistencias() <= 5) {
-                cadena += a.mostrarArticulo();
+                cadena += a.mostrarArticulo()+"\n";
             }
         }
         return cadena;

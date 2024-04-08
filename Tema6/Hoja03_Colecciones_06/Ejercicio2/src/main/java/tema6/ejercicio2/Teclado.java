@@ -70,7 +70,7 @@ public class Teclado {
     }
 
     public static int introExistencias(String mensaje) {
-        boolean valido = true;
+        boolean valido = false;
         int existencias = 0;
         while (!valido) {
             try {

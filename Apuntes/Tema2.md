@@ -179,14 +179,14 @@ Para construir un método necesitamos:
 ### ***Constructores***
 Es un método que se invoca cuando se crea un objeto y que sirve para iniciar los atributos del objeto
 
-#### ***Constructor por defecto***
+* #### ***Constructor por defecto***
 ```java
 public Rectangulo() {
 
     }
 ```
 
-#### ***Constructor por parámetros***
+* #### ***Constructor por parámetros***
 ```java
 public Alimento(String nombre, int grasas, int hidratos, boolean origenAnimal) {
         this.nombre = nombre;
@@ -195,7 +195,7 @@ public Alimento(String nombre, int grasas, int hidratos, boolean origenAnimal) {
         this.origenAnimal = origenAnimal;
     }
 ```
-#### ***Constructor Copia***
+* #### ***Constructor Copia***
 
 ```java
 public class Noria

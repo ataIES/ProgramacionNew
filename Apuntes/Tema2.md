@@ -153,7 +153,81 @@ System.out.printf("El radio de c1 es: %.2f", c1.getRadio());
 | protected |       x        |              x               |              x           |                            |
 | default   |       x        |              x               |                          |                            |
 | private   |       x        |                              |                          |                            |
+---
 
 ### ***Definir Métodos***
 
-Un **método** es una llamada a una operación de un determinado objeto. La mayoría de métodos devuelven un resultado (gracias a un return). Si el método no devuelve ningún resultado se indica como tipo de datos a devolver se
+Un **método** es una llamada a una operación de un determinado objeto. La mayoría de métodos devuelven un resultado (gracias a un return). Si el método no devuelve ningún resultado se indica como tipo de datos a devolver el tipo void.
+
+Para construir un método necesitamos: 
+1. Sus especificadores de alcance o visibilidad
+2. El tipo de datos o de objeto que devuelve
+3. El identificador del método
+4. Los parámetros 
+5. El cuerpo del método
+
+```java
+ public boolean esEquilatero() {
+        boolean equilatero = false;
+        if (lado1 == lado2 && lado2 == lado3) {
+            equilatero = true;
+        }
+        return equilatero;
+    }
+```
+
+### ***Constructores***
+Es un método que se invoca cuando se crea un objeto y que sirve para iniciar los atributos del objeto
+
+#### ***Constructor por defecto***
+```java
+public Rectangulo() {
+
+    }
+```
+
+#### ***Constructor por parámetros***
+```java
+public Alimento(String nombre, int grasas, int hidratos, boolean origenAnimal) {
+        this.nombre = nombre;
+        this.grasas = grasas;
+        this.hidratos = hidratos;
+        this.origenAnimal = origenAnimal;
+    }
+```
+#### ***Constructor Copia***
+
+```java
+public class Noria
+{
+    private double radio;
+
+public Noria(){
+    this.radio = 55;
+}
+public Noria(double radio){
+    this.radio = radio;
+}
+public Noria(Noria n){
+    this.radio=n.radio;
+}
+}
+```
+
+### ***Métodos recursivos***
+Es una técnica de escritura de métodos o funciones, pensada para problemas complejos. La idea parte de que un método puede invocarse a sí mismo.
+```java
+public class Matematicas
+{
+    	public double factorial(int n)
+    {
+        if(n<=1){
+            return 1;
+        }
+        else{
+            return n*factorial(n-1);
+        }
+    }
+}
+```
+

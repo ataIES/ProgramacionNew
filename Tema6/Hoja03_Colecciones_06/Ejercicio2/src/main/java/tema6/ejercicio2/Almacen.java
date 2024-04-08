@@ -24,49 +24,50 @@ public class Almacen {
         String codigoArticulo = articuloNuevo.getCodigo();
         try {
             if (listaArticulos.add(articuloNuevo)) {
-                System.out.println("ArtÃ­culo " + codigoArticulo + " aÃ±adido correctamente");
+                System.out.println("Artículo " + codigoArticulo + " añadido correctamente");
             } else {
-                throw new ExcepcionPersonalizada("Error, no se pudo aÃ±adir el articulo " + codigoArticulo);
+                throw new ExcepcionPersonalizada("Error, no se pudo añadir el articulo " + codigoArticulo);
             }
         } catch (ExcepcionPersonalizada e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public Articulo buscarArticuloPorCodigo(String codigo) {
+    private Articulo buscarArticuloPorCodigo(String codigo) {
         Iterator<Articulo> it = listaArticulos.iterator();
-        Articulo articulo = null;
+        Articulo articuloEncontrado = null;
         boolean encontrado = false;
-        while (it.hasNext() || !encontrado) {
-            articulo = it.next();
-            if (articulo.getCodigo().equalsIgnoreCase(codigo)) {
+        while (it.hasNext()) {
+            Articulo articulo = it.next();
+            if (articulo.getCodigo().equalsIgnoreCase(codigo) && !encontrado) {
                 encontrado = true;
+                articuloEncontrado=articulo;
             }
         }
-        return articulo;
+        return articuloEncontrado;
     }
 
-    public void mostrarArticuloPorCÃ³digo() {
-        Articulo articuloAMostrar = null;
+    public void mostrarArticuloPorCodigo() {
         String codigo = "";
+        Articulo a = null;
         try {
-            codigo = Teclado.introCodigo("Introduce el cÃ³digo a buscar: ");
-            articuloAMostrar = buscarArticuloPorCodigo(codigo);
-            if (articuloAMostrar!=null) {
-                System.out.println(articuloAMostrar.mostrarArticulo());
-            }else{
+            codigo = Teclado.introCodigo("Introduce el código a buscar: ");
+            a = buscarArticuloPorCodigo(codigo);
+            if (a != null) {
+                System.out.println(a.mostrarArticulo());
+            } else {
                 throw new NoSuchElementException();
             }
-        }catch(NoSuchElementException e){
-            System.out.println("Error, el articulo no existe");
+        } catch (NoSuchElementException e) {
+            System.out.println("Error, el articulo " + codigo + " no existe");
         }
     }
 
     public String pedidos() {
-        String cadena = "\nArticulos en el almacÃ©n";
+        String cadena = String.format("\n\t---Artículos en el almacén---");
         for (Articulo a : listaArticulos) {
             if (a.getExistencias() <= 5) {
-                cadena += a.mostrarArticulo()+"\n";
+                cadena += a.mostrarArticulo() + "\n";
             }
         }
         return cadena;

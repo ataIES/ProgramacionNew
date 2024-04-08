@@ -19,7 +19,7 @@ public class Almacen {
         this.listaArticulos = new LinkedHashSet<>();
     }
 
-    private void insertarArticulos(Articulo articuloNuevo) {
+    public void insertarArticulos(Articulo articuloNuevo) {
         String codigoArticulo = articuloNuevo.getCodigo();
         try {
             if (listaArticulos.add(articuloNuevo)) {
@@ -54,8 +54,10 @@ public class Almacen {
             if (articuloAMostrar!=null) {
                 System.out.println(articuloAMostrar.mostrarArticulo());
             }else{
-                
+                throw new ExcepcionPersonalizada("Error, no existe el artículo "+articuloAMostrar.getCodigo());
             }
+        }catch(ExcepcionPersonalizada e){
+            System.out.println(e.getMessage());
         }
     }
 

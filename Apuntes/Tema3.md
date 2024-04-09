@@ -1,5 +1,5 @@
 ### Tema 3 Estructuras De Control
-## ***IF - Sentencia Condicional Simple
+## ***IF - Sentencia Condicional Simple***
 Se trata de una sentencia que, tras evaluar una expresión lógica, ejecuta una serie de instrucciones en caso de que la expresión lógica sea verdadera.
 
 ```java
@@ -23,7 +23,7 @@ if(notas<5)
     System.out.println("Suspenso");
 ```
 
-## ***IF - Sentencia Condicional Compuesta
+## ***IF - Sentencia Condicional Compuesta***
 ```java
 if(expresión lógica){
     instrucciones
@@ -99,7 +99,7 @@ switch (expresiónEntera){
     default-> instrucciones que se ejecutan si la expresión no toma ninguno de los valores anteriores
 }
 ```
-## ***While - Sentencia repetitiva mientras
+## ***While - Sentencia repetitiva mientras***
 Permite crear bucles. Es un conjunto de sentencias que se repiten mientras se cumpla una determinada condición.
 
 ```java

@@ -14,7 +14,7 @@ public class usoString{
     }
 }
 ```
-### ***Asignacion de valores***
+### ***Asignación de valores***
 Se representa con comillas dobles. Las dobles comillas no forman parte de la cadena. Si queremos que la propia " sea un carácter en sí, y no el final de la cadena, hay que antepones la secuencia escape.
 
 ```java
@@ -58,7 +58,7 @@ que podemos nombrar como 0, 1, 2, 3 (el número de caracteres es cuatro). El
 carácter final indicado en la llamada al método, el número 4, queda excluido del
 substring.: "+ciclo.substring(0,4);
 ```
-### ***Igualdad de dos cadena***
+### ***Igualdad de dos cadenas***
 Si queremos averigüar si dos cadenas son iguales, distingue si está en mayúsculas o minúsculas. Si necesitamos preguntar sin distinguir mayúsculas de mnúsculas, utilizamos equalsIgnoreCase().
 
 ```java

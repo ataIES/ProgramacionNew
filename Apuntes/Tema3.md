@@ -1,4 +1,4 @@
-### Tema 3 Estructuras De Control
+# Tema 3 Estructuras De Control
 ## ***IF - Sentencia Condicional Simple***
 Se trata de una sentencia que, tras evaluar una expresión lógica, ejecuta una serie de instrucciones en caso de que la expresión lógica sea verdadera.
 

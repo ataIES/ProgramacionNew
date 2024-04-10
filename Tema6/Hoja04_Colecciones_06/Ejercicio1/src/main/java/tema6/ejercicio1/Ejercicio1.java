@@ -14,9 +14,6 @@ import java.util.SortedSet;
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-        String nombre=Teclado.introNombre("Introduce el nombre y dos apellidos: ");
-        System.out.println(nombre);
-        /*
         Scanner teclado=new Scanner(System.in);
         int opc=0;
         Equipo equipo=new Equipo();
@@ -50,7 +47,6 @@ public class Ejercicio1 {
                 default->System.out.println("Error, opción incorrecta");
             }
         }while(opc!=7);
-*/
     }
     public static void menu(){
         System.out.printf("\n\t---Menu del Equipo---"

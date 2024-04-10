@@ -4,6 +4,7 @@
  */
 package tema6.ejercicio1;
 
+import java.util.Comparator;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -16,7 +17,7 @@ public class Equipo {
     private SortedSet<Jugador> listaJugadores;
 
     public Equipo() {
-        this.listaJugadores = new TreeSet<>();
+        this.listaJugadores = new TreeSet<>(Comparator.comparing(Jugador::getAltura).thenComparing(Jugador::getNombre);
     }
 
     public void insertarJugador() {

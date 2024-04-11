@@ -1,5 +1,7 @@
 # Tema 3 Estructuras De Control
+
 ## ***IF - Sentencia Condicional Simple***
+
 Se trata de una sentencia que, tras evaluar una expresión lógica, ejecuta una serie de instrucciones en caso de que la expresión lógica sea verdadera.
 
 ```java
@@ -24,6 +26,7 @@ if(notas<5)
 ```
 
 ## ***IF - Sentencia Condicional Compuesta***
+
 ```java
 if(expresión lógica){
     instrucciones
@@ -42,8 +45,11 @@ if(nota>=5){
     suspensos++;
 }
 ```
+
 ## ***IF - Anidación***
+
 Dentro de una sentencia if se puede colocar otra sentencia if. Permite crear programas donde se valoren expresiones complejas.
+
 ```java
 if(x==1){
     instrucciones
@@ -60,7 +66,9 @@ if(x==1){
     }
 }
 ```
+
 Una forma más elegible de escribir sería con la instruccion if-else-if
+
 ```java
 if(x==1){
     instrucciones
@@ -73,7 +81,9 @@ if(x==1){
     ....
 }
 ```
+
 ## ***Switch***
+
 Se llama estructura condicional compleja porque permite evaluar varios valores a la vez. Sirve como sustituta de algunas expresiones del tipo if-else-if
 
 ```java
@@ -90,7 +100,9 @@ switch(expresiónEntera){
         no toma ningun de los valores anteriores*/
 }
 ```
+
 Otra sintaxis de la expresión es: 
+
 ```java
 switch (expresiónEntera){
     case valor1-> instrucciones del valor1;
@@ -99,7 +111,9 @@ switch (expresiónEntera){
     default-> instrucciones que se ejecutan si la expresión no toma ninguno de los valores anteriores
 }
 ```
+
 ## ***While - Sentencia repetitiva mientras***
+
 Permite crear bucles. Es un conjunto de sentencias que se repiten mientras se cumpla una determinada condición.
 
 ```java
@@ -107,7 +121,9 @@ while(expresión lógica){
     sentencias que se ejecutan si la condición es true;
 }
 ```
+
 El programa se ejecuta siguiendo: 
+
 1. Se evalúa la expresión lógica
 2. Si la expresión es verdadera ejecuta las sentencias, sino el programa abandona la sentencia
 3. Tras ejecutar, volvemos al paso 1;
@@ -119,15 +135,20 @@ while (i<=100){
     i++;
 }
 ```
+
+---
+
 ### ***Bucles con contador***
+
 Se llaman así a los bucles que se repiten una serie determinada de veces. El contador es una variable que va variando su valor (de uno en uno, de dos en dos...) en cada vuelta del bucle
 
 En todos los bucles de contador necesitamos saber:
+
 1. Lo que vale la variable contadora al principio. Antes de entrar en el bucle
 2. Lo que varía (lo que se incrementa o decrementa) el contador en cada vuelta
 3. Las acciones a realizar en cada vuelta de bucle
 4. El valor final del contador. En cuanto se rebase el bucle termina
-   
+
 ```java
 for(int lineas=1; lineas<=numFilas; lineas++){
             
@@ -139,7 +160,9 @@ for(int lineas=1; lineas<=numFilas; lineas++){
             System.out.println();
         }
 ```
+
 ### ***Bucle con centinela***
+
 Se trata de preguntar a cada ciclo del bucle por una condición lógica. Si esta condición se cumple, continuamos otro ciclo más en el bucle. Cuando la condición lógica deja de cumplirse, se sale del bucle.
 
 ```java
@@ -154,7 +177,9 @@ while(salir==false) // Condición de repetición: que salir siga siendo falso. E
         salir=(i%7==0); //El centinela vale verdadero si el número es múltiplo de 7
     }
 ```
+
 ## ***DO WHILE - Sentencia repetitiva hacer mientras***
+
 La única diferencia respecto a la anterior está en que la expresión lógica se evalúa después de haber ejecutado las sentencias. Es decir el bucle al menos se ejecuta una vez
 
 1. Ejecutar sentencias
@@ -166,6 +191,7 @@ do{
     instrucciones
 }while(expresión lógica);
 ```
+
 Ejemplo
 
 ```java
@@ -175,7 +201,9 @@ do{
     System.out.println(i);
 }while(i<1000);
 ```
+
 ## ***FOR - Sentencia repetitiva para***
+
 Es un bucle más complejo especialmente pensado para rellenar arrays o para ejecutar instrucciones controladas por un contador
 
 ```java
@@ -183,6 +211,7 @@ for(inicialización;condición;incremento){
     sentencias
 }
 ```
+
 1. Se ejecuta la instrucción de inicialización
 2. Se comprueba la condición
 3. Si la condición es cierta, entonces se ejecutan las sentencias. Si la condición es falsa, abandonamos el bloque for
@@ -193,7 +222,9 @@ for(int i=0;i<=1000;i++){
     System.out.println(i);
 }
 ```
+
 La ventaja es que el código se reduce.
+
 ```java
 int i=0;/*Sentencia de inicialización*/
 while(i<=1000)/*Condición*/{
@@ -201,8 +232,11 @@ while(i<=1000)/*Condición*/{
     i++; //incremento
 }
 ```
+
 ## ***Bucles anidados***
+
 Se trata de usar estructuras de bucle dentro de otra ya existente
+
 * While
 * Do
 * For

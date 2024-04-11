@@ -17,7 +17,7 @@ public class Equipo {
     private SortedSet<Jugador> listaJugadores;
 
     public Equipo() {
-        this.listaJugadores = new TreeSet<>(Comparator.comparing(Jugador::getAltura).thenComparing(Jugador::getNombre);
+        this.listaJugadores = new TreeSet<>();
     }
 
     public void insertarJugador() {

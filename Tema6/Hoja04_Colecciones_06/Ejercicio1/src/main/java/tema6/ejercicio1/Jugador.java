@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author DAW125
  */
-public class Jugador implements Comparable<Jugador>{
+public class Jugador implements Comparable<Jugador> {
 
     private String nombre;
     private float estatura;
@@ -65,7 +65,13 @@ public class Jugador implements Comparable<Jugador>{
 
     @Override
     public int compareTo(Jugador o) {
-        return Float.compare(o.estatura, this.estatura);
+        if (this.equals(o)) {
+            return 0;
+        } else if (this.estatura > o.estatura) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
-      
+
 }

@@ -3,7 +3,7 @@
    2. [UTILIZACIÓN DE OBJETOS Y DESARROLLO DE CLASES](/Apuntes/Tema2.md)
        * [STRINGS](/Apuntes/Strings.md)
    3. [ESTRUCTURAS DE CONTROL](/Apuntes/Tema3.md)
-       * ALEATORIOS
+       * [ALEATORIOS](/Apuntes/Aleatorios.md)
    4. ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICOS
        * FECHAS
    5. USO AVANZADOS DE CLASES

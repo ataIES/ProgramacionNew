@@ -5,6 +5,7 @@
 package tema6.ejercicio1;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  *
@@ -128,6 +129,17 @@ public class Serie {
             cadena+=capitulo.toString();
         }
         return cadena;
+    }
+    public Capitulo existeCapitulo(int nTemporada,int nCapitulo){
+        Capitulo capituloEncontrado=null;
+        Iterator<Capitulo>it=listaCapitulos.values().iterator();
+        while(it.hasNext()){
+            Capitulo c=it.next();
+            if(c.getnTemporada()==nTemporada && c.getnCapitulo()==nCapitulo){
+                capituloEncontrado=c;
+            }
+        }
+        return capituloEncontrado;
     }
 
 }

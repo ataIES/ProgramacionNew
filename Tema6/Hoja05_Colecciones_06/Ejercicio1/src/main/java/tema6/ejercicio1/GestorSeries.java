@@ -60,6 +60,7 @@ public class GestorSeries {
         }
     }
 
+    //Metodo que elimina una serie pasada su nombre como parámetro
     public void eliminarSerie(String nombreABuscar) {
         Serie encontrado = existeSerie(nombreABuscar);
         try {
@@ -79,12 +80,124 @@ public class GestorSeries {
         }
     }
 
+    //Metodo que muestra la series por una tematica concreta, nacionalidad,o todas
+    public void verSeries() {
+        int opc = 0;
+        do {
+            System.out.printf("\n\t---Ver Serie---"
+                    + "\n1.Por nacionalidad"
+                    + "\n2.Por temática"
+                    + "\n3.Todas las series"
+                    + "\n4.Salir");
+            opc = Teclado.introEntero("Introduce una opción: ");
+            switch (opc) {
+                case 1 -> {
+                    Tematica tematicaBuscar = Teclado.pedirTematica();
+                    verSeriesPorTematica(tematicaBuscar);
+                }
+                case 2 -> {
+                    String nacionalidad = Teclado.introCadena("Introduce la nacionalidad: ");
+                    verSeriesPorNacionalidad(nacionalidad);
+                }
+                case 3 ->
+                    verTodasSeries();
+
+                case 4 ->
+                    System.out.println("Saliendo!!");
+
+                default ->
+                    System.out.println("Error, opción incorrecta");
+            }
+
+        } while (opc != 4);
+    }
+
+    //Metodo que comprueba si existe la serie y crea un capitulo
+    public void crearCapitulo(String nombreSerie) {
+        Serie serieEncontrada = null;
+        Capitulo capituloNuevo = null;
+        String codigoCapitulo = "";
+        try {
+            serieEncontrada = existeSerie(nombreSerie);
+            if (serieEncontrada != null) {
+                capituloNuevo = new Capitulo();
+                codigoCapitulo = Serie.generaClaveCapitulo(capituloNuevo.getDescripcion(), capituloNuevo.getnTemporada(), capituloNuevo.getnCapitulo());
+                serieEncontrada.insertarCapitulo(codigoCapitulo, capituloNuevo);
+            } else {
+                throw new NullPointerException("Error, la serie no existe");
+            }
+        } catch (NullPointerException n) {
+            System.out.println(n.getMessage());
+        }
+    }
+
+    public void eliminarCapitulo(String nombreSerie) {
+        Serie serieEncontrada = null;
+        Capitulo capituloEncontrado = null;
+        int nTemporada = 0, nCapitulo = 0;
+        try {
+            serieEncontrada = existeSerie(nombreSerie);
+            if (serieEncontrada != null) {
+                nTemporada = Teclado.introEntero("Introduce el número de temporada del capítulo: ");
+                nCapitulo = Teclado.introCapitulo("Introduce el número del capítulo: ");
+                capituloEncontrado = serieEncontrada.existeCapitulo(nTemporada, nCapitulo);
+                if (capituloEncontrado != null) {
+                    String clave = Serie.generaClaveCapitulo(capituloEncontrado.getDescripcion(), nTemporada, nCapitulo);
+                    serieEncontrada.eliminarCapitulo(clave);
+                } else {
+                    throw new NullPointerException("Error, el capitulo no existe");
+                }
+            } else {
+                throw new NullPointerException("Error, la serie " + nombreSerie + " no existe");
+            }
+        } catch (NullPointerException n) {
+            System.out.println(n.getMessage());
+        }
+    }
+
+    public String visualizarCapitulos(String nombreSerie) {
+        Serie serieEncontrada = null;
+        String cadena="";
+        try {
+            if (serieEncontrada != null) {
+                cadena=serieEncontrada.visualizarCapitulos();
+            }else{
+                throw new NullPointerException("Error, la serie "+nombreSerie+" no existe");
+            }
+        }catch(NullPointerException n){
+            System.out.println(n.getMessage());
+        }
+    }
+
     //Metodo que inserta una serie
     private void insertarSerie(Serie serieNueva) throws ExcepcionPersonalizada {
         if (listaSeries.add(serieNueva)) {
             System.out.println("Serie " + serieNueva.getNombreSerie() + " insertada correctamente");
         } else {
             throw new ExcepcionPersonalizada("Error, no se pudo añadir la serie " + serieNueva.getNombreSerie());
+        }
+    }
+
+    //Metodo que muestra las series de la temática pasada por parámetro
+    private void verSeriesPorTematica(Tematica tematicaBuscar) {
+        for (Serie s : listaSeries) {
+            if (s.getTematica().equals(tematicaBuscar)) {
+                System.out.println(s.toString());
+            }
+        }
+    }
+
+    private void verSeriesPorNacionalidad(String nacionalidadBuscar) {
+        for (Serie s : listaSeries) {
+            if (s.getNacionalidad().equalsIgnoreCase(nacionalidadBuscar)) {
+                System.out.println(s.toString());
+            }
+        }
+    }
+
+    private void verTodasSeries() {
+        for (Serie s : listaSeries) {
+            System.out.println(s.toString());
         }
     }
 

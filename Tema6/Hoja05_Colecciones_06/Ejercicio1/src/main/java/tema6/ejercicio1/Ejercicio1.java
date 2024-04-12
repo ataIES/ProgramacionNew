@@ -15,7 +15,7 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         int opc=0;
-        Serie s=new Serie("Casa de Papel",Tematica.POLICIAL,"Española",true,4);
+        GestorSeries gestor=new GestorSeries();
         do{
             menu();
             opc=teclado.nextInt();
@@ -35,14 +35,17 @@ public class Ejercicio1 {
                 
                 default-> System.out.println("Error, opción incorrecta");
             }
-        }while(opc!=4);
+        }while(opc!=7);
     }
     public static void menu(){
-        System.out.printf("\n\t---Menú de Serie---"
-                + "\n1.Insertar Capítulo"
-                + "\n2.Eliminar Capítulo"
-                + "\n3.Mostrar Capítulo"
-                + "\n4.Salir"
+        System.out.printf("\n\t---Gestión de Series---"
+                + "\n1.Añadir Serie"
+                + "\n2.Eliminar Serie"
+                + "\n3.Mostrar Series"
+                + "\n4.Añadir capitulo a una serie"
+                + "\n5.Borrar capitulo de una serie"
+                + "\n6.Ver capitulos de una serie"
+                +" \n7.Salir"
                 + "\nIntroduce una opción: ");
     }
 }

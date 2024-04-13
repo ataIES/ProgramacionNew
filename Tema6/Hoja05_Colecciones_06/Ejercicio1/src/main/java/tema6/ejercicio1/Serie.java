@@ -6,6 +6,7 @@ package tema6.ejercicio1;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  *
@@ -125,8 +126,8 @@ public class Serie {
     //Metodo que muestra los capitulos de la serie
     public String visualizarCapitulos(){
         String cadena="\n\t---Lista de Capitulos---";
-        for(Capitulo capitulo:listaCapitulos.values()){
-            cadena+=capitulo.toString();
+        for(Map.Entry<String,Capitulo>entry : listaCapitulos.entrySet()){
+            cadena+="\nCodigo del Capitulo: "+entry.getKey()+entry.getValue().toString();
         }
         return cadena;
     }

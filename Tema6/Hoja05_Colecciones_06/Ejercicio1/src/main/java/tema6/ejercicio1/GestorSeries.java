@@ -85,11 +85,11 @@ public class GestorSeries {
         int opc = 0;
         do {
             System.out.printf("\n\t---Ver Serie---"
-                    + "\n1.Por nacionalidad"
-                    + "\n2.Por temática"
+                    + "\n1.Por Temática"
+                    + "\n2.Por Nacionalidad"
                     + "\n3.Todas las series"
                     + "\n4.Salir");
-            opc = Teclado.introEntero("Introduce una opción: ");
+            opc = Teclado.introEntero("\nIntroduce una opción: ");
             switch (opc) {
                 case 1 -> {
                     Tematica tematicaBuscar = Teclado.pedirTematica();
@@ -120,7 +120,7 @@ public class GestorSeries {
         try {
             serieEncontrada = existeSerie(nombreSerie);
             if (serieEncontrada != null) {
-                capituloNuevo = new Capitulo();
+                capituloNuevo = new Capitulo(serieEncontrada);
                 codigoCapitulo = Serie.generaClaveCapitulo(capituloNuevo.getDescripcion(), capituloNuevo.getnTemporada(), capituloNuevo.getnCapitulo());
                 serieEncontrada.insertarCapitulo(codigoCapitulo, capituloNuevo);
             } else {
@@ -131,6 +131,7 @@ public class GestorSeries {
         }
     }
 
+    //Metodo que elimina un capitulo pasando el nombre de la serie 
     public void eliminarCapitulo(String nombreSerie) {
         Serie serieEncontrada = null;
         Capitulo capituloEncontrado = null;
@@ -155,8 +156,9 @@ public class GestorSeries {
         }
     }
 
+    //Metodo que visualiza los capitulos pasando por parámetros el nombre de la serie
     public String visualizarCapitulos(String nombreSerie) {
-        Serie serieEncontrada = null;
+        Serie serieEncontrada = existeSerie(nombreSerie);
         String cadena="";
         try {
             if (serieEncontrada != null) {
@@ -167,6 +169,7 @@ public class GestorSeries {
         }catch(NullPointerException n){
             System.out.println(n.getMessage());
         }
+        return cadena;
     }
 
     //Metodo que inserta una serie
@@ -186,7 +189,7 @@ public class GestorSeries {
             }
         }
     }
-
+    //Metodo que muestra las series por nacionalidad
     private void verSeriesPorNacionalidad(String nacionalidadBuscar) {
         for (Serie s : listaSeries) {
             if (s.getNacionalidad().equalsIgnoreCase(nacionalidadBuscar)) {
@@ -195,6 +198,7 @@ public class GestorSeries {
         }
     }
 
+    //Metodo que muestra todas las series
     private void verTodasSeries() {
         for (Serie s : listaSeries) {
             System.out.println(s.toString());

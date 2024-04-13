@@ -21,17 +21,27 @@ public class Ejercicio1 {
             opc=teclado.nextInt();
             switch(opc){
                 case 1->{
-                    Capitulo capitulo=new Capitulo();
-                    String clave=Serie.generaClaveCapitulo(capitulo.getDescripcion(), capitulo.getnTemporada(), capitulo.getnCapitulo());
-                    s.insertarCapitulo(clave, capitulo);
+                    gestor.crearSerie();
                 }
                 case 2->{
-                    String clave=teclado.nextLine();
-                    s.eliminarCapitulo(clave);
+                    String serieBuscar=Teclado.introCadena("Introduce la serie a eliminar: ");
+                    gestor.eliminarSerie(serieBuscar);
                 }
-                case 3-> System.out.println(s.visualizarCapitulos());
+                case 3-> gestor.verSeries();
                 
-                case 4-> System.out.println("Muchas Gracias!!!");
+                case 4->{
+                    String serieBuscar=Teclado.introCadena("Introduce la serie a buscar: ");
+                    gestor.crearCapitulo(serieBuscar);
+                }
+                case 5->{
+                    String serieEliminar=Teclado.introCadena("Introduce la serie a eliminar: ");
+                    gestor.eliminarCapitulo(serieEliminar);
+                }
+                case 6->{
+                    String cadena=Teclado.introCadena("Introduce la serie para visualizar sus capitulos: ");
+                    System.out.println(gestor.visualizarCapitulos(cadena));
+                }
+                case 7->System.out.println("Muchas Gracias!!");
                 
                 default-> System.out.println("Error, opción incorrecta");
             }

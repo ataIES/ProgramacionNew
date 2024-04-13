@@ -4,6 +4,8 @@
  */
 package tema6.ejercicio1;
 
+import java.util.Objects;
+
 /**
  *
  * @author DAW125
@@ -13,9 +15,9 @@ public class Capitulo {
     private int nCapitulo;
     private String descripcion;
     
-    //Constructor por defecto que pide datos por teclado
-    public Capitulo(){
-        this.nTemporada=Teclado.introTemporada("Introduce el número de Temporada: ");
+    //Constructor que paso por parámetro la serie a la que está relacionada y  que pide datos por teclado
+    public Capitulo(Serie s){
+        this.nTemporada=Teclado.validarTemporada(s);
         this.nCapitulo=Teclado.introCapitulo("Introduce el número de capítulo: ");
         this.descripcion=Teclado.introCadena("Introduce una descripción para el capítulo: ");
     }
@@ -52,9 +54,10 @@ public class Capitulo {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + this.nTemporada;
-        hash = 41 * hash + this.nCapitulo;
+        int hash = 7;
+        hash = 73 * hash + this.nTemporada;
+        hash = 73 * hash + this.nCapitulo;
+        hash = 73 * hash + Objects.hashCode(this.descripcion);
         return hash;
     }
 
@@ -73,8 +76,13 @@ public class Capitulo {
         if (this.nTemporada != other.nTemporada) {
             return false;
         }
-        return this.nCapitulo == other.nCapitulo;
+        if (this.nCapitulo != other.nCapitulo) {
+            return false;
+        }
+        return Objects.equals(this.descripcion, other.descripcion);
     }
+
+  
     
     
 }

@@ -68,7 +68,6 @@ public class Teclado {
         return cadena;
     }
 
-    
     //Metodo que valida booleans
     public static boolean introFinalizada(String mensaje) {
         boolean valido = false;
@@ -93,7 +92,6 @@ public class Teclado {
         return finalizada;
     }
 
-    
     //Metodo que valida la temporada
     public static int introTemporada(String mensaje) {
         boolean valido = false;
@@ -116,7 +114,6 @@ public class Teclado {
         return temporada;
     }
 
-    
     //Metodo que valida el capitulo
     public static int introCapitulo(String mensaje) {
         boolean valido = false;
@@ -179,6 +176,24 @@ public class Teclado {
         }
 
         return tematica;
+    }
+
+    public static int validarTemporada(Serie s) {
+        int temporada = 0;
+        boolean valido = false;
+        try {
+            while (!valido) {
+                temporada = Teclado.introTemporada("Introduce la temporada: ");
+                if (temporada <= s.getnTemporadas()) {
+                    valido=true;
+                }else{
+                    throw new ExcepcionPersonalizada("Error, la temporada del capítulo debe ser una temporada válida");
+                }
+            }
+        }catch(ExcepcionPersonalizada e){
+            System.out.println(e.getMessage());
+        }
+        return temporada;
     }
 
 }

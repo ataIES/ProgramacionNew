@@ -19,8 +19,8 @@ public class Persona implements Identificable {
     private LocalDate fechaNacimiento;
 
     public Persona() {
-        this.nombre = Teclado.introCadena("Introduce el nombre: ");
-        this.apellidos = Teclado.introCadena("Introduce dos apellidos: ");
+        this.nombre = Teclado.introNombre("Introduce el nombre: ");
+        this.apellidos = Teclado.introApellido("Introduce dos apellidos: ");
         this.fechaNacimiento = Teclado.fecha();
     }
 

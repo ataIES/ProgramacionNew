@@ -10,8 +10,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
@@ -20,23 +18,48 @@ import java.util.regex.PatternSyntaxException;
  */
 public class Teclado {
 
-    //Metodo que valida cadenas
-    public static String introCadena(String mensaje) {
+    //Metodo que valida nombre
+    public static String introNombre(String mensaje) {
         boolean valido = false;
-        String apellido = "";
-        String cond = "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]?){2}$";
-        Pattern patron = Pattern.compile(cond, Pattern.UNICODE_CHARACTER_CLASS);
-        Matcher matcher = null;
+        String cadena = "";
+        String cond = "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]?){1,2}$";
         while (!valido) {
             try {
                 System.out.println(mensaje);
-                apellido = new Scanner(System.in).nextLine();
-                matcher = patron.matcher(apellido);
-                if (!apellido.equalsIgnoreCase("")) {
-                    if (matcher.find()) {
+                cadena = new Scanner(System.in,"ISO-8859-1").nextLine();
+                if (!cadena.equalsIgnoreCase("")) {
+                    if (cadena.matches(cond)) {
                         valido = true;
                     } else {
-                        throw new PatternSyntaxException(apellido, patron.pattern(), -1);
+                        throw new PatternSyntaxException(cadena, cond, -1);
+                    }
+                } else {
+                    throw new Exception("Error, el nombre no puede estar vacío");
+                }
+
+            } catch (PatternSyntaxException p) {
+                System.out.println("Error, formato erróneo");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return cadena;
+    }
+    
+    //Metodo que valida apellidos
+    public static String introApellido(String mensaje) {
+        boolean valido = false;
+        String cadena = "";
+        String cond = "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]?){2}$";
+        while (!valido) {
+            try {
+                System.out.println(mensaje);
+                cadena = new Scanner(System.in,"ISO-8859-1").nextLine();
+                if (!cadena.equalsIgnoreCase("")) {
+                    if (cadena.matches(cond)) {
+                        valido = true;
+                    } else {
+                        throw new PatternSyntaxException(cadena, cond, -1);
                     }
                 } else {
                     throw new Exception("Error, los apellidos no puede estar vacío");
@@ -48,7 +71,7 @@ public class Teclado {
                 System.out.println(e.getMessage());
             }
         }
-        return apellido;
+        return cadena;
     }
 
     //Metodo que valida el año

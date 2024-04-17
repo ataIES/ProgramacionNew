@@ -6,7 +6,7 @@
    3. [ESTRUCTURAS DE CONTROL](/Apuntes/Tema3.md)
        * [ALEATORIOS](/Apuntes/Aleatorios.md)
    4. [ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICOS](/Apuntes/Tema4.md)
-       * FECHAS
+       * [FECHAS](/Apuntes/Fechas.md)
    5. USO AVANZADOS DE CLASES
    6. ESTRUCTURAS DINÁMICAS
        * EXPRESIONES REGULARES

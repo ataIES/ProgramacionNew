@@ -161,7 +161,7 @@ int b[]=Arrays.copyOfRange(a, 3,5);
 - Introducir parámetros desde netbeans
 ![](/Imagenes/argumentos.png)
 
--Ahora desde el propio main
+- Ahora desde el propio main
 
 ```java
  public static void main(String[] args) {

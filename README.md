@@ -7,7 +7,7 @@
        * [ALEATORIOS](/Apuntes/Aleatorios.md)
    4. [ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICOS](/Apuntes/Tema4.md)
        * [FECHAS](/Apuntes/Fechas.md)
-   5. USO AVANZADOS DE CLASES
+   5. [USO AVANZADOS DE CLASES](/Apuntes/Tema5.md)
    6. ESTRUCTURAS DINÁMICAS
        * EXPRESIONES REGULARES
        * JAVA XML

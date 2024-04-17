@@ -1,4 +1,4 @@
-# *** TEMA 5 USO AVANZADO DE CLASES***
+# ***TEMA 5 USO AVANZADO DE CLASES***
 ## ***Miembros Estáticos o de Clase en Java***
 
 Se trata de un atributo de la propia clase más que de un atributo de cada objeto de la clase

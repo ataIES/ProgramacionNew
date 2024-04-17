@@ -94,6 +94,6 @@ public abstract class Persona implements Comparable<Persona> {
         return this.dni.compareTo(p.dni);
     }
 
-    public abstract String mostrarInformacion();
+    public abstract String toString();
 
 }

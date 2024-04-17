@@ -38,7 +38,7 @@ public class Jugador extends Persona {
     }
 
     @Override
-    public String mostrarInformacion() {
+    public String toString() {
         String cadena = "";
 
        cadena = String.format("\nNombre: %s\nApellidos: %s\nDni: %s\nFechaNacimiento: %s\nCorreo Electrónico: %s\nDorsal: %d\nEstatura: %.2f",

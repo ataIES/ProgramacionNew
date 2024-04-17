@@ -12,10 +12,11 @@ import java.util.TreeSet;
  *
  * @author atres
  */
-public class Equipo implements Metodos<Persona> {
+public class Equipo {
 
     private Set<Persona> listaEntrenadores;
     private Set<Persona> listaJugadores;
+
 
     public Equipo() {
         this.listaEntrenadores = new TreeSet<>();
@@ -56,61 +57,5 @@ public class Equipo implements Metodos<Persona> {
         return jugadoraux;
     }
 
-    
-
-    @Override
-    public String listar(Set<Persona> lista) {
-        String cadena="";
-        if (!lista.isEmpty()) {
-            for (Persona p : lista) {
-                cadena += p.mostrarInformacion();
-            }
-        } else {
-            cadena += "\nEstá vacio";
-        }
-        return cadena;
-    }
-
-    @Override
-    public void insertar(Persona p, Set<Persona> lista) {
-        try {
-            if (lista.add(p)) {
-                if (p instanceof Entrenador entreaux) {
-                    System.out.println("Entrenador " + entreaux.nombre + " " + entreaux.apellidos + " añadido correctamente");
-                } else {
-                    System.out.println("Jugador " + p.nombre + " " + p.apellidos + " añadido correctamente");
-                }
-            } else {
-                throw new ExcepcionPersonalizada("Error, no se pudo añadir al equipo " + p.nombre);
-            }
-        } catch (ExcepcionPersonalizada e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @Override
-    public void borrar(String dni, Set<Persona> lista) {
-        try {
-            Persona personaEncontrada = buscarPorDni(dni, lista);
-            if (personaEncontrada != null) {
-                if (lista.remove(personaEncontrada)) {
-                    System.out.println("Entrenador" + dni + "borrado correctamente");
-                } else {
-                    throw new ExcepcionPersonalizada("Error, no se pudo borrar correctamente");
-                }
-            } else {
-                throw new NullPointerException("Error, no existe la persona con dni "+dni);
-            }
-        }catch(NullPointerException n){
-            System.out.println(n.getMessage());
-        }catch(ExcepcionPersonalizada e){
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @Override
-    public Persona buscarPorDni(String dni, Set<Persona> lista) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }

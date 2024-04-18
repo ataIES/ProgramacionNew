@@ -85,10 +85,6 @@ n3=(byte)(n1 * n2 / 100);
 |   /      | Divide dos operandos |
 |   %      | Calcula el resto de dividir el Operador1 entre el operador2 |
 
-<<<<<<< HEAD
-## ***Incrementales o unarios
-=======
----
 
 ## ***Incrementales o unarios***
 
@@ -1782,6 +1778,6 @@ Representa una extructura de datos para almacenar clave/valor
   
 * values: Devuelve una coleccion con los valores del Map
   
-  
+
 
 

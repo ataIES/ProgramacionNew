@@ -36,7 +36,8 @@ int dias=365;
 Y se puede declarar más de una variable a la vez del mismo tipo 
 ```java
 int dias=365, anio=23, semanas=12;
-```
+``` 
+
 ## ***Tipos de Datos***
 
 |  Tipo   | Tamaño |     Dato      |

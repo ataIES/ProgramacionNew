@@ -8,7 +8,7 @@
    4. [ESTRUCTURAS DE ALMACENAMIENTO ESTÁTICOS](/Apuntes/Tema4.md)
        * [FECHAS](/Apuntes/Fechas.md)
    5. [USO AVANZADOS DE CLASES](/Apuntes/Tema5.md)
-   6. ESTRUCTURAS DINÁMICAS
+   6. [ESTRUCTURAS DINÁMICAS](/Apuntes/Tema6.md)
        * EXPRESIONES REGULARES
        * JAVA XML
        * PROGRAMACIÓN FUNCIONAL

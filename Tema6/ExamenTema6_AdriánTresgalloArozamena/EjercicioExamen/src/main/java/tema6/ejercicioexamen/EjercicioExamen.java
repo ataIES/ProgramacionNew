@@ -57,9 +57,11 @@ public class EjercicioExamen {
             if (opcion.equalsIgnoreCase("Coche")) {
                 Coche cocheNuevo = crearCoche();
                 agencia.aniadirVehiculo(cocheNuevo);
+                insercion=true;
             } else {
                 Moto motoNueva = crearMoto();
                 agencia.aniadirVehiculo(motoNueva);
+                insercion=true;
             }
         }
     }
@@ -106,7 +108,8 @@ public class EjercicioExamen {
                 String modelo = MetodosEstaticos.introModelo("Introduce el modelo del coche: ");
                 Conductor conductor = crearConductor();
                 int potencia = MetodosEstaticos.pedirPotencia("Introduce la potencia: ");
-
+                c=new Coche(matricula,modelo,conductor,potencia);
+                valido=true;
             } catch (InputMismatchException i) {
                 System.out.println(i.getMessage());
             } catch (ExcepcionPersonalizada e) {
@@ -125,6 +128,8 @@ public class EjercicioExamen {
                 String modelo = MetodosEstaticos.introModelo("Introduce el modelo de la moto: ");
                 Conductor conductor = crearConductor();
                 int potencia = MetodosEstaticos.pedirCilindrada("Introduce la cilindrada: ");
+                m=new Moto(matricula,modelo,conductor,potencia);
+                valido=true;
 
             } catch (InputMismatchException i) {
                 System.out.println(i.getMessage());

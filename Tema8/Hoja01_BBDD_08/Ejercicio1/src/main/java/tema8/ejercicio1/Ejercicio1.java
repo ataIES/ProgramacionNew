@@ -35,13 +35,17 @@ public class Ejercicio1 {
                    metodos.eliminar(id);
                }
                case 3->{
-                  Usuario nuevoUsuario=metodos.nuevoUsuario();
+                  Usuario nuevoUsuario=new Usuario();
                   metodos.guardar(nuevoUsuario);
                }
                case 4->{
-                   List<Usuario>listaUsuarios=new ArrayList<>();
+                   List<Usuario>listaUsuarios=metodos.listar();
                    metodos.listarUsuario(listaUsuarios);
+                   
                }
+               case 5->System.out.println("Muchas Gracias!!!");
+               
+               default->System.out.println("Error, opción incorrecta");
            }
        }while(opc!=5);
     }
@@ -51,7 +55,7 @@ public class Ejercicio1 {
                 + "\n2.Eliminar"
                 + "\n3.Agregar"
                 + "\n4.Listar"
-                + "\nSalir"
+                + "\n5.Salir"
                 + "\nIntroduce una opción: ");
     }
 }

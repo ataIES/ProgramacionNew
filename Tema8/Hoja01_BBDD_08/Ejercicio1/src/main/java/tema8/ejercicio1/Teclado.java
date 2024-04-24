@@ -38,7 +38,7 @@ public class Teclado {
     public static String introUsername(String mensaje) {
         boolean valido = false;
         String cadena = "";
-        String cond = "^[a-zA-Z_-]+$";
+        String cond = "^[a-zA-Z0-9_-]+$";
         while (!valido) {
             try {
                 System.out.println(mensaje);

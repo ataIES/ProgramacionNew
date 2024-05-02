@@ -25,12 +25,13 @@ public class Teclado {
         boolean valido = false;
         String cadena = "";
         String cond = "^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]?){1,2}$";
+        Pattern patron=Pattern.compile(cond,Pattern.UNICODE_CASE);
         while (!valido) {
             try {
                 System.out.println(mensaje);
                 cadena = new Scanner(System.in).nextLine();
                 if (!cadena.equalsIgnoreCase("")) {
-                    if (cadena.matches(cond)) {
+                    if (cadena.matches(patron.pattern())) {
                         valido = true;
                     } else {
                         throw new PatternSyntaxException(cadena, cond, -1);

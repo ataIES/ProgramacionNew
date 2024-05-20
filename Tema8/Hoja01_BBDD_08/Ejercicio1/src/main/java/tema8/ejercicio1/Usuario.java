@@ -16,7 +16,15 @@ public class Usuario {
     private String password;
     private String email;
 
-    public Usuario(String username, String password, String email) {
+    
+    public Usuario(){
+        this.id=0;
+        this.username=Teclado.introUsername("Introduce el username: ");
+        this.password=Teclado.introPassword("Introduce la contraseña: ");
+        this.email=Teclado.introCorreoElectronico("Introduce el correo electrónico: ");
+    }
+    public Usuario(int id,String username, String password, String email) {
+        this.id=id;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -37,6 +45,23 @@ public class Usuario {
     public int getId() {
         return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     
 
     @Override

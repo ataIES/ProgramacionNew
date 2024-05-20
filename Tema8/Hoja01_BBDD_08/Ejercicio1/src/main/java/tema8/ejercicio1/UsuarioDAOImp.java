@@ -47,10 +47,12 @@ public class UsuarioDAOImp implements Repositorio<Usuario> {
     public Usuario porId(int id) {
         Usuario usu = null;
         String sql = "SELECT * FROM usuarios WHERE id=?";
-        try (PreparedStatement pst = getConnection().prepareStatement(sql); ResultSet rs = pst.executeQuery(sql)) {
+        try (PreparedStatement pst = getConnection().prepareStatement(sql);) {
             pst.setInt(1, id);
-            if (rs.next()) {
-                usu = crearUsuario(rs);
+            try (ResultSet rs = pst.executeQuery();) {
+                if (rs.next()) {
+                    usu = crearUsuario(rs);
+                }
             }
         } catch (SQLException s) {
             System.out.println(s.getMessage());
@@ -70,6 +72,9 @@ public class UsuarioDAOImp implements Repositorio<Usuario> {
             if (t.getId() > 0) {
                 stmt.setInt(4, t.getId());
             }
+            t.setUsername(Teclado.introUsername("Introduce el nuevo nombre de usuario: "));
+            t.setPassword(Teclado.introPassword("Introduce la nueva contraseña: "));
+            t.setEmail(Teclado.introCorreoElectronico("Introduce el nuevo correo electrónico: "));
             stmt.setString(1, t.getUsername());
             stmt.setString(2, encriptacionMD5(t.getPassword()));
             stmt.setString(3, t.getEmail());
@@ -92,6 +97,48 @@ public class UsuarioDAOImp implements Repositorio<Usuario> {
             int salida = stmt.executeUpdate();
             if (salida != 1) {
                 throw new Exception(" No se ha borrado un solo registro");
+            } else {
+                System.out.println("Se ha eliminado el usuario con id " + id);
+            }
+        } catch (SQLException s) {
+            System.out.println(s.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void insertar(Usuario t) {
+        String sql = "INSERT into usuarios(username,password,email)VALUES(?,?,?)";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            stmt.setString(1, t.getUsername());
+            stmt.setString(2, encriptacionMD5(t.getPassword()));
+            stmt.setString(3, t.getEmail());
+            int salida = stmt.executeUpdate();
+            if (salida != 1) {
+                throw new Exception(" No se ha insertado el registro");
+            }
+        } catch (SQLException s) {
+            System.out.println(s.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void actualizar(Usuario t) {
+        String sql = "UPDATE usuarios SET username=?, password=?, email=? WHERE id=?";
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql);) {
+            t.setUsername(Teclado.introUsername("Introduce el nuevo nombre de usuario: "));
+            t.setPassword(Teclado.introPassword("Introduce la nueva contraseña: "));
+            t.setEmail(Teclado.introCorreoElectronico("Introduce el nuevo correo electrónico: "));
+            stmt.setInt(4, t.getId());
+            stmt.setString(1, t.getUsername());
+            stmt.setString(2, encriptacionMD5(t.getPassword()));
+            stmt.setString(3, t.getEmail());
+            int salida = stmt.executeUpdate();
+            if (salida != 1) {
+                throw new Exception(" No se ha modificadp el registro");
             }
         } catch (SQLException s) {
             System.out.println(s.getMessage());
@@ -101,11 +148,7 @@ public class UsuarioDAOImp implements Repositorio<Usuario> {
     }
 
     private Usuario crearUsuario(final ResultSet rs) throws SQLException {
-        Usuario nuevoUsuario = null;
-
-        nuevoUsuario = new Usuario(rs.getString("username"), rs.getString("password"), rs.getString("email"));
-
-        return nuevoUsuario;
+        return new Usuario(rs.getInt("id"), rs.getString("username"), rs.getString("password"), rs.getString("email"));
     }
 
     private String encriptacionMD5(String pasw) {
@@ -124,16 +167,9 @@ public class UsuarioDAOImp implements Repositorio<Usuario> {
         }
     }
 
-    public Usuario nuevoUsuario() {
-        String username = Teclado.introUsername("Introduce el nombre de usuario: ");
-        String password = Teclado.introPassword("Introduce su contraseña: ");
-        String email = Teclado.introCorreoElectronico("Introduce su correo electrónico");
-
-        return new Usuario(username, password, email);
-    }
-    public void listarUsuario(List<Usuario>lista){
-        for(Usuario usu:lista){
-            System.out.println(usu.toString()+"\n");
+    public void listarUsuario(List<Usuario> lista) {
+        for (Usuario usu : lista) {
+            System.out.println(usu.toString() + "\n");
         }
     }
 

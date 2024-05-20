@@ -25,4 +25,10 @@ public interface Repositorio<T> {
     // método para borrar un objeto por su ID
     // nos permite borrar un registro de la base de datos por clave primaria
     public void eliminar( int  id);
+    
+    //Metodo para insertar datos a una tabla
+    public void insertar(T t);
+    
+    //Metodo para actualizar datos de una tabla;
+    public void actualizar(T t);
 }

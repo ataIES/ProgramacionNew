@@ -5,6 +5,7 @@
 package tema8.ejercicio1;
 
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.PatternSyntaxException;
 
@@ -187,11 +188,36 @@ public class Teclado {
     }
 
     /**
-     * Metodo que valida un dni
-     *
-     * @param mensaje
-     * @return devuelve el dni validado
+     * Metodo que introduce una fecha y la valida
+     * @return 
      */
+    public static LocalDate introFecha() {
+        boolean valido = false;
+        LocalDate fecha = null;
+        LocalDate hoy = LocalDate.now();
+        while (!valido) {
+            try {
+                int anio = anio("Introduce el año: ");
+                int mes = mes("Introduce el mes: ");
+                int dia = dia("Introduce el dia: ", mes, anio);
+                fecha = LocalDate.of(anio, mes, dia);
+                if (fecha.isAfter(hoy)) {
+                    valido = true;
+                } else {
+                    throw new Exception("Error, la fecha debe ser posterior al dia de hoy");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return fecha;
+    }
+        /**
+         * Metodo que valida un dni
+         *
+         * @param mensaje
+         * @return devuelve el dni validado
+         */
     public static String introDNI(String mensaje) {
         boolean valido = false;
         String dni = "";
@@ -210,6 +236,55 @@ public class Teclado {
             }
         }
         return dni;
+    }
+    
+    /**
+     * Metodo que pide un tratamiento y lo valida
+     * @return 
+     */
+     public static Tratamientos pedirTratamiento() {
+        Tratamientos tratamiento = null;
+        boolean valido = false;
+        int n = 0;
+        int opcion = 0;
+
+        while (!valido) {
+            try {
+                System.out.println("Elige el tratamiento.\n1. Implantología\n2. Ortodoncia\n3. Periodoncia\n4. Estética\n5. Extracciones");
+                opcion = new Scanner(System.in).nextInt();
+                switch (opcion) {
+                    case 1 -> {
+                        tratamiento = Tratamientos.Implantología;
+                        valido = true;
+                    }
+                    case 2 -> {
+                        tratamiento=Tratamientos.Ortodoncia;
+                        valido = true;
+                    }
+                    case 3 -> {
+                        tratamiento=Tratamientos.Periodoncia;
+                        valido = true;
+                    }
+                    case 4 -> {
+                        tratamiento=Tratamientos.Estética;
+                        valido = true;
+                    }
+                    case 5->{
+                        tratamiento=Tratamientos.Extracciones;
+                        valido=true;
+                    }
+                    default -> {
+                        System.out.println("Error: elige una opcion");
+                    }
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error No es un numero");
+            } catch (Exception e) {
+                System.out.println("Error Indeterminado");
+            }
+        }
+
+        return tratamiento;
     }
 
     /**

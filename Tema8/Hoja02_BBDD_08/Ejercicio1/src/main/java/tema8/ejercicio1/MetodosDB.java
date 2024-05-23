@@ -125,6 +125,11 @@ public class MetodosDB {
         return visitas;
     }
 
+    /**
+     * Metodo que lista las visitas de un paciente ordenado por DESC
+     * @param dni
+     * @return 
+     */
     public static List<Visita> listarVisitasPaciente(String dni) {
         List<Visita> listaVisitaPaciente = new ArrayList<>();
         String sql = "SELECT id,dni,fecha,tratamiento,observaciones from visitas WHERE dni=? ORDER BY 'DESC'";

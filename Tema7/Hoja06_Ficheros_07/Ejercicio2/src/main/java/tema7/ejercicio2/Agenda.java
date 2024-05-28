@@ -4,18 +4,20 @@
  */
 package tema7.ejercicio2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author DAW125
  */
-public class Agenda {
+public class Agenda implements Serializable {
     
     private String nombre;
-    private String tlf;
+    private int tlf;
     private String direccion;
-    private String codigoPostal;
+    private int codigoPostal;
 
-    public Agenda(String nombre, String tlf, String direccion, String codigoPostal) {
+    public Agenda(String nombre, int tlf, String direccion, int codigoPostal) {
         this.nombre = nombre;
         this.tlf = tlf;
         this.direccion = direccion;
@@ -30,11 +32,11 @@ public class Agenda {
         this.nombre = nombre;
     }
 
-    public String getTlf() {
+    public int getTlf() {
         return tlf;
     }
 
-    public void setTlf(String tlf) {
+    public void setTlf(int tlf) {
         this.tlf = tlf;
     }
 
@@ -46,11 +48,11 @@ public class Agenda {
         this.direccion = direccion;
     }
 
-    public String getCodigoPostal() {
+    public int getCodigoPostal() {
         return codigoPostal;
     }
 
-    public void setCodigoPostal(String codigoPostal) {
+    public void setCodigoPostal(int codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
 

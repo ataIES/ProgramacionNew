@@ -34,6 +34,26 @@ public class Teclado {
         }
         return nombre;
     }
+    public static String introDireccion(String mensaje) {
+        String nombre = "";
+        String condicion = "^([A-ZÁÉÍÓÚ]{1}[a-záéíóúñ]*[\s]?)+$";
+        boolean valido = false;
+        while (!valido) {
+            try {
+                System.out.println(mensaje);
+                nombre = new Scanner(System.in).nextLine();
+                if (nombre.matches(condicion)) {
+                    valido = true;
+                } else {
+                    throw new PatternSyntaxException(nombre, condicion, -1);
+                }
+            } catch (PatternSyntaxException p) {
+                System.out.println("Error, formato erróneo");
+            }
+
+        }
+        return nombre;
+    }
 
     public static String introTelefono(String mensaje) {
         boolean valido = false;
@@ -53,6 +73,25 @@ public class Teclado {
             }
         }
         return tlf;
+    }
+     public static String introCodigoPostal(String mensaje) {
+        boolean valido = false;
+        String codPostal = "";
+        String condicion = "^[0-9]{5}$";
+        while (!valido) {
+            try {
+                System.out.println(mensaje);
+                codPostal = new Scanner(System.in).nextLine();
+                if (codPostal.matches(condicion)) {
+                    valido = true;
+                } else {
+                    throw new PatternSyntaxException(codPostal, condicion, -1);
+                }
+            } catch (PatternSyntaxException p) {
+                System.out.println(p.getMessage());
+            }
+        }
+        return codPostal;
     }
 
     public static int introEntero(String mensaje) {

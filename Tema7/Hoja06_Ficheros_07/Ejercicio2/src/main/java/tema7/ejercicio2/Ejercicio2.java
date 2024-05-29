@@ -16,6 +16,7 @@ public class Ejercicio2 {
     public static void main(String[] args) {
         File fichero = new File("agenda.dat");
         int opc = 0;
+        List<Agenda> lista = Fichero.aniadirLista(fichero);
         do {
             menu();
             opc = new Scanner(System.in).nextInt();
@@ -30,12 +31,19 @@ public class Ejercicio2 {
 
                 case 3 -> {
                     String nombre = Teclado.introNombre("Introduce el nombre a buscar: ");
-                    List<Agenda> lista = Fichero.aniadirLista(fichero);
-                    Fichero.buscarEnAgenda(lista, nombre);
+                    List<Agenda>listaEncontrada=Fichero.buscarEnAgenda(lista, nombre);
+                    Fichero.listar(listaEncontrada);
+                    ;
                 }
 
                 case 4 -> {
-
+                    String nombre = Teclado.introNombre("Introduce el nombre a buscar: ");
+                    boolean borrado = Fichero.eliminarPersonaAgenda(fichero, lista, nombre);
+                    String result = borrado ? "Borrado correctamente" : "No se ha borrado a la persona " + nombre;
+                    System.out.println(result);
+                }
+                case 5->{
+                    Fichero.eliminarFichero(fichero);
                 }
             }
         } while (opc != 6);

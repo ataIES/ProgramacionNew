@@ -1,0 +1,6 @@
+Se recibe por parámetro el nombre del fichero poema.txt.
+El contenido del fichero está estructurado en una única línea. Se trata de leer este fichero letra
+a letra, y grabarlo en otro fichero denominado datos.txt, donde se debe grabar línea a línea. El
+comienzo de cada línea está indicado con un asterisco*. El asterisco * que indica el comienzo de
+una nueva línea, no debe grabarse en el segundo fichero.
+Al final del ejercicio se elimina datos.txt y se renombra como poema.txt.

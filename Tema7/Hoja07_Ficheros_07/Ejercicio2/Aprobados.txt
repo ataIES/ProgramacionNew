@@ -1,0 +1,7 @@
+Alumno{nombreAlumno=Adrian, nota=7}
+Alumno{nombreAlumno=Pablo, nota=5}
+Alumno{nombreAlumno=Carlos, nota=9}
+Alumno{nombreAlumno=Juanillo, nota=7}
+Alumno{nombreAlumno=Alberto, nota=8}
+Alumno{nombreAlumno=Ruth, nota=10}
+Alumno{nombreAlumno=Martial, nota=8}
